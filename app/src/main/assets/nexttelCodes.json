@@ -1,0 +1,241 @@
+
+{
+	"Name": "Main balance",
+	"Operator": "Nexttel",
+	"Code": "*801#",
+	"Description": "Display your main account balance",
+	"Tags": [],
+	"InputFields": []
+},
+{
+"Name": "Bonus balance",
+"Operator": "Nexttel",
+"Code": "*801*1#",
+"Description": "Display your bonus balance(credit)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Credit card recharge",
+"Operator": "Nexttel",
+"Code": "*802*@#",
+"Description": "Recharge airtime using credit card",
+"Tags": [],
+"InputFields": [{
+"Title": "Credit card number",
+"InputType": "Pass code"
+}]
+},
+{
+"Name": "Credit transfer(Ishare)",
+"Operator": "Nexttel",
+"Code": "*869*@*@*@#",
+"Description": "Transfer airtime from your main balance to another Nexttel subscriber",
+"Tags": [],
+"InputFields": [
+{
+"Title": "Ishare code",
+"InputType": "Pass code"
+},
+{
+"Title": "Phone number",
+"InputType": "Phone number"
+},
+{
+"Title": "Amount",
+"InputType": "Default"
+}
+]
+},
+{
+"Name": "Internet Package FLY",
+"Operator": "Nexttel",
+"Code": "*865#",
+"Description": "Subscribe to to an internet package FLY or WhatsApp",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Internet balance",
+"Operator": "Nexttel",
+"Code": "*865*1#",
+"Description": "Subscribe to to an internet package FLY or WhatsApp",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Enable Eco+",
+"Operator": "Nexttel",
+"Code": "*805#",
+"Description": "Enable Eco+. 400% bonus",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Enable Next15+",
+"Operator": "Nexttel",
+"Code": "*805*2#",
+"Description": "Enable Next15+. To call 15Frs/min",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Next15+ balance",
+"Operator": "Nexttel",
+"Code": "*805*21#",
+"Description": "Consult your Next15 balance",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Jackpot package(Multiply airtime)",
+"Operator": "Nexttel",
+"Code": "*806#",
+"Description": "Consult your Next15 balance",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Jackpot balance",
+"Operator": "Nexttel",
+"Code": "*806*1#",
+"Description": "Consult your jackpot balance",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Data Package Day",
+"Operator": "Nexttel",
+"Code": "*865*20#",
+"Description": "Subscribe to data package day. 50Frs = 50Mo (valid for 2H)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Data Package Day 1",
+"Operator": "Nexttel",
+"Code": "*865*21#",
+"Description": "Subscribe to data package day. 150Frs = 150Mo (valid for 24H)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Data Package Day 2",
+"Operator": "Nexttel",
+"Code": "*865*22#",
+"Description": "Subscribe to data package day. 250Frs = 250Mo (valid for 24H)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Data Package Day 3",
+"Operator": "Nexttel",
+"Code": "*865*23#",
+"Description": "Subscribe to data package day. 500Frs = 500Mo (valid for 24H)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Data Package Day 4",
+"Operator": "Nexttel",
+"Code": "*865*24#",
+"Description": "Subscribe to data package day. 100Frs = 100Mo (valid for 24H)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Data Package Night 1",
+"Operator": "Nexttel",
+"Code": "*865*11#",
+"Description": "Subscribe to data package night. 150Frs = 200Mo (valid from Midnight to 6H:00)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Data Package Night 2",
+"Operator": "Nexttel",
+"Code": "*865*12#",
+"Description": "Subscribe to data package night. 250Frs = 300Mo (valid from Midnight to 6H:00)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Data Package Week 1",
+"Operator": "Nexttel",
+"Code": "*865*80#",
+"Description": "Subscribe to data package week. 300Frs = 400Mo (valid for 1 week)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Data Package Week 2",
+"Operator": "Nexttel",
+"Code": "*865*81#",
+"Description": "Subscribe to data package week. 250Frs = 300Mo (valid for 1 week)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Data Package Week 3",
+"Operator": "Nexttel",
+"Code": "*865*82#",
+"Description": "Subscribe to data package week. 250Frs = 300Mo (valid for 1 week)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Data Package Week 4",
+"Operator": "Nexttel",
+"Code": "*865*83#",
+"Description": "Subscribe to data package week. 250Frs = 300Mo (valid for 1 week)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Data Package Week 5",
+"Operator": "Nexttel",
+"Code": "*865*84#",
+"Description": "Subscribe to data package week. 250Frs = 300Mo (valid for 1 week)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Data Package Month 1",
+"Operator": "Nexttel",
+"Code": "*865*41#",
+"Description": "Subscribe to data package month. 8000Frs = 4.6Go (valid for 1 month)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Data Package Month 2",
+"Operator": "Nexttel",
+"Code": "*865*42#",
+"Description": "Subscribe to data package month. 12000Frs = 8Go (valid for 1 month)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Data Package Month 3",
+"Operator": "Nexttel",
+"Code": "*865*43#",
+"Description": "Subscribe to data package month. 25000Frs = 18Go (valid for 1 month)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Data Package Month 4",
+"Operator": "Nexttel",
+"Code": "*865*44#",
+"Description": "Subscribe to data package month. 4000Frs = 1.5Go (valid for 1 month)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "My number",
+"Operator": "Nexttel",
+"Code": "*600#",
+"Description": "Display your phone number",
+"Tags": [],
+"InputFields": []
+},

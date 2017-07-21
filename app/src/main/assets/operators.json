@@ -1,0 +1,24 @@
+{
+    "Operators": [
+        {
+            "Name": "Mtn Cameroon",
+            "Description": "Mtn Cameroon was created in February 2000. It is the second mobile operator in Cameroon which began operations in 2002.\nHere u will find USSD codes used by Mtn Cameroon subscribers",
+            "Tel": 8787
+        },
+        {
+            "Name": "Orange Cameroon",
+            "Description": "Orange Cameroon is one of the major mobile operators in Cameroon.\nHere u will find USSD codes used by Orange Cameroon subscribers",
+            "Tel": 950
+        },
+        {
+            "Name": "Camtel",
+            "Description": "Camtel is a national telecommunication and internet service provider in Cameroon.\nHere u will find  USSD codes used by Camtel subscribers",
+            "Tel": 825
+        },
+        {
+            "Name": "Nexttel",
+            "Description": "Viettel CAMEROON S.A is a Cameroonian telecommunications company with Nexttel trade name. Nexttel launched its commercial activities september 12, 2014.\nHere u will find USSD codes used by Nexttel subscribers",
+            "Tel": 8123
+        }
+    ]
+}

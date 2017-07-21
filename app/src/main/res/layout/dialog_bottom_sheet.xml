@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:theme="@style/AppTheme">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="@dimen/logo_width_small"
+                android:layout_height="@dimen/logo_height_small"
+                android:src="@mipmap/logo_mtn"
+                android:paddingLeft="@dimen/logo_small_padding"
+                android:id="@+id/operator_logo_small" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/activate_code"
+                    android:paddingLeft="@dimen/logo_small_padding"
+                    android:paddingTop="@dimen/logo_small_padding"
+                    android:textSize="@dimen/text_primary"
+                    android:textStyle="bold"
+                    android:textColor="@color/from"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/operator_logo_small"
+                    android:layout_toEndOf="@+id/operator_logo_small" />
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/name_bottom_sheet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/from"
+                android:text="Call me back"
+                android:layout_marginLeft="65dp"
+                android:layout_marginRight="10dp"
+                android:textSize="@dimen/text_primary"
+                android:textStyle="bold"
+                android:paddingRight="@dimen/logo_small_padding" />
+
+            <TextView
+                android:id="@+id/description_bottom_sheet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Call me back"
+                android:textColor="@color/from"
+                android:textSize="@dimen/text_secondary"
+                android:layout_marginLeft="65dp"
+                android:layout_marginRight="10dp"
+                android:paddingRight="@dimen/logo_small_padding"
+                 />
+            <TextView
+                android:id="@+id/code_bottom_sheet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Call me back"
+                android:textColor="@color/from"
+                android:textSize="@dimen/text_secondary"
+                android:layout_marginLeft="65dp"
+                android:layout_marginRight="10dp"
+                android:textStyle="bold"
+                android:paddingRight="@dimen/logo_small_padding"
+                />
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/input_fields_layout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/activate_this_code_warning"
+            android:paddingLeft="@dimen/logo_small_padding"
+            android:textSize="@dimen/text_primary"
+            android:textColor="@color/from"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+        <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="4dp">
+
+        <Button
+            android:id="@+id/btn_dialog_bottom_sheet_ok"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:text="@string/dialog_ok"
+            android:background="@drawable/bg_simple_botton"
+            android:textColor="@color/colorAccent" />
+
+        <Button
+            android:id="@+id/btn_dialog_bottom_sheet_cancel"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/btn_dialog_bottom_sheet_ok"
+            android:background="@drawable/bg_simple_botton"
+            android:text="@string/dialog_cancel"
+            android:textColor="@color/colorAccent" />
+
+    </RelativeLayout>
+    </LinearLayout>
+
+
+</android.support.v4.widget.NestedScrollView>

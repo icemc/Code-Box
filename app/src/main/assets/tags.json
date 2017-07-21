@@ -1,0 +1,24 @@
+{
+    "Tags": [
+        {
+            "Name": "Internet",
+            "Operator": "All"
+        },
+        {
+            "Name": "Tariff plan",
+            "Operator": "All"
+        },
+        {
+            "Name": "Sms",
+            "Operator": "All"
+        },
+        {
+            "Name": "Balance",
+            "Operator": "All"
+        },
+        {
+            "Name": "Call me back",
+            "Operator": "All"
+        }
+    ]
+}

@@ -1,0 +1,577 @@
+{
+	"Name": "Orange services",
+	"Operator": "Orange Cameroon",
+	"Code": "#111#",
+	"Description": "Display all Orange cameroon services",
+	"Tags": [],
+	"InputFields": []
+},
+{
+"Name": "My number",
+"Operator": "Orange Cameroon",
+"Code": "#99#",
+"Description": "show your Orange Cameroon phone number",
+"Tags": [],
+"InputFields": [{
+"Title": "Phone number",
+"InputType": "Phone number"
+}]
+},
+{
+"Name": "Main balance",
+"Operator": "Orange Cameroon",
+"Code": "#123#",
+"Description": "Display your main account balance and other account balances( select 0)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Orange services",
+"Operator": "Orange Cameroon",
+"Code": "#111#",
+"Description": "Display all Orange cameroon services",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Call me back",
+"Operator": "Orange Cameroon",
+"Code": "#146*@#",
+"Description": "Send a call me back to any Orange Cameroon phone number",
+"Tags": [
+"Call me back"
+],
+"InputFields": [{
+"Title": "Phone number",
+"InputType": "Phone number"
+}]
+},
+{
+"Name": "Credit transfer",
+"Operator": "Orange Cameroon",
+"Code": "*144*@*@*@#",
+"Description": "Transfer airtime from your main balance to another Orange Cameroon subscriber",
+"Tags": [
+
+],
+"InputFields": [
+{
+"Title": "Phone number",
+"InputType": "Phone number"
+},
+{
+"Title": "Amount",
+"InputType": "Default"},
+
+{
+"Title": "ME2U code",
+"InputType": "Pass code"
+}
+]
+},
+{
+"Name": "Orange packages(calls and sms)",
+"Operator": "Orange Cameroon",
+"Code": "#131#",
+"Description": "Show Orange packages(calls and sms)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "SMS packages",
+"Operator": "Orange Cameroon",
+"Code": "#131*1#",
+"Description": "Subscribe to an SMS package",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Orange Bonus(Multiply airtime)",
+"Operator": "Orange Cameroon",
+"Code": "#131*1#",
+"Description": "Subscibe to Orange bonus",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Orange Bonus Plus",
+"Operator": "Orange Cameroon",
+"Code": "#131*2#",
+"Description": "Subscibe to Orange bonus Plus",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "International pack bonus",
+"Operator": "Orange Cameroon",
+"Code": "#5*141#",
+"Description": "Subscribe to an international pack bonus",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Blackberry offers",
+"Operator": "Orange Cameroon",
+"Code": "#145*3#",
+"Description": "Display all blackberry offers",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Take Ya Own(Offer packages)",
+"Operator": "Orange Cameroon",
+"Code": "#131*5#",
+"Description": "Take Ya Own(Offer packages) to an Orange Cameroon subscriber",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Internet bundle subscription",
+"Operator": "Orange Cameroon",
+"Code": "#145*2#",
+"Description": "Subscribe to an internet bundle",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Internet bundle balances",
+"Operator": "Orange Cameroon",
+"Code": "#145*2#",
+"Description": "Display internet bundle balances",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "SOS Credit(Borrow airtime)",
+"Operator": "Orange Cameroon",
+"Code": "#133#",
+"Description": "SOS Credit(Borrow airtime)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "SOS Data(Borrow internet data)",
+"Operator": "Orange Cameroon",
+"Code": "#145*3#",
+"Description": "SOS Data(Borrow internet data)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Credit card recharge",
+"Operator": "Orange Cameroon",
+"Code": "#188*@#",
+"Description": "Recharge airtime using credit card",
+"Tags": [],
+"InputFields": [{
+"Title": "Credit card number",
+"InputType": "Pass code"
+}]
+},
+{
+"Name": "Orange Money",
+"Operator": "Orange Cameroon",
+"Code": "#150#",
+"Description": "Orange Money services",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Orange loyalty",
+"Operator": "Orange Cameroon",
+"Code": "#140#",
+"Description": "Orange loyalty program",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Weekend surprise",
+"Operator": "Orange Cameroon",
+"Code": "#195#",
+"Description": "Orange weekend surprise",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Orange Multimedia Gateway",
+"Operator": "Orange Cameroon",
+"Code": "#119#",
+"Description": "Display Orange Multimedia Gateway",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Package Giga Data",
+"Operator": "Orange Cameroon",
+"Code": "#145*2*4#",
+"Description": "Display all Giga data packages",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Plenty Classic",
+"Operator": "Orange Cameroon",
+"Code": "#141*1#",
+"Description": "Subscribe to Orange plenty",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Plenty FUN",
+"Operator": "Orange Cameroon",
+"Code": "#141*2#",
+"Description": "Subscribe to Orange Fun",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Plenty Smart",
+"Operator": "Orange Cameroon",
+"Code": "#141*3#",
+"Description": "Subscribe to Orange Smart",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Plenty Relax",
+"Operator": "Orange Cameroon",
+"Code": "#141*4#",
+"Description": "Subscribe to Orange Relax",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Family Talk",
+"Operator": "Orange Cameroon",
+"Code": "#145*5#",
+"Description": "Subscribe to a Family Talk call bundle",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Flexi",
+"Operator": "Orange Cameroon",
+"Code": "#131*6#",
+"Description": "Subscribe to a Flexi call/data bundle",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Data Package 1 Day 1000",
+"Operator": "Orange Cameroon",
+"Code": "#145*2*3*1*1#",
+"Description": "Subscribe to Data Package Day 1000 bundle. 1000Frs = 1Go (valid for 24H)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Data Package 1 Day 500",
+"Operator": "Orange Cameroon",
+"Code": "#145*2*3*2*1#",
+"Description": "Subscribe to Data Package Day 500 bundle. 500Frs = 300Mo (valid for 24H)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Data Package 1 Day 250",
+"Operator": "Orange Cameroon",
+"Code": "#145*2*3*3*1#",
+"Description": "Subscribe to Data Package Day 250 bundle. 250Frs = 125Mo (valid for 24H)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Data Package 1 Day 100",
+"Operator": "Orange Cameroon",
+"Code": "#145*2*3*4*1#",
+"Description": "Subscribe to Data Package Day 100 bundle. 100Frs = 50Mo (valid for 24H)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Data Package 3 Days 500",
+"Operator": "Orange Cameroon",
+"Code": "#145*2*2*1*1#",
+"Description": "Subscribe to Data Package 3 Days 500 bundle. 500Frs = 250Mo (valid for 3 days)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Data Package 3 Days 300",
+"Operator": "Orange Cameroon",
+"Code": "#145*2*2*2*1#",
+"Description": "Subscribe to Data Package 3 Days 300 bundle. 300Frs = 175Mo (valid for 3 days)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Data Package Month 10,000",
+"Operator": "Orange Cameroon",
+"Code": "#145*2*1*1*1#",
+"Description": "Subscribe to Data Package Month 10,000 bundle. 10,000Frs = 30GB (valid for 30 days)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Data Package Month 8,000",
+"Operator": "Orange Cameroon",
+"Code": "#145*2*1*2*1#",
+"Description": "Subscribe to Data Package Month 8,000 bundle. 8,000Frs = 4.6GB (valid for 30 days)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Data Package Month 4,000",
+"Operator": "Orange Cameroon",
+"Code": "#145*2*1*3*1#",
+"Description": "Subscribe to Data Package Month 4,000 bundle. 4,000Frs = 1.5GB (valid for 30 days)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Data Package Month 2,000",
+"Operator": "Orange Cameroon",
+"Code": "#145*2*1*4*1#",
+"Description": "Subscribe to Data Package Month 2,000 bundle. 2,000Frs = 600MB (valid for 30 days)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "GigaData Month 5Go/day",
+"Operator": "Orange Cameroon",
+"Code": "#145*2*4*1*1*1#",
+"Description": "Subscribe to GigaData Month 5Go/day bundle. 63000Frs = 5Go/day (valid for 30 days)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "GigaData Month 4Go/day",
+"Operator": "Orange Cameroon",
+"Code": "#145*2*4*1*2*1#",
+"Description": "Subscribe to GigaData Month 4Go/day bundle. 50400Frs = 4Go/day (valid for 30 days)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "GigaData Month 3Go/day",
+"Operator": "Orange Cameroon",
+"Code": "#145*2*4*1*3*1#",
+"Description": "Subscribe to GigaData Month 3Go/day bundle. 34450Frs = 3Go/day (valid for 30 days)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "GigaData Month 2Go/day",
+"Operator": "Orange Cameroon",
+"Code": "#145*2*4*1*4*1#",
+"Description": "Subscribe to GigaData Month 2Go/day bundle. 21500Frs = 2Go/day (valid for 30 days)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "GigaData Month 1Go/day",
+"Operator": "Orange Cameroon",
+"Code": "#145*2*4*1*5*1#",
+"Description": "Subscribe to GigaData Month 1Go/day bundle 10000Frs = 1Go/day (valid for 30 days)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "GigaData 15 Days 5Go/day",
+"Operator": "Orange Cameroon",
+"Code": "#145*2*4*2*1*1#",
+"Description": "Subscribe to GigaData 15 Days 5Go/day bundle 32250Frs = 5Go/day (valid for 15 days)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "GigaData 15 Days 4Go/day",
+"Operator": "Orange Cameroon",
+"Code": "#145*2*4*2*2*1#",
+"Description": "Subscribe to GigaData 15 Days 4Go/day bundle 25800Frs = 4Go/day (valid for 15 days)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "GigaData 15 Days 3Go/day",
+"Operator": "Orange Cameroon",
+"Code": "#145*2*4*2*3*1#",
+"Description": "Subscribe to GigaData 15 Days 3Go/day bundle 18000Frs = 3Go/day (valid for 15 days)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "GigaData 15 Days 2Go/day",
+"Operator": "Orange Cameroon",
+"Code": "#145*2*4*2*4*1#",
+"Description": "Subscribe to GigaData 15 Days 2Go/day bundle 11250Frs = 2Go/day (valid for 15 days)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "GigaData 15 Days 1Go/day",
+"Operator": "Orange Cameroon",
+"Code": "#145*2*4*2*5*1#",
+"Description": "Subscribe to GigaData 15 Days 1Go/day bundle 5250Frs = 1Go/day (valid for 15 days)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "GigaData 7 Days 5Go/day",
+"Operator": "Orange Cameroon",
+"Code": "#145*2*4*3*1*1#",
+"Description": "Subscribe to GigaData 7 Days 5Go/day bundle 15400Frs = 5Go/day (valid for 7 days)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "GigaData 7 Days 4Go/day",
+"Operator": "Orange Cameroon",
+"Code": "#145*2*4*3*2*1#",
+"Description": "Subscribe to GigaData 7 Days 4Go/day bundle 12300Frs = 4Go/day (valid for 7 days)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "GigaData 7 Days 3Go/day",
+"Operator": "Orange Cameroon",
+"Code": "#145*2*4*3*3*1#",
+"Description": "Subscribe to GigaData 7 Days 3Go/day bundle 8950Frs = 3Go/day (valid for 7 days)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "GigaData 7 Days 2Go/day",
+"Operator": "Orange Cameroon",
+"Code": "#145*2*4*3*4*1#",
+"Description": "Subscribe to GigaData 7 Days 2Go/day bundle 5600Frs = 2Go/day (valid for 7 days)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "GigaData 7 Days 1Go/day",
+"Operator": "Orange Cameroon",
+"Code": "#145*2*4*3*5*1#",
+"Description": "Subscribe to GigaData 7 Days 1Go/day bundle 2650Frs = 1Go/day (valid for 7 days)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "GigaData 3 Days 5Go/day",
+"Operator": "Orange Cameroon",
+"Code": "#145*2*4*4*1*1#",
+"Description": "Subscribe to GigaData 3 Days 5Go/day bundle 6750Frs = 5Go/day (valid for 3 days)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "GigaData 3 Days 4Go/day",
+"Operator": "Orange Cameroon",
+"Code": "#145*2*4*4*2*1#",
+"Description": "Subscribe to GigaData 3 Days 4Go/day bundle 5400Frs = 4Go/day (valid for 3 days)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "GigaData 3 Days 3Go/day",
+"Operator": "Orange Cameroon",
+"Code": "#145*2*4*4*3*1#",
+"Description": "Subscribe to GigaData 3 Days 3Go/day bundle 4050Frs = 3Go/day (valid for 3 days)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "GigaData 3 Days 2Go/day",
+"Operator": "Orange Cameroon",
+"Code": "#145*2*4*4*4*1#",
+"Description": "Subscribe to GigaData 3 Days 2Go/day bundle 2550Frs = 2Go/day (valid for 3 days)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "GigaData 3 Days 1Go/day",
+"Operator": "Orange Cameroon",
+"Code": "#145*2*4*4*5*1#",
+"Description": "Subscribe to GigaData 3 Days 1Go/day bundle 1200Frs = 1Go/day (valid for 3 days)",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Data on Demand 24H",
+"Operator": "Orange Cameroon",
+"Code": "#145*2*5*5*@#",
+"Description": "Data on demand 24H validity. Purchase custom data that will be valid for 24H.\nPlease specify the volume you will like to obtain in MB. Example 500",
+"Tags": [],
+"InputFields": [{
+"Title": "Volume in MB, Example 500",
+"InputType": "Default"
+}]
+},
+{
+"Name": "Data on Demand 3 Days",
+"Operator": "Orange Cameroon",
+"Code": "#145*2*5*4*@#",
+"Description": "Data on demand 3 Days validity. Purchase custom data that will be valid for 3 Days.\nPlease specify the volume you will like to obtain in MB. Example 500",
+"Tags": [],
+"InputFields": [{
+"Title": "Volume in MB, Example 500",
+"InputType": "Default"
+}]
+},
+{
+"Name": "Data on Demand 7 Days",
+"Operator": "Orange Cameroon",
+"Code": "#145*2*5*3*@#",
+"Description": "Data on demand 7 Days validity. Purchase custom data that will be valid for 7 Days.\nPlease specify the volume you will like to obtain in MB. Example 500",
+"Tags": [],
+"InputFields": [{
+"Title": "Volume in MB, Example 500",
+"InputType": "Default"
+}]
+},
+{
+"Name": "Data on Demand 10 Days",
+"Operator": "Orange Cameroon",
+"Code": "#145*2*5*2*@#",
+"Description": "Data on demand 10 Days validity. Purchase custom data that will be valid for 10 Days.\nPlease specify the volume you will like to obtain in MB. Example 500",
+"Tags": [],
+"InputFields": [{
+"Title": "Volume in MB, Example 500",
+"InputType": "Default"
+}]
+},
+{
+"Name": "Data on Demand 30 Days",
+"Operator": "Orange Cameroon",
+"Code": "#145*2*5*1*@#",
+"Description": "Data on demand 30 Days validity. Purchase custom data that will be valid for 30 Days.\nPlease specify the volume you will like to obtain in MB. Example 500",
+"Tags": [],
+"InputFields": [{
+"Title": "Volume in MB, Example 500",
+"InputType": "Default"
+}]
+},
+{
+"Name": "SMS Pack Week",
+"Operator": "Orange Cameroon",
+"Code": "#131*1*2*1#",
+"Description": "Unlimited SMS to Orange at 255Frs valid 7 days",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "SMS Pack Day",
+"Operator": "Orange Cameroon",
+"Code": "#131*1*1*1#",
+"Description": "25 SMS to Orange at 102Frs valid till 00H",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "SMS Pack Month",
+"Operator": "Orange Cameroon",
+"Code": "#131*1*3*1#",
+"Description": "Unlimited SMS to Orange at 459Frs valid 30 days",
+"Tags": [],
+"InputFields": []
+},

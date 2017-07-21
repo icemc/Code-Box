@@ -1,0 +1,53 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/operator_card"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/card_margin_horizontal"
+        android:elevation="3dp"
+        card_view:cardCornerRadius="2dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/operator_logo"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/operator_cover_height"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:src="@drawable/logo_mtn"
+                android:scaleType="fitXY" />
+
+            <TextView
+                android:id="@+id/operator_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/operator_logo"
+                android:paddingLeft="@dimen/operator_name_padding"
+                android:paddingRight="@dimen/operator_name_padding"
+                android:paddingTop="@dimen/operator_name_padding"
+                android:textColor="@color/from"
+                 />
+
+            <TextView
+                android:id="@+id/operator_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/operator_name"
+                android:paddingBottom="@dimen/codes_count_padding_bottom"
+                android:paddingLeft="@dimen/operator_name_padding"
+                android:paddingRight="@dimen/operator_name_padding"
+                android:textSize="@dimen/codes_count" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

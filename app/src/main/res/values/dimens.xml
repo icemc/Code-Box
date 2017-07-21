@@ -1,0 +1,37 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <!-- Added dimensions -->
+    <dimen name="dots_height">30dp</dimen>
+    <dimen name="dots_margin_bottom">20dp</dimen>
+    <dimen name="img_width_height">120dp</dimen>
+    <dimen name="slide_title">30dp</dimen>
+    <dimen name="slide_desc">16dp</dimen>
+    <dimen name="desc_padding">40dp</dimen>
+    <dimen name="padding_list_row">10dp</dimen>
+    <dimen name="text_primary">16sp</dimen>
+    <dimen name="text_secondary">14sp</dimen>
+    <dimen name="icon_width_height">45dp</dimen>
+    <dimen name="icon_text">30dp</dimen>
+    <dimen name="icon_phone">30dp</dimen>
+    <dimen name="card_margin_horizontal">5dp</dimen>
+    <dimen name="logo_width_small">60dp</dimen>
+    <dimen name="logo_height_small">60dp</dimen>
+    <dimen name="logo_small_padding">10dp</dimen>
+    <dimen name="operator_cover_height">140dp</dimen>
+    <dimen name="operator_name_padding">10dp</dimen>
+    <dimen name="codes_count_padding_bottom">5dp</dimen>
+    <dimen name="codes_count">12dp</dimen>
+    <dimen name="main_card_margin_vertical">8dp</dimen>
+    <dimen name="main_card_margin_horizontal">8dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="card_title_margin">16dp</dimen>
+    <dimen name="text_margin_small">8dp</dimen>
+    <dimen name="text_input_layout_left_padding">20dp</dimen>
+</resources>

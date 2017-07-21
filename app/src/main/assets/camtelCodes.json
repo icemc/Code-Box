@@ -1,0 +1,168 @@
+
+{
+	"Name": "Credit transfer",
+	"Operator": "Camtel",
+	"Code": "*126*@*@*@#",
+	"Description": "Transfer airtime from your main balance to another Camtel subscriber",
+	"Tags": [
+
+	],
+	"InputFields": [
+		{
+			"Title": "Phone number",
+			"InputType": "Phone number"
+		},
+		{
+			"Title": "Amount",
+			"InputType": "Default"},
+
+		{
+			"Title": "Code",
+			"InputType": "Pass code"
+		}
+	]
+},
+{
+"Name": "Main balance",
+"Operator": "Camtel",
+"Code": "*825*1#",
+"Description": "Display your main account and internet balance",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Toli Fap",
+"Operator": "Camtel",
+"Code": "*155*500*1#",
+"Description": "Subscribe to Toli Fap",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Toli Kolo",
+"Operator": "Camtel",
+"Code": "*155*1000*1#",
+"Description": "Subscribe to Toli Kolo",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Toli 5000",
+"Operator": "Camtel",
+"Code": "*155*5000*1#",
+"Description": "Subscribe to Toli 5000",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Toli Premium One",
+"Operator": "Camtel",
+"Code": "*10000*155*1#",
+"Description": "Subscribe to Toli Premium One",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Toli Premium Two",
+"Operator": "Camtel",
+"Code": "*20000*155*1#",
+"Description": "Subscribe to Toli Premium Two",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Fako Day",
+"Operator": "Camtel",
+"Code": "*155*6050*1#",
+"Description": "Subscribe to Fako Day",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Fako Mini",
+"Operator": "Camtel",
+"Code": "*155*6100*2#",
+"Description": "Subscribe to Fako Mini",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Access Fako",
+"Operator": "Camtel",
+"Code": "*155*6150*1#",
+"Description": "Access Fako packages",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Fako Day More",
+"Operator": "Camtel",
+"Code": "*155*6051*2#",
+"Description": "Subscribe to Fako Day More",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Fako Smart",
+"Operator": "Camtel",
+"Code": "*155*6700*1#",
+"Description": "Subscribe to Fako Smart",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Fako Comfort",
+"Operator": "Camtel",
+"Code": "*155*6015*1#",
+"Description": "Subscribe to Fako Comfort",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Fako Night",
+"Operator": "Camtel",
+"Code": "*155*6002*1#",
+"Description": "Subscribe to Fako Night",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Fako Night More",
+"Operator": "Camtel",
+"Code": "*155*6003*1#",
+"Description": "Subscribe to Fako Night More",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Fako Chatter",
+"Operator": "Camtel",
+"Code": "*155*1111*1#",
+"Description": "Subscribe to Fako Chatter",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Fako Streamer",
+"Operator": "Camtel",
+"Code": "*155*1112*1#",
+"Description": "Subscribe to Fako Streamer",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Fako Downloader",
+"Operator": "Camtel",
+"Code": "*155*1113*1#",
+"Description": "Subscribe to Fako Downloader",
+"Tags": [],
+"InputFields": []
+},
+{
+"Name": "Fako Big Downloader",
+"Operator": "Camtel",
+"Code": "*155*1114*1#",
+"Description": "Subscribe to Fako Big Downloader",
+"Tags": [],
+"InputFields": []
+}

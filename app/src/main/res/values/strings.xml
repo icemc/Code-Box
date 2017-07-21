@@ -1,0 +1,64 @@
+<resources>
+    <string name="app_name">Code Box</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
+    <string name="slide_1_title">Hello I am Code Box!</string>
+    <string name="slide_1_desc">The easiest way to find any USSD code from your mobile operator in Cameroon!</string>
+
+    <string name="slide_2_title">Looking for a code? </string>
+    <string name="slide_2_desc">No need to stress up. Just use my search feature to find the code you need</string>
+
+    <string name="slide_3_title">Found a code I don\'t have?</string>
+    <string name="slide_3_desc">Use my add feature to add new codes to your mobile operators!</string>
+
+    <string name="slide_4_title">Lets get Started</string>
+    <string name="slide_4_desc">All major mobile operators in Cameroon are available!</string>
+    <string name="title_activity_operators">Operators</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="dialog_ok">OK</string>
+    <string name="activate_code">Activate this code</string>
+    <string name="activate_this_code_warning">Are you sure you want to activate this code?</string>
+
+    <!-- String related to About -->
+    <string name="about_version">Version: </string>
+    <string name="about_email_intent">About:</string>
+    <string name="about_not_found_email">Not found email app</string>
+    <string name="about_card1_message">Hey, glad to see you! Thanks for using the app.</string>
+    <string name="about_card2_title">If you liked the app, feel free to contact me.</string>
+    <string name="about_google_play">Rate on Google play</string>
+    <string name="about_email">Feedback by E-mail</string>
+    <string name="about_git_hub">Source code on GitHub</string>
+    <string name="about_address">Buea, Cameroon</string>
+
+    <!-- String related to About -->
+    <string name="About">About</string>
+    <string name="communication">Communication</string>
+    <string name="donate">Donate</string>
+    <string name="help">Help</string>
+    <string name="send">Send</string>
+    <string name="share">Share</string>
+    <string name="settings">Settings</string>
+    <string name="operators">All operators</string>
+    <string name="title_activity_donate">Donate</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="title_activity_help">Help</string>
+    <string name="loading_codes">Loading....</string>
+    <string name="saving">Loading....</string>
+    <string name="code_email">About:Code Box</string>
+    <string name="action_search">Search</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_sort">Filter</string>
+    <string name="action_create">Add code</string>
+    <string name="search_hint">Search name or tag</string>
+
+
+    <item name="saving" type="id">Loading</item>
+    <string name="title_activity_search">SearchActivity</string>
+    <string name="filter_by_tag">Select a filter option</string>
+</resources>

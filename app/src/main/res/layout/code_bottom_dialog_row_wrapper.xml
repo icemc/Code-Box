@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/text_input_layout_left_padding"
+        android:paddingRight="@dimen/text_input_layout_left_padding"
+        android:id="@+id/bottom_dialog_input_layout">
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/bottom_dialog_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorAccent"/>
+    </android.support.design.widget.TextInputLayout>
+
+</LinearLayout>
