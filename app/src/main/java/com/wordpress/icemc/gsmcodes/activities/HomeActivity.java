@@ -14,6 +14,7 @@ import android.preference.PreferenceManager;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.ContextCompat;
@@ -30,34 +31,44 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.wordpress.icemc.gsmcodes.R;
 import com.wordpress.icemc.gsmcodes.adapter.CodeAdapter;
 import com.wordpress.icemc.gsmcodes.dao.CodeDao;
+import com.wordpress.icemc.gsmcodes.dao.TagMapDao;
 import com.wordpress.icemc.gsmcodes.dao.TagsDao;
 import com.wordpress.icemc.gsmcodes.listeners.CodeAdapterListener;
 import com.wordpress.icemc.gsmcodes.listeners.ContactButtonClickListener;
 import com.wordpress.icemc.gsmcodes.listeners.ContactPickListener;
+import com.wordpress.icemc.gsmcodes.listeners.TagSelectionListener;
 import com.wordpress.icemc.gsmcodes.model.Code;
 import com.wordpress.icemc.gsmcodes.model.CodeItem;
 import com.wordpress.icemc.gsmcodes.model.DefaultTags;
 import com.wordpress.icemc.gsmcodes.model.Tag;
+import com.wordpress.icemc.gsmcodes.model.TagMap;
 import com.wordpress.icemc.gsmcodes.providers.CodeProviderAPI;
 import com.wordpress.icemc.gsmcodes.providers.TagProviderAPI;
 import com.wordpress.icemc.gsmcodes.utilities.ApplicationConstants;
 import com.wordpress.icemc.gsmcodes.utilities.GSMCodeUtils;
-import com.wordpress.icemc.gsmcodes.views.CodeBottomSheetDialog;
+import com.wordpress.icemc.gsmcodes.utilities.ItemTouchHelperCallback;
+import com.wordpress.icemc.gsmcodes.views.ActivateCodeBottomSheetDialog;
+import com.wordpress.icemc.gsmcodes.views.CreateCodeBottomSheetDialog;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class HomeActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, CodeAdapterListener, ContactButtonClickListener,  LoaderManager.LoaderCallbacks<Cursor> {
+        implements NavigationView.OnNavigationItemSelectedListener, CodeAdapterListener,
+        ContactButtonClickListener,  LoaderManager.LoaderCallbacks<Cursor>, CreateCodeBottomSheetDialog.AddCodeListener {
 
     private static final String TAG = HomeActivity.class.getSimpleName();
 
@@ -91,8 +102,16 @@ public class HomeActivity extends AppCompatActivity
     private List<String> allNumbers = new ArrayList<>();
     private boolean contactPicked = false;
 
+    enum CurrentViewState {
+        NORMAL, SEARCH
+    }
+
+    private CurrentViewState currentViewState;
+
     //Fields for BottomSheet
-    private CodeBottomSheetDialog codeBottomSheetDialog;
+    private ActivateCodeBottomSheetDialog activateCodeBottomSheetDialog;
+    private CreateCodeBottomSheetDialog createCodeBottomSheetDialog;
+    private TagSelectionListener tagSelectionListener;
 
     //boolean flags
     //private static boolean isOtherTags = true;
@@ -130,6 +149,10 @@ public class HomeActivity extends AppCompatActivity
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapter);
+
+        ItemTouchHelper.Callback callback = new ItemTouchHelperCallback(adapter);
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(callback);
+        itemTouchHelper.attachToRecyclerView(recyclerView);
 
         //Init the tag cursor loader
         getSupportLoaderManager().initLoader(TAG_LOADER, null, this);
@@ -173,11 +196,6 @@ public class HomeActivity extends AppCompatActivity
     }
 
     @Override
-    protected void onStart(){
-        super.onStart();
-
-    }
-    @Override
     protected void onNewIntent(Intent intent) {
         setIntent(intent);
         handleIntent(intent);
@@ -191,6 +209,7 @@ public class HomeActivity extends AppCompatActivity
             bundle.putString(QUERY, query);
             if(isFirstSearchIntent) {
                 isFirstSearchIntent = false;
+                currentViewState = CurrentViewState.SEARCH;
                 getSupportLoaderManager().initLoader(CODE_SEARCH_LOADER, bundle, this);
             } else {
                 //Reset the loader with the new parameters
@@ -201,6 +220,7 @@ public class HomeActivity extends AppCompatActivity
             final Bundle bundle = new Bundle();
             if(isFirstNormalStart) {
                 isFirstNormalStart = false;
+                currentViewState = CurrentViewState.NORMAL;
                 bundle.putString(CODE_TAG, DefaultTags.ALL.toString());
                 getSupportLoaderManager().initLoader(CODE_LOADER, bundle, this);
             } else {
@@ -219,6 +239,8 @@ public class HomeActivity extends AppCompatActivity
         SearchManager searchManager =
                 (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         MenuItem search = menu.findItem(R.id.action_search);
+        final MenuItem create = menu.findItem(R.id.action_create);
+        final MenuItem sort = menu.findItem(R.id.action_sort);
         SearchView searchView =
                 (SearchView) search.getActionView();
         searchView.setSearchableInfo(
@@ -226,6 +248,8 @@ public class HomeActivity extends AppCompatActivity
         MenuItemCompat.setOnActionExpandListener(search, new MenuItemCompat.OnActionExpandListener() {
             @Override
             public boolean onMenuItemActionExpand(MenuItem item) {
+                sort.setVisible(false);
+                create.setVisible(false);
                 return true;
             }
 
@@ -236,6 +260,8 @@ public class HomeActivity extends AppCompatActivity
                     setIntent(intent);
                     handleIntent(intent);
                 }
+                sort.setVisible(true);
+                create.setVisible(true);
                 return true;
             }
         });
@@ -252,10 +278,14 @@ public class HomeActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Toast.makeText(this, getString(R.string.not_yet_implemented), Toast.LENGTH_SHORT).show();
             return true;
         } else if (id == R.id.action_search) {
             return true;
         } else if(id == R.id.action_create) {
+            createCodeBottomSheetDialog = new CreateCodeBottomSheetDialog(this, this);
+            tagSelectionListener = createCodeBottomSheetDialog;
+            createCodeBottomSheetDialog.show();
             return true;
         } else if(id == R.id.action_sort) {
             final Bundle bundle = new Bundle();
@@ -300,9 +330,11 @@ public class HomeActivity extends AppCompatActivity
         } else if (id == R.id.nav_about) {
             startActivity(new Intent(this, AboutActivity1.class));
         } else if (id == R.id.nav_donate) {
-            startActivity(new Intent(this, Donate.class));
+            Toast.makeText(this, getString(R.string.not_yet_implemented), Toast.LENGTH_SHORT).show();
+            //startActivity(new Intent(this, Donate.class));
         } else if (id == R.id.nav_help) {
-            startActivity(new Intent(this, Help.class));
+            Toast.makeText(this, getString(R.string.not_yet_implemented), Toast.LENGTH_SHORT).show();
+            //startActivity(new Intent(this, Help.class));
         }else if (id == R.id.nav_send) {
             //send me an email
             Intent intent = new Intent();
@@ -316,6 +348,7 @@ public class HomeActivity extends AppCompatActivity
             }
         } else if (id == R.id.nav_share) {
             //TODO share the app
+            Toast.makeText(this, getString(R.string.not_yet_implemented), Toast.LENGTH_SHORT).show();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -464,20 +497,37 @@ public class HomeActivity extends AppCompatActivity
         } else {
             final Code code = codes.get(position).getCode();
 
-            codeBottomSheetDialog = new CodeBottomSheetDialog(this, code, this);
-            contactPickListener = codeBottomSheetDialog;
-            codeBottomSheetDialog.getBtn_dialog_bottom_sheet_ok()
+            activateCodeBottomSheetDialog = new ActivateCodeBottomSheetDialog(this, code, this);
+            contactPickListener = activateCodeBottomSheetDialog;
+            activateCodeBottomSheetDialog.getBtn_dialog_bottom_sheet_ok()
                     .setOnClickListener(okDialogClickListener);
-            codeBottomSheetDialog.getBtn_dialog_bottom_sheet_cancel()
+            activateCodeBottomSheetDialog.getBtn_dialog_bottom_sheet_cancel()
                     .setOnClickListener(cancelDialogClickListener);
-            codeBottomSheetDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            activateCodeBottomSheetDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
                 @Override
                 public void onDismiss(DialogInterface dialog) {
 //                    codeIndex = -1;
                 }
             });
-            codeBottomSheetDialog.show();
+            activateCodeBottomSheetDialog.show();
         }
+    }
+
+    @Override
+    public void onCodeRowSwiped(int position) {
+        //Todo delete code from database with its tagMap data
+        final Code code = codes.get(position).getCode();
+        codes.remove(position);
+        adapter.notifyItemRemoved(position);
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                new TagMapDao(HomeActivity.this).deleteTagMapsFromCode(code);
+                new CodeDao(HomeActivity.this).deleteCode(code);
+                Toast.makeText(HomeActivity.this, getString(R.string.code_deleted), Toast.LENGTH_LONG).show();
+            }
+        }).run();
+
     }
 
     @Override
@@ -524,8 +574,18 @@ public class HomeActivity extends AppCompatActivity
                     return new CursorLoader(this, ApplicationConstants.CODES_WITH_TAG_CONTENT_URI, null, args.getString(CODE_TAG), null, null);
                 }
             case CODE_SEARCH_LOADER:
-                String selection = CodeProviderAPI.CodeColumns.OPERATOR_NAME + "=? " + "AND " + CodeProviderAPI.CodeColumns.NAME + " LIKE ?";
-                String[] selectionArgs = {operatorName, "%"+args.getString(QUERY)+"%"};
+//                String selection = args.getString(QUERY);
+//                List<String> selectionArgs = new ArrayList<>();
+//                for(String s: tags) {
+//                    if(selection.toLowerCase().contains(s.toLowerCase())) {
+//                        selectionArgs.add(s);
+//                    }
+//                }
+                String selection = CodeProviderAPI.CodeColumns.OPERATOR_NAME + "=?" + " AND " + CodeProviderAPI.CodeColumns.NAME + " LIKE ?";
+                String[] selectionArgs = {operatorName, "%" +args.getString(QUERY) + "%"};
+
+                //SelectionArgs must contain the list of valid tags/categories from the query string while selection is actually the query string.
+                //This logic is used to run a special query that searches data from the database: see GSMCodeContentProvider query method at case SEARCH
                 return new CursorLoader(this, CodeProviderAPI.CodeColumns.CONTENT_URI, null, selection, selectionArgs, sortOrder);
 
             case TAG_LOADER:
@@ -571,12 +631,12 @@ public class HomeActivity extends AppCompatActivity
         @Override
         public void onClick(View v) {
             Intent callIntent = new Intent(Intent.ACTION_CALL, GSMCodeUtils.ussdToCallableUri(GSMCodeUtils.setCodeStringUsingEditTexts(
-                    codeBottomSheetDialog.getCode().getCode(), codeBottomSheetDialog.getEditTexts())));
+                    activateCodeBottomSheetDialog.getCode().getCode(), activateCodeBottomSheetDialog.getEditTexts())));
             codeIndex = -1;
 
             //NOT AN ERROR THERE IS NO WAY A USER WILL REACH THIS POINT WITHOUT GRANTING THE CALL_PHONE PERMISSION
             startActivity(callIntent);
-            codeBottomSheetDialog.dismiss();
+            activateCodeBottomSheetDialog.dismiss();
 
         }
     };
@@ -585,8 +645,119 @@ public class HomeActivity extends AppCompatActivity
         @Override
         public void onClick(View v) {
             codeIndex = -1;
-            codeBottomSheetDialog.dismiss();
+            activateCodeBottomSheetDialog.dismiss();
         }
     };
 
+    @Override
+    public void onOKButtonClick() {
+        boolean allFine = false;
+        //Do a little check on the code the user entered
+        //TODO add a more rigorous check since an invalid code may cause the app to crash when used
+        String usercode = createCodeBottomSheetDialog.getCode();
+        if(usercode.equals("")) {
+            Toast.makeText(this, getString(R.string.error_empty_code_field), Toast.LENGTH_SHORT).show();
+            return;
+        } else if(!usercode.startsWith("#") && !usercode.startsWith("*")) {
+            Toast.makeText(this, getString(R.string.error_invalid_code_start_char), Toast.LENGTH_SHORT).show();
+            return;
+        } else if(!usercode.endsWith("#")) {
+            Toast.makeText(this, getString(R.string.error_invalid_code_end_char), Toast.LENGTH_SHORT).show();
+            return;
+        } else if(createCodeBottomSheetDialog.getName().equals("")) {
+            Toast.makeText(this, getString(R.string.error_empty_name_field), Toast.LENGTH_SHORT).show();
+            return;
+        }else if(createCodeBottomSheetDialog.getDescription().equals("")) {
+            Toast.makeText(this, getString(R.string.error_empty_description_field), Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        //All checks passed with success
+        String codeId = "";
+        Code code = new Code.Builder()
+                .name(createCodeBottomSheetDialog.getName())
+                .code(codeId = createCodeBottomSheetDialog.getCode())
+                .description(createCodeBottomSheetDialog.getDescription())
+                .operator(operatorName)
+                .isFavourite(true)
+                .inputFields(null)
+                .build();
+        CodeDao dao = new CodeDao(this);
+        Uri uri = dao.saveCode(dao.getValuesFromObject(code));
+
+        //Check if code was saved successfully before saving the tagMaps
+        if(uri != null && createCodeBottomSheetDialog.getTags().size() > 0) {
+            TagMapDao tagMapDao = new TagMapDao(this);
+            for(String tag : createCodeBottomSheetDialog.getTags()) {
+                tagMapDao.saveTagMap(tagMapDao.getValuesFromObject(new
+                        TagMap.Builder().codeId(codeId).tagId(tag).build()));
+            }
+            Toast.makeText(this, getString(R.string.code_saved), Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(this, getString(R.string.error_code_not_saved_already_present), Toast.LENGTH_LONG).show();
+        }
+
+        if(currentViewState == CurrentViewState.NORMAL) {
+            //Reload data from database
+            Bundle bundle = new Bundle();
+            bundle.putString(CODE_TAG, tags.get(currentTag));
+            getSupportLoaderManager().restartLoader(CODE_LOADER, bundle, this);
+        }
+        createCodeBottomSheetDialog.dismiss();
+    }
+
+    @Override
+    public void onTagsButtonClick(List<String> tagList) {
+        final ArrayList<String> realTags = new ArrayList<>(tags);
+        realTags.remove(1);
+        realTags.remove(0);
+        final String[] multiChoiceItems = realTags.toArray(new String[realTags.size()]);
+        final boolean[] checkedItems = new boolean[multiChoiceItems.length];
+        final List<String> currentTags = new ArrayList<>(tagList);
+
+        for (int i = 0; i < multiChoiceItems.length; i++) {
+            checkedItems[i] = false;
+        }
+
+        //set Selected items
+        if (currentTags != null && currentTags.size() > 0){
+            for(String s: currentTags) {
+                checkedItems[realTags.indexOf(s)] = true;
+            }
+        }
+
+        new AlertDialog.Builder(this, R.style.MaterialDialog)
+                .setTitle(getString(R.string.select_categories))
+                .setMultiChoiceItems(multiChoiceItems, checkedItems, new DialogInterface.OnMultiChoiceClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which, boolean isChecked) {
+                        checkedItems[which] = isChecked;
+                    }
+                })
+                .setPositiveButton(getString(R.string.dialog_ok), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        List<String> tags = new ArrayList<>();
+                        for(int i = 0; i < multiChoiceItems.length; i++) {
+                            if(checkedItems[i]) {
+                                tags.add(multiChoiceItems[i]);
+                            }
+                        }
+                        tagSelectionListener.onTagSelectionFinished(tags);
+                    }
+                })
+                .setNegativeButton(getString(R.string.dialog_cancel), null)
+                .setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+
+                    }
+                })
+                .show();
+
+    }
 }

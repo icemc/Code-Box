@@ -1,12 +1,16 @@
 package com.wordpress.icemc.gsmcodes.views;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.support.design.widget.BottomSheetDialog;
 import android.support.design.widget.TextInputLayout;
 import android.text.InputType;
+import android.view.HapticFeedbackConstants;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -44,6 +48,25 @@ public class ActivateCodeBottomSheetDialog extends BottomSheetDialog implements 
 
         View dialogView = getLayoutInflater().inflate(R.layout.dialog_bottom_sheet, null);
         ImageView logo = (ImageView) dialogView.findViewById(R.id.operator_logo_small);
+        ImageView share = (ImageView) dialogView.findViewById(R.id.share_button);
+        share.getDrawable().mutate().setColorFilter(
+                getContext().getResources().getColor(R.color.colorAccent), PorterDuff.Mode.SRC_IN);
+        share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_SEND);
+                intent.putExtra(Intent.EXTRA_TEXT, code.getOperator() + "\n"
+                        + code.getName() + "\n"
+                        + code.getDescription() + "\n"
+                        + GSMCodeUtils.setCodeStringUsingInputFields(
+                        code.getCode(), code.getInputFields()));
+                intent.setType("text/plain");
+
+                getContext().startActivity(intent);
+                v.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS);
+            }
+        });
         Glide.with(getContext()).load(GSMCodeUtils.getLogoFromOperatorName(code.getOperator())).into(logo);
         btn_dialog_bottom_sheet_ok = (Button) dialogView.findViewById(R.id.btn_dialog_bottom_sheet_ok);
         btn_dialog_bottom_sheet_cancel = (Button) dialogView.findViewById(R.id.btn_dialog_bottom_sheet_cancel);

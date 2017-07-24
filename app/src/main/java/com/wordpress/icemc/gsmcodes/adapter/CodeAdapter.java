@@ -20,13 +20,15 @@ import android.widget.TextView;
 import com.wordpress.icemc.gsmcodes.R;
 import com.wordpress.icemc.gsmcodes.helpers.FlipAnimator;
 import com.wordpress.icemc.gsmcodes.listeners.CodeAdapterListener;
+import com.wordpress.icemc.gsmcodes.listeners.onMoveAndSwipedListener;
 import com.wordpress.icemc.gsmcodes.model.Code;
 import com.wordpress.icemc.gsmcodes.model.CodeItem;
 import com.wordpress.icemc.gsmcodes.utilities.GSMCodeUtils;
 
+import java.util.Collections;
 import java.util.List;
 
-public class CodeAdapter extends RecyclerView.Adapter<CodeAdapter.MyViewHolder>{
+public class CodeAdapter extends RecyclerView.Adapter<CodeAdapter.MyViewHolder> implements onMoveAndSwipedListener {
     private Context context;
     private List<CodeItem>  codes;
     private CodeAdapterListener listener;
@@ -94,66 +96,19 @@ public class CodeAdapter extends RecyclerView.Adapter<CodeAdapter.MyViewHolder>{
             }
         });
 
-        holder.codeContainer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                listener.onCodeRowClicked(position);
-            }
-        });
-
-        holder.codeListWrapper.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                listener.onPhoneClicked(position);
-            }
-        });
-
-        holder.codeListWrapper.setOnLongClickListener(new View.OnLongClickListener() {
+        View.OnLongClickListener l = new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                Code code = codes.get(position).getCode();
-                Intent intent = new Intent();
-                intent.setAction(Intent.ACTION_SEND);
-                intent.putExtra(Intent.EXTRA_TEXT, code.getOperator() + "\n"
-                        + code.getName() + "\n"
-                        + code.getDescription() + "\n"
-                        + GSMCodeUtils.setCodeStringUsingInputFields(
-                        code.getCode(), code.getInputFields()));
-                intent.setType("text/plain");
-
-                //Apply animation
-                Animation animation = AnimationUtils.loadAnimation(context, R.anim.anim_recycler_item_show);
-                holder.codeContainer.startAnimation(animation);
-
-                context.startActivity(intent);
                 v.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS);
+                v.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS);
+
                 return true;
             }
-        });
+        };
 
-        holder.codeContainer.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                //TODO refactor to remove duplicate code
-                Code code = codes.get(position).getCode();
-                Intent intent = new Intent();
-                intent.setAction(Intent.ACTION_SEND);
-                intent.putExtra(Intent.EXTRA_TEXT, code.getOperator() + "\n"
-                        + code.getName() + "\n"
-                        + code.getDescription() + "\n"
-                        + GSMCodeUtils.setCodeStringUsingInputFields(
-                                    code.getCode(), code.getInputFields()));
-                intent.setType("text/plain");
 
-                //Apply animation
-                Animation animation = AnimationUtils.loadAnimation(context, R.anim.anim_recycler_item_show);
-                holder.codeContainer.startAnimation(animation);
-
-                context.startActivity(intent);
-                v.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS);
-                return true;
-            }
-        });
+        holder.codeContainer.setOnLongClickListener(l);
+        holder.codeListWrapper.setOnLongClickListener(l);
     }
 
     private void applyBGColor(MyViewHolder holder, CodeItem item) {
@@ -205,6 +160,18 @@ public class CodeAdapter extends RecyclerView.Adapter<CodeAdapter.MyViewHolder>{
     public void toggleSelection(int position) {
         currentSelectedIndex = position;
         notifyItemChanged(position);
+    }
+
+    @Override
+    public boolean onItemMove(int fromPosition, int toPosition) {
+        Collections.swap(codes, fromPosition, toPosition);
+        notifyItemMoved(fromPosition, toPosition);
+        return false;
+    }
+
+    @Override
+    public void onItemDismiss(int position) {
+        listener.onCodeRowSwiped(position);
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {

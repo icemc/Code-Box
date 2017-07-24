@@ -7,4 +7,5 @@ public interface CodeAdapterListener {
     void onCodeRowClicked(int position);
 
     void onPhoneClicked(int position);
+    void onCodeRowSwiped(int position);
 }

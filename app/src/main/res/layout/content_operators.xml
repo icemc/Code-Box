@@ -10,11 +10,5 @@
     android:clipToPadding="false"
     tools:showIn="@layout/activity_operators">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/operator_recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:clipToPadding="false"
-        android:scrollbars="vertical" />
 
 </RelativeLayout>

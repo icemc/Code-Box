@@ -26,8 +26,7 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_about1"
-        android:clipToPadding="false"/>
+    <include layout="@layout/content_about1" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab_about_share"

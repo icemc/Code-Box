@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
 
+import com.wordpress.icemc.gsmcodes.model.Code;
 import com.wordpress.icemc.gsmcodes.model.TagMap;
 
 import java.util.ArrayList;
@@ -41,6 +42,12 @@ public class TagMapDao {
 
     public Uri saveTagMap(ContentValues values) {
         return context.getContentResolver().insert(TagMapColumns.CONTENT_URI, values);
+    }
+
+    public int deleteTagMapsFromCode(Code code) {
+        String selection = TagMapColumns.CODE_CODE + "=?";
+        String[] selectionArgs = {code.getCode()};
+        return context.getContentResolver().delete(TagMapColumns.CONTENT_URI, selection, selectionArgs);
     }
 
     public List<TagMap> getTagMapFromCursor(Cursor cursor) {

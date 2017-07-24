@@ -2,12 +2,10 @@
     "Codes": [
         {
             "Name": "Call me back",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*166*@#",
             "Description": "Send a call me back message to any MTN Cameroon number",
-            "Tags": [
-                "Call me back", "Balance"
-            ],
+            "Tags": ["Call me back"],
             "InputFields": [{
                 "Title": "Phone number",
                 "InputType": "Phone number"
@@ -15,12 +13,10 @@
         },
         {
             "Name": "ME2U (credit transfer)",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*150*@*@*@#",
             "Description": "This will transfer airtime from your main balance to another MTN Cameroon number",
-            "Tags": [
-
-            ],
+            "Tags": ["Recharge"],
             "InputFields": [{
                 "Title": "Amount",
                 "InputType": "Default"},
@@ -36,47 +32,47 @@
         },
         {
             "Name": "Main balance",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*155#",
             "Description": "Show your main account balance and optionally your Mtn 4 me balance.",
-            "Tags": [],
+            "Tags": ["Balance", "MTN 4 Me"],
             "InputFields": []
         },
         {
             "Name": "My number",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*135*8#",
             "Description": "Display your phone number and your current tariff plan.",
-            "Tags": [],
+            "Tags": ["Phone number"],
             "InputFields": []
         },
         {
             "Name": "MTN services",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*123#",
-            "Description": "Display all Mtn cameroon services.",
+            "Description": "Display all MTN Cameroon services.",
             "Tags": [],
             "InputFields": []
         },
         {
             "Name": "MTN mobile money",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*126*1#",
             "Description": "Display MTN mobile money menu.",
-            "Tags": [],
+            "Tags": ["MTN Mobile Money"],
             "InputFields": []
         },
         {
-            "Name": "MTN Extensions(borrow credit)",
-            "Operator": "Mtn Cameroon",
+            "Name": "MTN Prolongation(borrow credit)",
+            "Operator": "MTN Cameroon",
             "Code": "*121#",
             "Description": "Borrow airtime(credit).",
-            "Tags": [],
+            "Tags": ["Recharge"],
             "InputFields": []
         },
         {
-            "Name": "MTN Extensions balance",
-            "Operator": "Mtn Cameroon",
+            "Name": "MTN Prolongation balance",
+            "Operator": "MTN Cameroon",
             "Code": "*159*86#",
             "Description": "Borrow airtime(credit).",
             "Tags": ["Balance"],
@@ -84,7 +80,7 @@
         },
         {
             "Name": "Add a favourite number",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*165*1*@#",
             "Description": "Add a number as favourite number.",
             "Tags": [],
@@ -97,9 +93,9 @@
         },
         {
             "Name": "Delete a favourite number",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*165*2*@#",
-            "Description": "Borrow airtime(credit).",
+            "Description": "Delete a favourite number.",
             "Tags": [],
             "InputFields": [
                 {
@@ -110,111 +106,111 @@
         },
         {
             "Name": "Enable MTN Easy Booster",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*167*1#",
             "Description": "Enable mtn easy booster.",
-            "Tags": [],
+            "Tags": ["MTN Easy Booster"],
             "InputFields": []
         },
         {
             "Name": "Disable MTN Easy Booster",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*167*0#",
             "Description": "Disable mtn easy booster.",
-            "Tags": [],
+            "Tags": ["MTN Easy Booster"],
             "InputFields": []
         },
         {
             "Name": "MTN Easy Booster balance",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*159*80#",
             "Description": "Display mtn easy booster balance.",
-            "Tags": [],
+            "Tags": ["MTN Easy Booster","Balance"],
             "InputFields": []
         },
         {
             "Name": "SMS package day(Unlimited text on the Go)",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*148*5#",
             "Description": "Subscribe to mtn unlimited text on the Go. You will be charged 20 Frs/day",
-            "Tags": [],
+            "Tags": ["SMS"],
             "InputFields": []
         },
         {
             "Name": "SMS package month",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*148*1#",
             "Description": "Subscribe to mtn monthly text. You will be charged 500 Frs",
-            "Tags": [],
+            "Tags": ["SMS"],
             "InputFields": []
         },
         {
             "Name": "SMS package validity",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*148*9#",
             "Description": "Check the validy of an sms package",
-            "Tags": [],
+            "Tags": ["SMS","Balance"],
             "InputFields": []
         },
         {
             "Name": "MTN 4 Me",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*123*11#",
             "Description": "Subscribe to MTN 4 me package",
-            "Tags": [],
+            "Tags": ["MTN 4 Me", "Calls", "SMS", "Internet"],
             "InputFields": []
         },
         {
             "Name": "MTN Go plans",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*123*12#",
             "Description": "Subscribe to MTN Go plans package",
-            "Tags": [],
+            "Tags": ["MTN Go Plans","Tariff plan"],
             "InputFields": []
         },
         {
             "Name": "MTN Go plans balance",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*167*9#",
             "Description": "Check MTN Go plans package balance",
-            "Tags": [],
+            "Tags": ["Balance","MTN Go Plans"],
             "InputFields": []
         },
         {
             "Name": "MTN Mobile Money bonus(Credit purchase)",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*159*123#",
             "Description": "Check MTN Mobile money bonus",
-            "Tags": [],
+            "Tags": ["MTN Mobile Money"],
             "InputFields": []
         },
         {
             "Name": "MTN Mobile Money bonus(invoice)",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*159*27#",
             "Description": "Check MTN Mobile money bonus",
-            "Tags": [],
+            "Tags": ["MTN Mobile Money", "Balance"],
             "InputFields": []
         },
         {
             "Name": "MTN Mobile Money bonus(deposit)",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*159*91#",
             "Description": "Check MTN Mobile money bonus",
-            "Tags": [],
+            "Tags": ["MTN Mobile Money", "Balance"],
             "InputFields": []
         },
         {
             "Name": "Calls bonuses",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*159*2#",
             "Description": "Check call bonuses",
-            "Tags": [],
+            "Tags": ["Balance"],
             "InputFields": []
         },
         {
             "Name": "MTN Play",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*128#",
             "Description": "MTN play pakages",
             "Tags": [],
@@ -222,98 +218,98 @@
         },
         {
             "Name": "Internet bundle subscription",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*157#",
             "Description": "Subscribe to an internet bundle",
-            "Tags": [],
+            "Tags": ["Internet"],
             "InputFields": []
         },
         {
             "Name": "Internet bundle balance",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*157*99#",
             "Description": "Display your internet bundle balance.",
-            "Tags": [],
+            "Tags": ["Internet", "Balance"],
             "InputFields": []
         },
         {
             "Name": "Mobile Surf Day 100",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*157*1*1#",
             "Description": "Subscribe to data package day. 100Frs = 75Mo (valid for 24H)",
-            "Tags": [],
+            "Tags": ["Internet"],
             "InputFields": []
         },
         {
             "Name": "Mobile Surf Day 250",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*157*1*2#",
             "Description": "Subscribe to data package day. 250Frs = 200Mo (valid for 24H)",
-            "Tags": [],
+            "Tags": ["Internet"],
             "InputFields": []
         },
         {
             "Name": "Mobile Surf Day 500",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*157*1*3#",
             "Description": "Subscribe to data package day. 500Frs = 450Mo (valid for 24H)",
-            "Tags": [],
+            "Tags": ["Internet"],
             "InputFields": []
         },
         {
             "Name": "Mobile Surf Week 1000",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*157*2*1#",
             "Description": "Subscribe to data package week. 1000Frs = 500Mo (valid for 7 Days)",
-            "Tags": [],
+            "Tags": ["Internet"],
             "InputFields": []
         },
         {
             "Name": "Mobile Surf Week 3000",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*157*2*2#",
             "Description": "Subscribe to data package week. 3000Frs = 2.5Go (valid for 7 Days)",
-            "Tags": [],
+            "Tags": ["Internet"],
             "InputFields": []
         },
         {
             "Name": "Mobile Surf Month 2000",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*157*3*1#",
             "Description": "Subscribe to data package month. 2000Frs = 600Mo (valid for 30 Days)",
-            "Tags": [],
+            "Tags": ["Internet"],
             "InputFields": []
         },
         {
             "Name": "Mobile Streaming 40000",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*157*4*1#",
             "Description": "Subscribe to data package streaming. 40000Frs = 75Go (valid for 30 Days)",
-            "Tags": [],
+            "Tags": ["Internet"],
             "InputFields": []
         },
         {
             "Name": "Mobile Surf Night 500",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*157*5*1#",
             "Description": "Subscribe to data package night. 500Frs = 1Go (valid from Midnight to 06H)",
-            "Tags": [],
+            "Tags": ["Internet"],
             "InputFields": []
         },
         {
             "Name": "Mobile Surf 50",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*157*6*1#",
             "Description": "Subscribe to data package 50. 50Frs = 50Mo (valid for 02H)",
-            "Tags": [],
+            "Tags": ["Internet"],
             "InputFields": []
         },
         {
             "Name": "Mobile Surf Day 100 Gift",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*157*7*1*1*@#",
             "Description": "Give out a data package to an MTN Cameroon subscriber. 100Frs = 75Mo (valid for 24H)",
-            "Tags": [],
+            "Tags": ["Internet", "Gift"],
             "InputFields": [{
                 "Title": "Phone number",
                 "InputType": "Phone number"
@@ -321,10 +317,10 @@
         },
         {
             "Name": "Mobile Surf Day 250 Gift",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*157*7*1*2*@#",
             "Description": "Give out a data package to an MTN Cameroon subscriber. 250Frs = 200Mo (valid for 24H)",
-            "Tags": [],
+            "Tags": ["Internet", "Gift"],
             "InputFields": [{
                 "Title": "Phone number",
                 "InputType": "Phone number"
@@ -332,10 +328,10 @@
         },
         {
             "Name": "Mobile Surf Day 500 Gift",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*157*7*1*3*@#",
             "Description": "Give out a data package to an MTN Cameroon subscriber. 500Frs = 450Mo (valid for 24H)",
-            "Tags": [],
+            "Tags": ["Internet", "Gift"],
             "InputFields": [{
                 "Title": "Phone number",
                 "InputType": "Phone number"
@@ -343,21 +339,21 @@
         },
         {
             "Name": "Mobile Surf Week 1000 Gift",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*157*7*2*1*@#",
             "Description": "Give out a data package to an MTN Cameroon subscriber. 1000Frs = 500Mo (valid for 7 Days)",
-            "Tags": [],
+            "Tags": ["Internet", "Gift"],
             "InputFields": [{
                 "Title": "Phone number",
                 "InputType": "Phone number"
             }]
         },
         {
-            "Name": "Mobile Surf Week 3000",
-            "Operator": "Mtn Cameroon",
+            "Name": "Mobile Surf Week 3000 Gift",
+            "Operator": "MTN Cameroon",
             "Code": "*157*7*2*2*@#",
             "Description": "Give out a data package to an MTN Cameroon subscriber. 3000Frs = 2.5Go (valid for 7 Days)",
-            "Tags": [],
+            "Tags": ["Internet", "Gift"],
             "InputFields": [{
                 "Title": "Phone number",
                 "InputType": "Phone number"
@@ -365,10 +361,10 @@
         },
         {
             "Name": "Mobile Surf Month 2000 Gift",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*157*7*3*1*@#",
             "Description": "Give out a data package to an MTN Cameroon subscriber. 2000Frs = 600Mo (valid for 30 Days)",
-            "Tags": [],
+            "Tags": ["Internet", "Gift"],
             "InputFields": [{
                 "Title": "Phone number",
                 "InputType": "Phone number"
@@ -376,10 +372,10 @@
         },
         {
             "Name": "Mobile Streaming 40000 Gift",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*157*7*4*1*@#",
             "Description": "Give out a data package to an MTN Cameroon subscriber. 40000Frs = 75Go (valid for 30 Days)",
-            "Tags": [],
+            "Tags": ["Internet", "Gift"],
             "InputFields": [{
                 "Title": "Phone number",
                 "InputType": "Phone number"
@@ -387,10 +383,10 @@
         },
         {
             "Name": "Mobile Surf Night 500 Gift",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*157*7*5*1*@#",
             "Description": "Give out a data package to an MTN Cameroon subscriber. 500Frs = 1Go (valid from Midnight to 06H)",
-            "Tags": [],
+            "Tags": ["Internet", "Gift"],
             "InputFields": [{
                 "Title": "Phone number",
                 "InputType": "Phone number"
@@ -398,10 +394,10 @@
         },
         {
             "Name": "Mobile Surf 50 Gift",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*157*7*6*1*@#",
             "Description": "Give out a data package to an MTN Cameroon subscriber. 50Frs = 50Mo (valid for 02H)",
-            "Tags": [],
+            "Tags": ["Internet", "Gift"],
             "InputFields": [{
                 "Title": "Phone number",
                 "InputType": "Phone number"
@@ -409,7 +405,7 @@
         },
         {
             "Name": "MTN Sky",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*170*1#",
             "Description": "MTN Sky is MTN Cameroons VIP tariff plan. Here calls are taxed at 1 F/s to all MTN numbers and at 0.5F after a daily consumption of 100F.",
             "Tags": [],
@@ -417,42 +413,42 @@
         },
         {
             "Name": "WhatsApp Day",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*701*1#",
             "Description": "Subscribe to MTN WhatsApp Daily data bundle. This will cost you 200Frs (valid for 1 day)",
-            "Tags": [],
+            "Tags": ["WhatsApp"],
             "InputFields": []
         },
         {
             "Name": "WhatsApp Week",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*701*2#",
             "Description": "Subscribe to MTN WhatsApp Weekly data bundle. This will cost you 500Frs (valid for 7 days)",
-            "Tags": [],
+            "Tags": ["WhatsApp"],
             "InputFields": []
         },
         {
             "Name": "WhatsApp On The Go",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*701*6#",
             "Description": "Subscribe to MTN WhatsApp On The Go data bundle. This will cost you 20Frs/Day",
-            "Tags": [],
+            "Tags": ["WhatsApp"],
             "InputFields": []
         },
         {
             "Name": "WhatsApp Month",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*701*3#",
             "Description": "Subscribe to MTN WhatsApp Monthly data bundle. This will cost you 1500Frs(valid for 30 days)",
-            "Tags": [],
+            "Tags": ["WhatsApp"],
             "InputFields": []
         },
         {
             "Name": "WhatsApp data bundle balance",
-            "Operator": "Mtn Cameroon",
+            "Operator": "MTN Cameroon",
             "Code": "*701*4#",
             "Description": "Check WhatsApp data bundle balance",
-            "Tags": [],
+            "Tags": ["WhatsApp", "Balance"],
             "InputFields": []
         },
 
@@ -470,7 +466,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#99#",
             "Description": "show your Orange Cameroon phone number",
-            "Tags": [],
+            "Tags": ["Phone number"],
             "InputFields": [{
                 "Title": "Phone number",
                 "InputType": "Phone number"
@@ -481,7 +477,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#123#",
             "Description": "Display your main account balance and other account balances( select 0)",
-            "Tags": [],
+            "Tags": ["Balance", "Internet"],
             "InputFields": []
         },
         {
@@ -502,9 +498,7 @@
             "Operator": "Orange Cameroon",
             "Code": "*144*@*@*@#",
             "Description": "Transfer airtime from your main balance to another Orange Cameroon subscriber",
-            "Tags": [
-
-            ],
+            "Tags": ["Recharge"],
             "InputFields": [
                 {
                     "Title": "Phone number",
@@ -525,7 +519,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#131#",
             "Description": "Show Orange packages(calls and sms)",
-            "Tags": [],
+            "Tags": ["Calls", "SMS"],
             "InputFields": []
         },
         {
@@ -533,7 +527,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#131*1#",
             "Description": "Subscribe to an SMS package",
-            "Tags": [],
+            "Tags": ["SMS"],
             "InputFields": []
         },
         {
@@ -541,7 +535,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#131*2#",
             "Description": "Subscibe to Orange bonus",
-            "Tags": [],
+            "Tags": ["Calls"],
             "InputFields": []
         },
         {
@@ -549,7 +543,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#131*7#",
             "Description": "Subscibe to Orange bonus Plus",
-            "Tags": [],
+            "Tags": ["Calls"],
             "InputFields": []
         },
         {
@@ -565,7 +559,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#145*2#",
             "Description": "Subscribe to an internet bundle",
-            "Tags": [],
+            "Tags": ["Internet"],
             "InputFields": []
         },
         {
@@ -573,7 +567,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#145*1#",
             "Description": "Display internet bundle balances",
-            "Tags": [],
+            "Tags": ["Internet", "Balance"],
             "InputFields": []
         },
         {
@@ -581,7 +575,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#133#",
             "Description": "SOS Credit(Borrow airtime)",
-            "Tags": [],
+            "Tags": ["Recharge"],
             "InputFields": []
         },
         {
@@ -589,7 +583,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#145*3#",
             "Description": "SOS Data(Borrow internet data)",
-            "Tags": [],
+            "Tags": ["Internet"],
             "InputFields": []
         },
         {
@@ -597,7 +591,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#188*@#",
             "Description": "Recharge airtime using credit card",
-            "Tags": [],
+            "Tags": ["Recharge"],
             "InputFields": [{
                 "Title": "Credit card number",
                 "InputType": "Pass code"
@@ -608,7 +602,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#150#",
             "Description": "Orange Money services",
-            "Tags": [],
+            "Tags": ["Orange Money"],
             "InputFields": []
         },
         {
@@ -616,7 +610,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#140#",
             "Description": "Orange loyalty program",
-            "Tags": [],
+            "Tags": ["Calls", "Internet", "SMS"],
             "InputFields": []
         },
         {
@@ -640,7 +634,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#145*2*4#",
             "Description": "Display all Giga data packages",
-            "Tags": [],
+            "Tags": ["Internet"],
             "InputFields": []
         },
         {
@@ -648,7 +642,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#141*1#",
             "Description": "Subscribe to Orange plenty",
-            "Tags": [],
+            "Tags": ["Tariff plan"],
             "InputFields": []
         },
         {
@@ -656,7 +650,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#141*2#",
             "Description": "Subscribe to Orange Fun",
-            "Tags": [],
+            "Tags": ["Tariff plan"],
             "InputFields": []
         },
         {
@@ -664,7 +658,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#141*3#",
             "Description": "Subscribe to Orange Smart",
-            "Tags": [],
+            "Tags": ["Tariff plan"],
             "InputFields": []
         },
         {
@@ -672,7 +666,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#141*4#",
             "Description": "Subscribe to Orange Relax",
-            "Tags": [],
+            "Tags": ["Tariff plan"],
             "InputFields": []
         },
         {
@@ -680,7 +674,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#145*5#",
             "Description": "Subscribe to a Family Talk call bundle",
-            "Tags": [],
+            "Tags": ["Calls"],
             "InputFields": []
         },
         {
@@ -688,7 +682,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#131*6#",
             "Description": "Subscribe to a Flexi call/data bundle",
-            "Tags": [],
+            "Tags": ["Calls", "Internet"],
             "InputFields": []
         },
         {
@@ -696,7 +690,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#145*2*3*1*1#",
             "Description": "Subscribe to Data Package Day 1000 bundle. 1000Frs = 1Go (valid for 24H)",
-            "Tags": [],
+            "Tags": ["Internet"],
             "InputFields": []
         },
         {
@@ -704,7 +698,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#145*2*3*2*1#",
             "Description": "Subscribe to Data Package Day 500 bundle. 500Frs = 300Mo (valid for 24H)",
-            "Tags": [],
+            "Tags": ["Internet"],
             "InputFields": []
         },
         {
@@ -712,7 +706,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#145*2*3*3*1#",
             "Description": "Subscribe to Data Package Day 250 bundle. 250Frs = 125Mo (valid for 24H)",
-            "Tags": [],
+            "Tags": ["Internet"],
             "InputFields": []
         },
         {
@@ -720,7 +714,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#145*2*3*4*1#",
             "Description": "Subscribe to Data Package Day 100 bundle. 100Frs = 50Mo (valid for 24H)",
-            "Tags": [],
+            "Tags": ["Internet"],
             "InputFields": []
         },
         {
@@ -728,7 +722,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#145*2*2*1*1#",
             "Description": "Subscribe to Data Package 3 Days 500 bundle. 500Frs = 250Mo (valid for 3 days)",
-            "Tags": [],
+            "Tags": ["Internet"],
             "InputFields": []
         },
         {
@@ -736,7 +730,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#145*2*2*2*1#",
             "Description": "Subscribe to Data Package 3 Days 300 bundle. 300Frs = 175Mo (valid for 3 days)",
-            "Tags": [],
+            "Tags": ["Internet"],
             "InputFields": []
         },
         {
@@ -744,7 +738,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#145*2*1*1*1#",
             "Description": "Subscribe to Data Package Month 10,000 bundle. 10,000Frs = 30GB (valid for 30 days)",
-            "Tags": [],
+            "Tags": ["Internet"],
             "InputFields": []
         },
         {
@@ -752,7 +746,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#145*2*1*2*1#",
             "Description": "Subscribe to Data Package Month 8,000 bundle. 8,000Frs = 4.6GB (valid for 30 days)",
-            "Tags": [],
+            "Tags": ["Internet"],
             "InputFields": []
         },
         {
@@ -760,7 +754,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#145*2*1*3*1#",
             "Description": "Subscribe to Data Package Month 4,000 bundle. 4,000Frs = 1.5GB (valid for 30 days)",
-            "Tags": [],
+            "Tags": ["Internet"],
             "InputFields": []
         },
         {
@@ -768,7 +762,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#145*2*1*4*1#",
             "Description": "Subscribe to Data Package Month 2,000 bundle. 2,000Frs = 600MB (valid for 30 days)",
-            "Tags": [],
+            "Tags": ["Internet"],
             "InputFields": []
         },
         {
@@ -776,7 +770,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#145*2*4*1*1*1#",
             "Description": "Subscribe to GigaData Month 5Go/day bundle. 63000Frs = 5Go/day (valid for 30 days)",
-            "Tags": [],
+            "Tags": ["Internet", "GigaData"],
             "InputFields": []
         },
         {
@@ -784,7 +778,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#145*2*4*1*2*1#",
             "Description": "Subscribe to GigaData Month 4Go/day bundle. 50400Frs = 4Go/day (valid for 30 days)",
-            "Tags": [],
+            "Tags": ["Internet", "GigaData"],
             "InputFields": []
         },
         {
@@ -792,7 +786,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#145*2*4*1*3*1#",
             "Description": "Subscribe to GigaData Month 3Go/day bundle. 34450Frs = 3Go/day (valid for 30 days)",
-            "Tags": [],
+            "Tags": ["Internet", "GigaData"],
             "InputFields": []
         },
         {
@@ -800,7 +794,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#145*2*4*1*4*1#",
             "Description": "Subscribe to GigaData Month 2Go/day bundle. 21500Frs = 2Go/day (valid for 30 days)",
-            "Tags": [],
+            "Tags": ["Internet", "GigaData"],
             "InputFields": []
         },
         {
@@ -808,7 +802,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#145*2*4*1*5*1#",
             "Description": "Subscribe to GigaData Month 1Go/day bundle 10000Frs = 1Go/day (valid for 30 days)",
-            "Tags": [],
+            "Tags": ["Internet", "GigaData"],
             "InputFields": []
         },
         {
@@ -816,7 +810,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#145*2*4*2*1*1#",
             "Description": "Subscribe to GigaData 15 Days 5Go/day bundle 32250Frs = 5Go/day (valid for 15 days)",
-            "Tags": [],
+            "Tags": ["Internet", "GigaData"],
             "InputFields": []
         },
         {
@@ -824,7 +818,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#145*2*4*2*2*1#",
             "Description": "Subscribe to GigaData 15 Days 4Go/day bundle 25800Frs = 4Go/day (valid for 15 days)",
-            "Tags": [],
+            "Tags": ["Internet", "GigaData"],
             "InputFields": []
         },
         {
@@ -832,7 +826,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#145*2*4*2*3*1#",
             "Description": "Subscribe to GigaData 15 Days 3Go/day bundle 18000Frs = 3Go/day (valid for 15 days)",
-            "Tags": [],
+            "Tags": ["Internet", "GigaData"],
             "InputFields": []
         },
         {
@@ -840,7 +834,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#145*2*4*2*4*1#",
             "Description": "Subscribe to GigaData 15 Days 2Go/day bundle 11250Frs = 2Go/day (valid for 15 days)",
-            "Tags": [],
+            "Tags": ["Internet", "GigaData"],
             "InputFields": []
         },
         {
@@ -848,7 +842,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#145*2*4*2*5*1#",
             "Description": "Subscribe to GigaData 15 Days 1Go/day bundle 5250Frs = 1Go/day (valid for 15 days)",
-            "Tags": [],
+            "Tags": ["Internet", "GigaData"],
             "InputFields": []
         },
         {
@@ -856,7 +850,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#145*2*4*3*1*1#",
             "Description": "Subscribe to GigaData 7 Days 5Go/day bundle 15400Frs = 5Go/day (valid for 7 days)",
-            "Tags": [],
+            "Tags": ["Internet", "GigaData"],
             "InputFields": []
         },
         {
@@ -864,7 +858,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#145*2*4*3*2*1#",
             "Description": "Subscribe to GigaData 7 Days 4Go/day bundle 12300Frs = 4Go/day (valid for 7 days)",
-            "Tags": [],
+            "Tags": ["Internet", "GigaData"],
             "InputFields": []
         },
         {
@@ -872,7 +866,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#145*2*4*3*3*1#",
             "Description": "Subscribe to GigaData 7 Days 3Go/day bundle 8950Frs = 3Go/day (valid for 7 days)",
-            "Tags": [],
+            "Tags": ["Internet", "GigaData"],
             "InputFields": []
         },
         {
@@ -880,7 +874,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#145*2*4*3*4*1#",
             "Description": "Subscribe to GigaData 7 Days 2Go/day bundle 5600Frs = 2Go/day (valid for 7 days)",
-            "Tags": [],
+            "Tags": ["Internet", "GigaData"],
             "InputFields": []
         },
         {
@@ -888,7 +882,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#145*2*4*3*5*1#",
             "Description": "Subscribe to GigaData 7 Days 1Go/day bundle 2650Frs = 1Go/day (valid for 7 days)",
-            "Tags": [],
+            "Tags": ["Internet", "GigaData"],
             "InputFields": []
         },
         {
@@ -896,7 +890,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#145*2*4*4*1*1#",
             "Description": "Subscribe to GigaData 3 Days 5Go/day bundle 6750Frs = 5Go/day (valid for 3 days)",
-            "Tags": [],
+            "Tags": ["Internet", "GigaData"],
             "InputFields": []
         },
         {
@@ -904,7 +898,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#145*2*4*4*2*1#",
             "Description": "Subscribe to GigaData 3 Days 4Go/day bundle 5400Frs = 4Go/day (valid for 3 days)",
-            "Tags": [],
+            "Tags": ["Internet", "GigaData"],
             "InputFields": []
         },
         {
@@ -912,7 +906,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#145*2*4*4*3*1#",
             "Description": "Subscribe to GigaData 3 Days 3Go/day bundle 4050Frs = 3Go/day (valid for 3 days)",
-            "Tags": [],
+            "Tags": ["Internet", "GigaData"],
             "InputFields": []
         },
         {
@@ -920,7 +914,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#145*2*4*4*4*1#",
             "Description": "Subscribe to GigaData 3 Days 2Go/day bundle 2550Frs = 2Go/day (valid for 3 days)",
-            "Tags": [],
+            "Tags": ["Internet", "GigaData"],
             "InputFields": []
         },
         {
@@ -928,7 +922,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#145*2*4*4*5*1#",
             "Description": "Subscribe to GigaData 3 Days 1Go/day bundle 1200Frs = 1Go/day (valid for 3 days)",
-            "Tags": [],
+            "Tags": ["Internet", "GigaData"],
             "InputFields": []
         },
         {
@@ -936,7 +930,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#145*2*5*5*@#",
             "Description": "Data on demand 24H validity. Purchase custom data that will be valid for 24H.\nPlease specify the volume you will like to obtain in MB. Example 500",
-            "Tags": [],
+            "Tags": ["Internet"],
             "InputFields": [{
                 "Title": "Volume in MB, Example 500",
                 "InputType": "Default"
@@ -947,7 +941,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#145*2*5*4*@#",
             "Description": "Data on demand 3 Days validity. Purchase custom data that will be valid for 3 Days.\nPlease specify the volume you will like to obtain in MB. Example 500",
-            "Tags": [],
+            "Tags": ["Internet"],
             "InputFields": [{
                 "Title": "Volume in MB, Example 500",
                 "InputType": "Default"
@@ -958,7 +952,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#145*2*5*3*@#",
             "Description": "Data on demand 7 Days validity. Purchase custom data that will be valid for 7 Days.\nPlease specify the volume you will like to obtain in MB. Example 500",
-            "Tags": [],
+            "Tags": ["Internet"],
             "InputFields": [{
                 "Title": "Volume in MB, Example 500",
                 "InputType": "Default"
@@ -969,7 +963,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#145*2*5*2*@#",
             "Description": "Data on demand 10 Days validity. Purchase custom data that will be valid for 10 Days.\nPlease specify the volume you will like to obtain in MB. Example 500",
-            "Tags": [],
+            "Tags": ["Internet"],
             "InputFields": [{
                 "Title": "Volume in MB, Example 500",
                 "InputType": "Default"
@@ -980,7 +974,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#145*2*5*1*@#",
             "Description": "Data on demand 30 Days validity. Purchase custom data that will be valid for 30 Days.\nPlease specify the volume you will like to obtain in MB. Example 500",
-            "Tags": [],
+            "Tags": ["Internet"],
             "InputFields": [{
                 "Title": "Volume in MB, Example 500",
                 "InputType": "Default"
@@ -991,7 +985,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#131*1*2*1#",
             "Description": "Unlimited SMS to Orange at 255Frs valid 7 days",
-            "Tags": [],
+            "Tags": ["SMS"],
             "InputFields": []
         },
         {
@@ -999,7 +993,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#131*1*1*1#",
             "Description": "25 SMS to Orange at 102Frs valid till 00H",
-            "Tags": [],
+            "Tags": ["SMS"],
             "InputFields": []
         },
         {
@@ -1007,7 +1001,7 @@
             "Operator": "Orange Cameroon",
             "Code": "#131*1*3*1#",
             "Description": "Unlimited SMS to Orange at 459Frs valid 30 days",
-            "Tags": [],
+            "Tags": ["SMS"],
             "InputFields": []
         },
 
@@ -1019,7 +1013,7 @@
             "Operator": "Nexttel",
             "Code": "*801#",
             "Description": "Display your main account balance",
-            "Tags": [],
+            "Tags": ["Balance"],
             "InputFields": []
         },
         {
@@ -1027,7 +1021,7 @@
             "Operator": "Nexttel",
             "Code": "*801*1#",
             "Description": "Display your bonus balance(credit)",
-            "Tags": [],
+            "Tags": ["Balance"],
             "InputFields": []
         },
         {
@@ -1035,7 +1029,7 @@
             "Operator": "Nexttel",
             "Code": "*802*@#",
             "Description": "Recharge airtime using credit card",
-            "Tags": [],
+            "Tags": ["Recharge"],
             "InputFields": [{
                 "Title": "Credit card number",
                 "InputType": "Pass code"
@@ -1046,7 +1040,7 @@
             "Operator": "Nexttel",
             "Code": "*869*@*@*@#",
             "Description": "Transfer airtime from your main balance to another Nexttel subscriber",
-            "Tags": [],
+            "Tags": ["Recharge"],
             "InputFields": [
                 {
                     "Title": "Ishare code",
@@ -1067,7 +1061,7 @@
             "Operator": "Nexttel",
             "Code": "*865#",
             "Description": "Subscribe to to an internet package FLY or WhatsApp",
-            "Tags": [],
+            "Tags": ["Internet"],
             "InputFields": []
         },
         {
@@ -1075,7 +1069,7 @@
             "Operator": "Nexttel",
             "Code": "*865*1#",
             "Description": "Subscribe to to an internet package FLY or WhatsApp",
-            "Tags": [],
+            "Tags": ["Balance","Internet"],
             "InputFields": []
         },
         {
@@ -1083,7 +1077,7 @@
             "Operator": "Nexttel",
             "Code": "*805#",
             "Description": "Enable Eco+. 400% bonus",
-            "Tags": [],
+            "Tags": ["Calls"],
             "InputFields": []
         },
         {
@@ -1091,7 +1085,7 @@
             "Operator": "Nexttel",
             "Code": "*805*2#",
             "Description": "Enable Next15+. To call 15Frs/min",
-            "Tags": [],
+            "Tags": ["Calls"],
             "InputFields": []
         },
         {
@@ -1099,7 +1093,7 @@
             "Operator": "Nexttel",
             "Code": "*805*21#",
             "Description": "Consult your Next15 balance",
-            "Tags": [],
+            "Tags": ["Balance"],
             "InputFields": []
         },
         {
@@ -1107,7 +1101,7 @@
             "Operator": "Nexttel",
             "Code": "*806#",
             "Description": "Consult your Next15 balance",
-            "Tags": [],
+            "Tags": ["Calls"],
             "InputFields": []
         },
         {
@@ -1115,7 +1109,7 @@
             "Operator": "Nexttel",
             "Code": "*806*1#",
             "Description": "Consult your jackpot balance",
-            "Tags": [],
+            "Tags": ["Balance", "Calls"],
             "InputFields": []
         },
         {
@@ -1123,7 +1117,7 @@
             "Operator": "Nexttel",
             "Code": "*865*20#",
             "Description": "Subscribe to data package day. 50Frs = 50Mo (valid for 2H)",
-            "Tags": [],
+            "Tags": ["Internet"],
             "InputFields": []
         },
         {
@@ -1131,7 +1125,7 @@
             "Operator": "Nexttel",
             "Code": "*865*21#",
             "Description": "Subscribe to data package day. 150Frs = 150Mo (valid for 24H)",
-            "Tags": [],
+            "Tags": ["Internet"],
             "InputFields": []
         },
         {
@@ -1139,7 +1133,7 @@
             "Operator": "Nexttel",
             "Code": "*865*22#",
             "Description": "Subscribe to data package day. 250Frs = 250Mo (valid for 24H)",
-            "Tags": [],
+            "Tags": ["Internet"],
             "InputFields": []
         },
         {
@@ -1147,7 +1141,7 @@
             "Operator": "Nexttel",
             "Code": "*865*23#",
             "Description": "Subscribe to data package day. 500Frs = 500Mo (valid for 24H)",
-            "Tags": [],
+            "Tags": ["Internet"],
             "InputFields": []
         },
         {
@@ -1155,7 +1149,7 @@
             "Operator": "Nexttel",
             "Code": "*865*24#",
             "Description": "Subscribe to data package day. 100Frs = 100Mo (valid for 24H)",
-            "Tags": [],
+            "Tags": ["Internet"],
             "InputFields": []
         },
         {
@@ -1163,7 +1157,7 @@
             "Operator": "Nexttel",
             "Code": "*865*11#",
             "Description": "Subscribe to data package night. 150Frs = 200Mo (valid from Midnight to 6H:00)",
-            "Tags": [],
+            "Tags": ["Internet"],
             "InputFields": []
         },
         {
@@ -1171,7 +1165,7 @@
             "Operator": "Nexttel",
             "Code": "*865*12#",
             "Description": "Subscribe to data package night. 250Frs = 300Mo (valid from Midnight to 6H:00)",
-            "Tags": [],
+            "Tags": ["Internet"],
             "InputFields": []
         },
         {
@@ -1179,7 +1173,7 @@
             "Operator": "Nexttel",
             "Code": "*865*80#",
             "Description": "Subscribe to data package week. 300Frs = 400Mo (valid for 1 week)",
-            "Tags": [],
+            "Tags": ["Internet"],
             "InputFields": []
         },
         {
@@ -1187,7 +1181,7 @@
             "Operator": "Nexttel",
             "Code": "*865*81#",
             "Description": "Subscribe to data package week. 250Frs = 300Mo (valid for 1 week)",
-            "Tags": [],
+            "Tags": ["Internet"],
             "InputFields": []
         },
         {
@@ -1195,7 +1189,7 @@
             "Operator": "Nexttel",
             "Code": "*865*82#",
             "Description": "Subscribe to data package week. 250Frs = 300Mo (valid for 1 week)",
-            "Tags": [],
+            "Tags": ["Internet"],
             "InputFields": []
         },
         {
@@ -1203,7 +1197,7 @@
             "Operator": "Nexttel",
             "Code": "*865*83#",
             "Description": "Subscribe to data package week. 250Frs = 300Mo (valid for 1 week)",
-            "Tags": [],
+            "Tags": ["Internet"],
             "InputFields": []
         },
         {
@@ -1211,7 +1205,7 @@
             "Operator": "Nexttel",
             "Code": "*865*84#",
             "Description": "Subscribe to data package week. 250Frs = 300Mo (valid for 1 week)",
-            "Tags": [],
+            "Tags": ["Internet"],
             "InputFields": []
         },
         {
@@ -1219,7 +1213,7 @@
             "Operator": "Nexttel",
             "Code": "*865*41#",
             "Description": "Subscribe to data package month. 8000Frs = 4.6Go (valid for 1 month)",
-            "Tags": [],
+            "Tags": ["Internet"],
             "InputFields": []
         },
         {
@@ -1227,7 +1221,7 @@
             "Operator": "Nexttel",
             "Code": "*865*42#",
             "Description": "Subscribe to data package month. 12000Frs = 8Go (valid for 1 month)",
-            "Tags": [],
+            "Tags": ["Internet"],
             "InputFields": []
         },
         {
@@ -1235,7 +1229,7 @@
             "Operator": "Nexttel",
             "Code": "*865*43#",
             "Description": "Subscribe to data package month. 25000Frs = 18Go (valid for 1 month)",
-            "Tags": [],
+            "Tags": ["Internet"],
             "InputFields": []
         },
         {
@@ -1243,7 +1237,7 @@
             "Operator": "Nexttel",
             "Code": "*865*44#",
             "Description": "Subscribe to data package month. 4000Frs = 1.5Go (valid for 1 month)",
-            "Tags": [],
+            "Tags": ["Internet"],
             "InputFields": []
         },
         {
@@ -1251,7 +1245,7 @@
             "Operator": "Nexttel",
             "Code": "*600#",
             "Description": "Display your phone number",
-            "Tags": [],
+            "Tags": ["Phone number"],
             "InputFields": []
         },
 
@@ -1261,9 +1255,7 @@
             "Operator": "Camtel",
             "Code": "*126*@*@*@#",
             "Description": "Transfer airtime from your main balance to another Camtel subscriber",
-            "Tags": [
-
-            ],
+            "Tags": ["Recharge"],
             "InputFields": [
                 {
                     "Title": "Phone number",
@@ -1284,7 +1276,7 @@
             "Operator": "Camtel",
             "Code": "*825*1#",
             "Description": "Display your main account and internet balance",
-            "Tags": [],
+            "Tags": ["Balance"],
             "InputFields": []
         },
         {
@@ -1292,7 +1284,7 @@
             "Operator": "Camtel",
             "Code": "*155*500*1#",
             "Description": "Subscribe to Toli Fap",
-            "Tags": [],
+            "Tags": ["Toli"],
             "InputFields": []
         },
         {
@@ -1300,7 +1292,7 @@
             "Operator": "Camtel",
             "Code": "*155*1000*1#",
             "Description": "Subscribe to Toli Kolo",
-            "Tags": [],
+            "Tags": ["Toli"],
             "InputFields": []
         },
         {
@@ -1308,7 +1300,7 @@
             "Operator": "Camtel",
             "Code": "*155*5000*1#",
             "Description": "Subscribe to Toli 5000",
-            "Tags": [],
+            "Tags": ["Toli"],
             "InputFields": []
         },
         {
@@ -1316,7 +1308,7 @@
             "Operator": "Camtel",
             "Code": "*10000*155*1#",
             "Description": "Subscribe to Toli Premium One",
-            "Tags": [],
+            "Tags": ["Toli"],
             "InputFields": []
         },
         {
@@ -1324,7 +1316,7 @@
             "Operator": "Camtel",
             "Code": "*20000*155*1#",
             "Description": "Subscribe to Toli Premium Two",
-            "Tags": [],
+            "Tags": ["Toli"],
             "InputFields": []
         },
         {
@@ -1332,7 +1324,7 @@
             "Operator": "Camtel",
             "Code": "*155*6050*1#",
             "Description": "Subscribe to Fako Day",
-            "Tags": [],
+            "Tags": ["Fako", "Internet"],
             "InputFields": []
         },
         {
@@ -1340,7 +1332,7 @@
             "Operator": "Camtel",
             "Code": "*155*6100*2#",
             "Description": "Subscribe to Fako Mini",
-            "Tags": [],
+            "Tags": ["Fako", "Internet"],
             "InputFields": []
         },
         {
@@ -1348,7 +1340,7 @@
             "Operator": "Camtel",
             "Code": "*155*6150*1#",
             "Description": "Access Fako packages",
-            "Tags": [],
+            "Tags": ["Fako", "Internet"],
             "InputFields": []
         },
         {
@@ -1356,7 +1348,7 @@
             "Operator": "Camtel",
             "Code": "*155*6051*2#",
             "Description": "Subscribe to Fako Day More",
-            "Tags": [],
+            "Tags": ["Fako", "Internet"],
             "InputFields": []
         },
         {
@@ -1364,7 +1356,7 @@
             "Operator": "Camtel",
             "Code": "*155*6700*1#",
             "Description": "Subscribe to Fako Smart",
-            "Tags": [],
+            "Tags": ["Fako", "Internet"],
             "InputFields": []
         },
         {
@@ -1372,7 +1364,7 @@
             "Operator": "Camtel",
             "Code": "*155*6015*1#",
             "Description": "Subscribe to Fako Comfort",
-            "Tags": [],
+            "Tags": ["Fako", "Internet"],
             "InputFields": []
         },
         {
@@ -1380,7 +1372,7 @@
             "Operator": "Camtel",
             "Code": "*155*6002*1#",
             "Description": "Subscribe to Fako Night",
-            "Tags": [],
+            "Tags": ["Fako", "Internet"],
             "InputFields": []
         },
         {
@@ -1388,7 +1380,7 @@
             "Operator": "Camtel",
             "Code": "*155*6003*1#",
             "Description": "Subscribe to Fako Night More",
-            "Tags": [],
+            "Tags": ["Fako", "Internet"],
             "InputFields": []
         },
         {
@@ -1396,7 +1388,7 @@
             "Operator": "Camtel",
             "Code": "*155*1111*1#",
             "Description": "Subscribe to Fako Chatter",
-            "Tags": [],
+            "Tags": ["Fako", "Internet"],
             "InputFields": []
         },
         {
@@ -1404,7 +1396,7 @@
             "Operator": "Camtel",
             "Code": "*155*1112*1#",
             "Description": "Subscribe to Fako Streamer",
-            "Tags": [],
+            "Tags": ["Fako", "Internet"],
             "InputFields": []
         },
         {
@@ -1412,7 +1404,7 @@
             "Operator": "Camtel",
             "Code": "*155*1113*1#",
             "Description": "Subscribe to Fako Downloader",
-            "Tags": [],
+            "Tags": ["Fako", "Internet"],
             "InputFields": []
         },
         {
@@ -1420,7 +1412,7 @@
             "Operator": "Camtel",
             "Code": "*155*1114*1#",
             "Description": "Subscribe to Fako Big Downloader",
-            "Tags": [],
+            "Tags": ["Fako", "Internet"],
             "InputFields": []
         }
 

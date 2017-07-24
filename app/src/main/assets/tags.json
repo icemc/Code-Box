@@ -9,7 +9,7 @@
             "Operator": "All"
         },
         {
-            "Name": "Sms",
+            "Name": "SMS",
             "Operator": "All"
         },
         {
@@ -19,6 +19,60 @@
         {
             "Name": "Call me back",
             "Operator": "All"
+        },
+		{
+            "Name": "Calls",
+            "Operator": "All"
+        },
+		{
+            "Name": "Gift",
+            "Operator": "All"
+        },
+		{
+            "Name": "Phone number",
+            "Operator": "All"
+        },
+		{
+            "Name": "Recharge",
+            "Operator": "All"
+        },
+
+        {
+            "Name": "MTN 4 Me",
+            "Operator": "MTN Cameroon"
+        },
+        {
+            "Name": "MTN Go Plans",
+            "Operator": "MTN Cameroon"
+        },
+		{
+            "Name": "MTN Mobile Money",
+            "Operator": "MTN Cameroon"
+        },
+		{
+            "Name": "MTN Easy Booster",
+            "Operator": "MTN Cameroon"
+        },
+		{
+            "Name": "WhatsApp",
+            "Operator": "MTN Cameroon"
+        },
+		{
+            "Name": "Orange Money",
+            "Operator": "Orange Cameroon"
+        },
+		{
+            "Name": "GigaData",
+            "Operator": "Orange Cameroon"
+        },
+		
+		{
+            "Name": "Toli",
+            "Operator": "Camtel"
+        },
+		{
+            "Name": "Fako",
+            "Operator": "Camtel"
         }
     ]
 }

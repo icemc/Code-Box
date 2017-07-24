@@ -114,7 +114,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
-            android:background="@drawable/bg_simple_botton"
+            android:background="@drawable/bg_list_row"
             android:layout_alignBottom="@+id/message_container"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"

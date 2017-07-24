@@ -9,7 +9,7 @@ public enum SupportedOperators {
     public String toString() {
         switch(this) {
             case MTN_CAMEROON:
-                return "Mtn Cameroon";
+                return "MTN Cameroon";
             case ORANGE_CAMEROON:
                 return "Orange Cameroon";
             case CAMTEL:

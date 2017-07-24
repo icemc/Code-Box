@@ -1,5 +1,179 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/operator_logo"
+        android:src="@drawable/logo_mtn"
+        android:layout_width="@dimen/logo_width_small"
+        android:layout_height="@dimen/logo_height_small"
+        android:paddingLeft="@dimen/logo_small_padding"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingStart="20dp"
+        android:textSize="@dimen/text_secondary"
+        android:paddingTop="15dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/add_code_heading"
+        android:id="@+id/create_code"
+        android:textColor="@color/from"
+        android:textStyle="bold"
+        android:layout_toRightOf="@+id/textView2"
+        android:layout_toEndOf="@+id/textView2" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_secondary"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Name: "
+        android:textColor="@color/from"
+        android:textStyle="bold"
+        android:id="@+id/textView2"
+        android:layout_alignBottom="@+id/view3"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignStart="@+id/textView3" />
+
+    <!--<EditText-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/code_name"-->
+        <!--android:layout_alignRight="@+id/create_code" />-->
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/view3"
+        android:layout_below="@+id/textView3"
+        android:layout_alignLeft="@+id/view2"
+        android:layout_marginRight="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_alignStart="@+id/view2">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/code_name"
+            android:hint="@string/name"
+            android:maxLines="1"
+            android:inputType="textAutoComplete|textCapSentences|textAutoCorrect"
+            android:singleLine="true"
+            app:backgroundTint="@color/colorAccent"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/from"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="10dp"
+        android:text="Code: "
+        android:textSize="@dimen/text_secondary"
+        android:textStyle="bold"
+        android:id="@+id/textView3"
+        android:layout_below="@+id/operator_logo"
+        android:layout_alignRight="@+id/operator_logo"
+        android:layout_alignEnd="@+id/operator_logo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Description: "
+        android:id="@+id/textView4"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_secondary"
+        android:layout_alignBottom="@+id/view"
+        android:textColor="@color/from"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignStart="@+id/textView2" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scroll_tag"
+        android:clickable="true"
+        android:layout_alignBottom="@+id/textView"
+        android:background="@color/row_activated"
+        android:paddingBottom="5dp"
+        android:scrollbars="none"
+        android:layout_marginRight="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_alignLeft="@+id/view"
+        android:paddingEnd="5dp"
+        android:paddingRight="5dp"
+        android:layout_alignStart="@+id/view">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tag_list"
+            android:textColor="@color/from"
+            android:textStyle="bold"
+            android:text="@string/no_tags_msg"
+            android:scrollbars="none"
+            android:textSize="@dimen/text_primary"
+            android:layout_marginTop="5dp"/>
+    </HorizontalScrollView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Categories:"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        android:id="@+id/textView"
+        android:layout_below="@+id/textView4"
+        android:textColor="@color/from"
+        android:textSize="@dimen/text_secondary"
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_alignStart="@+id/textView4" />
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/view2"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_toRightOf="@+id/textView4"
+        android:layout_marginRight="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_toEndOf="@+id/textView4">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/code_code"
+            android:hint="@string/code"
+            android:maxLines="1"
+            android:inputType="phone"
+            android:singleLine="true"
+            app:backgroundTint="@color/colorAccent"/>
+
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/view"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/view3"
+        android:layout_toRightOf="@+id/textView4"
+        android:layout_marginRight="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_toEndOf="@+id/textView4">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/code_description"
+            android:hint="@string/description"
+            app:backgroundTint="@color/colorAccent"
+            android:inputType="textAutoComplete|textCapSentences|textMultiLine|textAutoCorrect"
+            android:paddingEnd="5dp"
+            android:paddingRight="5dp"
+            android:singleLine="false"/>
+
+    </android.support.design.widget.TextInputLayout>
 
 </RelativeLayout>

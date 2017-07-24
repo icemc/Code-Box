@@ -39,19 +39,19 @@ public class WelcomeActivity extends AppCompatActivity implements GetCodesListen
     private Button btnSkip, btnNext;
     private AppStartStatus status;
     private ProgressDialog pDialog;
+    private SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         // Checking for first time launch - before calling setContentView()
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         switch (status = AppStart.checkAppStartStatus(this, sharedPreferences)) {
             case NORMAL:
                 String operator = sharedPreferences.getString(ApplicationConstants.LAST_OPERATOR_USED, "");
                 if(!operator.equals("")) {
                     Intent intent = new Intent(WelcomeActivity.this, HomeActivity.class);
-                    intent.putExtra(ApplicationConstants.LAST_OPERATOR_USED, operator);
                     startActivity(intent);
                 } else {
                     launchHomeScreen();
@@ -148,6 +148,9 @@ public class WelcomeActivity extends AppCompatActivity implements GetCodesListen
         if(status == AppStartStatus.FIRST_TIME) {
             new LoadDataIntoDatabase(this).execute();
         } else {
+            if(!sharedPreferences.getBoolean(ApplicationConstants.IS_DATABASE_DATA_CORRECT, false)) {
+                new LoadDataIntoDatabase(this).execute();
+            }
             startActivity(new Intent(WelcomeActivity.this, OperatorsActivity.class));
             finish();
         }
@@ -200,6 +203,7 @@ public class WelcomeActivity extends AppCompatActivity implements GetCodesListen
         if (pDialog.isShowing()) {
             pDialog.dismiss();
         }
+        sharedPreferences.edit().putBoolean(ApplicationConstants.IS_DATABASE_DATA_CORRECT, true).apply();
         startActivity(new Intent(WelcomeActivity.this, OperatorsActivity.class));
         finish();
     }

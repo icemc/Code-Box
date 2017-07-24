@@ -12,42 +12,89 @@
         android:elevation="3dp"
         card_view:cardCornerRadius="2dp">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <ImageView
-                android:id="@+id/operator_logo"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/operator_cover_height"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:clickable="true"
-                android:src="@drawable/logo_mtn"
-                android:scaleType="fitXY" />
+                android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/operator_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/operator_logo"
-                android:paddingLeft="@dimen/operator_name_padding"
-                android:paddingRight="@dimen/operator_name_padding"
-                android:paddingTop="@dimen/operator_name_padding"
-                android:textColor="@color/from"
-                 />
+                <ImageView
+                    android:id="@+id/operator_logo"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/operator_cover_height"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:scaleType="centerCrop" />
 
-            <TextView
-                android:id="@+id/operator_description"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/operator_name"
-                android:paddingBottom="@dimen/codes_count_padding_bottom"
-                android:paddingLeft="@dimen/operator_name_padding"
-                android:paddingRight="@dimen/operator_name_padding"
-                android:textSize="@dimen/codes_count" />
+                <TextView
+                    android:id="@+id/operator_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/operator_logo"
+                    android:paddingLeft="@dimen/operator_name_padding"
+                    android:paddingRight="@dimen/operator_name_padding"
+                    android:paddingTop="@dimen/operator_name_padding"
+                    android:textColor="@color/from"
+                    />
 
-        </RelativeLayout>
+                <TextView
+                    android:id="@+id/operator_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/operator_name"
+                    android:paddingBottom="@dimen/codes_count_padding_bottom"
+                    android:paddingLeft="@dimen/operator_name_padding"
+                    android:paddingRight="@dimen/operator_name_padding"
+                    android:textSize="@dimen/codes_count" />
 
+                <!--<RelativeLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentBottom="true"-->
+                    <!--android:paddingTop="10dp"-->
+                    <!--android:layout_below="@+id/operator_description"-->
+                    <!--android:layout_alignParentLeft="true"-->
+                    <!--android:layout_alignParentStart="true">-->
+                    <!--<TextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="@string/service_number"-->
+                        <!--android:id="@+id/help_line"-->
+                        <!--android:textStyle="bold"-->
+                        <!--android:textColor="@color/from"-->
+                        <!--android:textSize="@dimen/text_primary"-->
+                        <!--android:layout_alignBottom="@+id/phone"-->
+                        <!--android:layout_alignParentLeft="true"-->
+                        <!--android:paddingBottom="10dp"-->
+                        <!--android:layout_alignParentStart="true" />-->
+                    <!--<TextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:textStyle="bold"-->
+                        <!--android:textColor="@color/from"-->
+                        <!--android:textSize="@dimen/text_primary"-->
+                        <!--android:text="1234"-->
+                        <!--android:layout_alignBaseline="@+id/help_line"-->
+                        <!--android:layout_toRightOf="@+id/help_line"-->
+                        <!--android:layout_toEndOf="@+id/help_line"-->
+                        <!--android:layout_toLeftOf="@+id/phone"-->
+                        <!--android:layout_toStartOf="@id/phone"-->
+                        <!--android:paddingLeft="5dp"-->
+                        <!--android:paddingBottom="10dp"-->
+                        <!--android:id="@+id/help_line_number"/>-->
+
+                    <!--<android.support.v7.widget.AppCompatImageView-->
+                        <!--android:id="@+id/phone"-->
+                        <!--android:layout_width="@dimen/icon_phone"-->
+                        <!--android:layout_height="@dimen/icon_phone"-->
+                        <!--android:src="@drawable/ic_call_black_24dp"-->
+                        <!--android:layout_marginLeft="10dp"-->
+                        <!--android:layout_marginStart="10dp"-->
+                        <!--android:layout_marginTop="5dp"-->
+                        <!--android:paddingBottom="10dp"-->
+                        <!--android:layout_alignParentRight="true"-->
+                        <!--android:layout_alignParentEnd="true"/>-->
+                <!--</RelativeLayout>-->
+
+            </RelativeLayout>
     </android.support.v7.widget.CardView>
 
 </LinearLayout>

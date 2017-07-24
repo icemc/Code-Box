@@ -59,7 +59,8 @@ public class AboutActivity1 extends AppCompatActivity implements  View.OnClickLi
         alphaAnimation.setStartOffset(600);
 
         TextView tv_about_version = (TextView) findViewById(R.id.tv_about_version);
-        tv_about_version.setText(getVersionName());
+        String version = getVersionName() + " BETA";
+        tv_about_version.setText(version);
         tv_about_version.startAnimation(alphaAnimation);
     }
 
@@ -70,16 +71,16 @@ public class AboutActivity1 extends AppCompatActivity implements  View.OnClickLi
 
         switch (view.getId()) {
             case R.id.ll_card_about_2_shop:
-                intent.setData(Uri.parse(ApplicationConstants.APP_URL));
-                intent.setAction(Intent.ACTION_VIEW);
-                startActivity(intent);
+//                intent.setData(Uri.parse(ApplicationConstants.APP_URL));
+//                intent.setAction(Intent.ACTION_VIEW);
+//                startActivity(intent);
+                Toast.makeText(AboutActivity1.this, getString(R.string.not_yet_implemented), Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.ll_card_about_2_email:
                 intent.setAction(Intent.ACTION_SENDTO);
                 intent.setData(Uri.parse(ApplicationConstants.EMAIL));
                 intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.about_email_intent));
-                //intent.putExtra(Intent.EXTRA_TEXT, "Hi,");
                 try {
                     startActivity(intent);
                 } catch (Exception e) {

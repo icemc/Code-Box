@@ -13,10 +13,15 @@ import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.widget.Toast;
 
+import com.wordpress.icemc.gsmcodes.R;
+import com.wordpress.icemc.gsmcodes.dao.CodeDao;
+import com.wordpress.icemc.gsmcodes.model.Code;
 import com.wordpress.icemc.gsmcodes.utilities.ApplicationConstants;
 
 import java.util.HashMap;
+import java.util.List;
 
 import static com.wordpress.icemc.gsmcodes.providers.CodeProviderAPI.CodeColumns;
 import static com.wordpress.icemc.gsmcodes.providers.OperatorProviderAPI.OperatorColumns;
@@ -46,6 +51,7 @@ public class GSMCodeContentProvider extends ContentProvider {
     private static final int TAG_MAPS = 7;
     private static final int TAG_MAP_ID = 8;
     private static final int CODES_WITH_TAG = 9;
+    private static final int SEARCH = 10;
 
     private static final UriMatcher uriMatcher;
 
@@ -109,8 +115,32 @@ public class GSMCodeContentProvider extends ContentProvider {
 
     @Override
     public int delete(Uri uri, String selection, String[] selectionArgs) {
-        // Implement this to handle requests to delete one or more rows.
-        throw new UnsupportedOperationException("Not yet implemented");
+        SQLiteDatabase db = getDbHelper().getWritableDatabase();
+        String tableName = "";
+        switch ((uriMatcher.match(uri))) {
+            case OPERATORS:
+                tableName = OPERATORS_TABLE;
+                break;
+
+            case TAGS:
+                tableName = TAGS_TABLE;
+                break;
+
+            case CODES:
+                tableName = CODES_TABLE;
+                break;
+
+            case TAG_MAPS:
+                tableName = TAG_MAPS_TABLE;
+                break;
+
+            default:
+                throw  new IllegalArgumentException("Unknown URI");
+        }
+
+        int count =  db.delete(tableName, selection, selectionArgs);
+        getContext().getContentResolver().notifyChange(uri, null);
+        return count;
     }
 
     private DatabaseHelper databaseHelper;
@@ -174,8 +204,28 @@ public class GSMCodeContentProvider extends ContentProvider {
                 break;
 
             case CODES:
-                //TODO check if the code already exists
+                String selection = CodeColumns.CODE + "=? " + "AND " + CodeColumns.OPERATOR_NAME + "=?";
+                String[] selectionArgs = {values.getAsString(CodeColumns.CODE), values.getAsString(CodeColumns.OPERATOR_NAME)};
+                Cursor c = query(uri, null, selection, selectionArgs, null);
+                if(c != null &&  c.moveToNext()) {
+                    try {
 
+                        CodeDao dao = new CodeDao(getContext());
+                        c.moveToPrevious();
+                        List<Code> codes = dao.getCodesFromCursor(c);
+                        if (codes != null && codes.size() > 0) {
+                            //Code not Saved
+                            return null;
+                        }
+//                         else {
+////                            Toast t = new Toast(getContext());
+////                            t.setText(getContext().getString(R.string.error_code_not_saved));
+////                            t.setDuration(Toast.LENGTH_LONG);
+//                        }
+                    } finally {
+                        c.close();
+                    }
+                }
                 rowId = db.insert(CODES_TABLE, null, values);
                 if (rowId > 0) {
                     return ContentUris.withAppendedId(CodeColumns.CONTENT_URI, rowId);
@@ -187,7 +237,7 @@ public class GSMCodeContentProvider extends ContentProvider {
 
                 rowId = db.insert(TAG_MAPS_TABLE, null, values);
                 if (rowId > 0) {
-                    Log.d(TAG, "Iserted tag map with values: code = " + values.get(TagMapColumns.CODE_CODE) + " tag: " + values.get(TagMapColumns.TAG_NAME));
+                    Log.d(TAG, "Inserted tag map with values: code = " + values.get(TagMapColumns.CODE_CODE) + " tag: " + values.get(TagMapColumns.TAG_NAME));
                     return ContentUris.withAppendedId(TagMapColumns.CONTENT_URI, rowId);
                 }
                 break;
@@ -196,7 +246,8 @@ public class GSMCodeContentProvider extends ContentProvider {
                 throw new IllegalArgumentException("Unknown URI");
         }
 
-        throw new SQLException("Failed to insert row into " + uri);
+//        throw new SQLException("Failed to insert row into " + uri);
+        return null;
     }
 
     @Override
@@ -253,12 +304,53 @@ public class GSMCodeContentProvider extends ContentProvider {
                             + "WHERE tm." + TagMapColumns.TAG_NAME + " = " + "'" + selection + "'"
                             + " AND " + "c." + CodeColumns.CODE + " = " + "tm." + TagMapColumns.CODE_CODE
                             + " AND " + "c." + CodeColumns.OPERATOR_NAME + " = " + "'" + operatorName + "'"
-                            + " GROUP BY c." + CodeColumns.NAME;
+                            + " GROUP BY c." + CodeColumns.NAME
+                            + " ORDER BY c." + CodeColumns.NAME;
 
                     Cursor cursor = getDbHelper().getReadableDatabase().rawQuery(query, null);
                         cursor.setNotificationUri(getContext().getContentResolver(), uri);
                         return cursor;
+                case SEARCH:
+                    String searchOperatorName = PreferenceManager.getDefaultSharedPreferences(getContext()).getString(ApplicationConstants.LAST_OPERATOR_USED, "");
+                    if(searchOperatorName.equals("")) {
+                        return null;
+                    }
 
+                    if (selectionArgs.length > 0) {
+                        String tags = "'" + selectionArgs[0] + "'";
+                        for (int i = 1; i < selectionArgs.length; i++) {
+                            tags += ", " + "'" + selectionArgs[i] + "'";
+                        }
+
+                        String query2 = "SELECT c.* "
+                                + " FROM " + CODES_TABLE + " c, " + TAGS_TABLE + " t, " + TAG_MAPS_TABLE + " tm "
+                                + " WHERE  " + "c." + CodeColumns.CODE + " = " + "tm." + TagMapColumns.CODE_CODE
+                                + " AND (tm." + TagMapColumns.TAG_NAME + " IN (" + tags + "))"
+                                + " AND " + "c." + CodeColumns.OPERATOR_NAME + " = " + "'" + searchOperatorName + "'"
+                                + " UNION ";
+
+                        String query1 = "SELECT c.* "
+                                + "FROM " + CODES_TABLE + " c "
+                                + "WHERE c." + CodeColumns.OPERATOR_NAME + " = " + "'" + searchOperatorName + "'" + " AND"
+                                + " c." + CodeColumns.NAME + " LIKE " + "'%" + selection + "%'"
+                                + " ORDER BY c." + CodeColumns.NAME;
+
+                        String searchQuery = query2 + query1;
+                        Cursor searchCursor = getDbHelper().getReadableDatabase().rawQuery(searchQuery, null);
+                        searchCursor.setNotificationUri(getContext().getContentResolver(), uri);
+                        return searchCursor;
+                    } else {
+                        String query1 = "SELECT c.* "
+                                + "FROM " + CODES_TABLE + " c "
+                                + "WHERE c." + CodeColumns.OPERATOR_NAME + " = " + "'" + searchOperatorName + "'" + " AND"
+                                + " c." + CodeColumns.NAME + " LIKE " + "'%" + selection + "%'"
+                                + " GROUP BY c." + CodeColumns.NAME;
+
+                        String searchQuery = query1;
+                        Cursor searchCursor = getDbHelper().getReadableDatabase().rawQuery(searchQuery, null);
+                        searchCursor.setNotificationUri(getContext().getContentResolver(), uri);
+                        return searchCursor;
+                    }
                 default:
                     throw new IllegalArgumentException("Unknown URI");
             }
@@ -316,6 +408,7 @@ public class GSMCodeContentProvider extends ContentProvider {
         uriMatcher.addURI(ApplicationConstants.AUTHORITY, "tagmaps", TAG_MAPS);
         uriMatcher.addURI(ApplicationConstants.AUTHORITY, "tagmaps/#", TAG_MAP_ID);
         uriMatcher.addURI(ApplicationConstants.AUTHORITY, "codes_with_tag", CODES_WITH_TAG);
+        uriMatcher.addURI(ApplicationConstants.AUTHORITY, "search", SEARCH);
 
         //Initialization of the operator projection map
         operatorsProjectionMap = new HashMap<>();

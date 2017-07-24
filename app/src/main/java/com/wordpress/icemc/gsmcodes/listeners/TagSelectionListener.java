@@ -1,7 +1,7 @@
 package com.wordpress.icemc.gsmcodes.listeners;
 
-/**
- * Created by Bomen on 7/21/2017.
- */
+import java.util.List;
+
 public interface TagSelectionListener {
+    void onTagSelectionFinished(List<String> tagList);
 }

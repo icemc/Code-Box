@@ -53,6 +53,12 @@ public class CodeDao {
         return context.getContentResolver().insert(CodeColumns.CONTENT_URI, values);
     }
 
+    public int deleteCode(Code code) {
+        String selection = CodeColumns.CODE + "=? " + "AND " + CodeColumns.OPERATOR_NAME + "=?";
+        String[] selectionArgs = {code.getCode(), code.getOperator()};
+        return context.getContentResolver().delete(CodeColumns.CONTENT_URI, selection, selectionArgs);
+    }
+
     public int updateCode(Code code) {
         String selection = CodeColumns.CODE + "=? " + "AND " + CodeColumns.OPERATOR_NAME + "=?";
         String[] selectionArgs = {code.getCode(), code.getOperator()};

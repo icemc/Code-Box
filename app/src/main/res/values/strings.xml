@@ -9,7 +9,7 @@
     <string name="start">GOT IT</string>
 
     <string name="slide_1_title">Hello I am Code Box!</string>
-    <string name="slide_1_desc">The easiest way to find any USSD code from your mobile operator in Cameroon!</string>
+    <string name="slide_1_desc">The easiest way to find any USSD code for mobile operators in Cameroon!</string>
 
     <string name="slide_2_title">Looking for a code? </string>
     <string name="slide_2_desc">No need to stress up. Just use my search feature to find the code you need</string>
@@ -33,7 +33,7 @@
     <string name="about_card2_title">If you liked the app, feel free to contact me.</string>
     <string name="about_google_play">Rate on Google play</string>
     <string name="about_email">Feedback by E-mail</string>
-    <string name="about_git_hub">Source code on GitHub</string>
+    <string name="about_git_hub">File an issue or request for a feature on GitHub</string>
     <string name="about_address">Buea, Cameroon</string>
 
     <!-- String related to About -->
@@ -55,10 +55,27 @@
     <string name="action_settings">Settings</string>
     <string name="action_sort">Filter</string>
     <string name="action_create">Add code</string>
-    <string name="search_hint">Search name or tag</string>
+    <string name="search_hint">Search code name</string>
 
 
     <item name="saving" type="id">Loading</item>
     <string name="title_activity_search">SearchActivity</string>
     <string name="filter_by_tag">Select a filter option</string>
+    <string name="no_tags_msg">Click to add categories</string>
+    <string name="error_empty_name_field">Please enter a name</string>
+    <string name="error_empty_description_field">Please enter a description</string>
+    <string name="error_empty_code_field">Please enter the code</string>
+    <string name="error_invalid_code_end_char">Error parsing code. Code must end with \'#\'</string>
+    <string name="error_invalid_code_start_char">Error parsing code. Code must start either with \'*\' or \'#\'</string>
+    <string name="error_code_not_saved">Error could not save code.</string>
+    <string name="error_code_not_saved_already_present">Error could not save code. Code already exists in database:</string>
+    <string name="select_categories">Select categories related to the code</string>
+    <string name="add_code_heading">Please enter the code data</string>
+    <string name="code">Code</string>
+    <string name="description">Description</string>
+    <string name="name">Name</string>
+    <string name="code_saved">Code saved successfully</string>
+    <string name="service_number">Help line:</string>
+    <string name="code_deleted">Code deleted successfully</string>
+    <string name="not_yet_implemented">Sorry! Not yet implemented! Will be available on final release</string>
 </resources>
