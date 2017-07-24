@@ -23,7 +23,7 @@ import com.wordpress.icemc.gsmcodes.utilities.GSMCodeUtils;
 
 import java.util.ArrayList;
 
-public class CodeBottomSheetDialog extends BottomSheetDialog implements ContactPickListener{
+public class ActivateCodeBottomSheetDialog extends BottomSheetDialog implements ContactPickListener{
     private ArrayList<EditText> editTexts = new ArrayList<>();
     private final Code code;
     private Button btn_dialog_bottom_sheet_ok;
@@ -32,7 +32,7 @@ public class CodeBottomSheetDialog extends BottomSheetDialog implements ContactP
     private ContactButtonClickListener contactButtonClickListener;
 
 
-    public CodeBottomSheetDialog(Context context, Code code, ContactButtonClickListener contactButtonClickListener){
+    public ActivateCodeBottomSheetDialog(Context context, Code code, ContactButtonClickListener contactButtonClickListener){
         super(context, R.style.MaterialBottomSheet);
         this.code = code;
         this.contactButtonClickListener = contactButtonClickListener;
