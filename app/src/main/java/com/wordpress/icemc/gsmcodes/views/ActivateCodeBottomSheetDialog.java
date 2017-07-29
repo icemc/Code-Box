@@ -63,8 +63,11 @@ public class ActivateCodeBottomSheetDialog extends BottomSheetDialog implements 
                         code.getCode(), code.getInputFields()));
                 intent.setType("text/plain");
 
-                getContext().startActivity(intent);
-                v.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS);
+                try {
+                    getContext().startActivity(intent);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
         Glide.with(getContext()).load(GSMCodeUtils.getLogoFromOperatorName(code.getOperator())).into(logo);
@@ -100,7 +103,6 @@ public class ActivateCodeBottomSheetDialog extends BottomSheetDialog implements 
                         inputLayout.setHintAnimationEnabled(true);
                         final int index = editTexts.size() - 1;
                         final ImageView contactButton = (ImageView) l.findViewById(R.id.bottom_sheet_contact_button);
-                        contactButton.setImageDrawable(getContext().getResources().getDrawable(R.drawable.ic_contacts_black_24dp));
                         contactButton.getDrawable().mutate().setColorFilter(
                                 getContext().getResources().getColor(R.color.colorAccent), PorterDuff.Mode.SRC_IN);
 

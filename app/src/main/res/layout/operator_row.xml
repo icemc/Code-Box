@@ -22,7 +22,7 @@
                     android:layout_height="@dimen/operator_cover_height"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:clickable="true"
-                    android:scaleType="centerCrop" />
+                    android:scaleType="fitXY" />
 
                 <TextView
                     android:id="@+id/operator_name"

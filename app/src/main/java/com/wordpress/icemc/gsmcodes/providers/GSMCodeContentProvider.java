@@ -305,7 +305,7 @@ public class GSMCodeContentProvider extends ContentProvider {
                             + " AND " + "c." + CodeColumns.CODE + " = " + "tm." + TagMapColumns.CODE_CODE
                             + " AND " + "c." + CodeColumns.OPERATOR_NAME + " = " + "'" + operatorName + "'"
                             + " GROUP BY c." + CodeColumns.NAME
-                            + " ORDER BY c." + CodeColumns.NAME;
+                            + " ORDER BY c." + CodeColumns.NAME + " ASC";
 
                     Cursor cursor = getDbHelper().getReadableDatabase().rawQuery(query, null);
                         cursor.setNotificationUri(getContext().getContentResolver(), uri);
@@ -323,14 +323,14 @@ public class GSMCodeContentProvider extends ContentProvider {
                         }
 
                         String query2 = "SELECT c.* "
-                                + " FROM " + CODES_TABLE + " c, " + TAGS_TABLE + " t, " + TAG_MAPS_TABLE + " tm "
+                                + " FROM " + CODES_TABLE + " AS c, " + TAGS_TABLE + " AS t, " + TAG_MAPS_TABLE + " AS tm "
                                 + " WHERE  " + "c." + CodeColumns.CODE + " = " + "tm." + TagMapColumns.CODE_CODE
                                 + " AND (tm." + TagMapColumns.TAG_NAME + " IN (" + tags + "))"
                                 + " AND " + "c." + CodeColumns.OPERATOR_NAME + " = " + "'" + searchOperatorName + "'"
                                 + " UNION ";
 
                         String query1 = "SELECT c.* "
-                                + "FROM " + CODES_TABLE + " c "
+                                + "FROM " + CODES_TABLE + " AS c "
                                 + "WHERE c." + CodeColumns.OPERATOR_NAME + " = " + "'" + searchOperatorName + "'" + " AND"
                                 + " c." + CodeColumns.NAME + " LIKE " + "'%" + selection + "%'"
                                 + " ORDER BY c." + CodeColumns.NAME;

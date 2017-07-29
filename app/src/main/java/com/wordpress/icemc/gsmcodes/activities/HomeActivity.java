@@ -242,7 +242,7 @@ public class HomeActivity extends AppCompatActivity
         final MenuItem create = menu.findItem(R.id.action_create);
         final MenuItem sort = menu.findItem(R.id.action_sort);
         SearchView searchView =
-                (SearchView) search.getActionView();
+                (SearchView) MenuItemCompat.getActionView(search);
         searchView.setSearchableInfo(
                 searchManager.getSearchableInfo(getComponentName()));
         MenuItemCompat.setOnActionExpandListener(search, new MenuItemCompat.OnActionExpandListener() {

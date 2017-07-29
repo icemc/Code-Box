@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:id="@+id/code_card"
     android:layout_width="match_parent"
@@ -78,8 +79,7 @@
                 <ImageView
                     android:layout_width="@dimen/icon_width_height"
                     android:layout_height="@dimen/icon_width_height"
-                    android:layout_centerInParent="true"
-                    android:src="@drawable/ic_favorite_black_24dp" />
+                    app:srcCompat="@drawable/ic_favorite_black_24dp" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -99,7 +99,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-
                     android:textColor="@android:color/white"
                     android:textSize="@dimen/icon_text" />
             </RelativeLayout>
@@ -110,7 +109,7 @@
             android:id="@+id/icon_phone"
             android:layout_width="@dimen/icon_phone"
             android:layout_height="@dimen/icon_phone"
-            android:src="@drawable/ic_call_black_24dp"
+            app:srcCompat="@drawable/ic_call_black_24dp"
             android:layout_marginLeft="10dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
