@@ -26,6 +26,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.wordpress.icemc.gsmcodes.R;
+import com.wordpress.icemc.gsmcodes.dao.CodeDao;
+import com.wordpress.icemc.gsmcodes.dao.OperatorsDao;
+import com.wordpress.icemc.gsmcodes.dao.TagMapDao;
+import com.wordpress.icemc.gsmcodes.dao.TagsDao;
 import com.wordpress.icemc.gsmcodes.listeners.GetCodesListener;
 import com.wordpress.icemc.gsmcodes.utilities.AppStart;
 import com.wordpress.icemc.gsmcodes.utilities.AppStartStatus;
@@ -71,6 +75,10 @@ public class WelcomeActivity extends AppCompatActivity implements GetCodesListen
                 break;
             case FIRST_TIME_VERSION:
                 //Add any version specific stuff here
+                new CodeDao(this).deleteCodes();
+                new OperatorsDao(this).deleteOperators();
+                new TagsDao(this).deleteTags();
+                new TagMapDao(this).deleteTagMaps();
                 break;
             case FIRST_TIME:
                 break;
@@ -227,7 +235,7 @@ public class WelcomeActivity extends AppCompatActivity implements GetCodesListen
     }
 
     private void loadDataIntoDatabase() {
-        if(status == AppStartStatus.FIRST_TIME) {
+        if(status == AppStartStatus.FIRST_TIME || status == AppStartStatus.FIRST_TIME_VERSION) {
             new LoadDataIntoDatabase(this).execute();
         } else {
             if(!sharedPreferences.getBoolean(ApplicationConstants.IS_DATABASE_DATA_CORRECT, false)) {
