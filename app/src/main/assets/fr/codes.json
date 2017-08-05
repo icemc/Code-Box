@@ -1,0 +1,1414 @@
+{
+    "Codes": [
+        {
+            "Name": "Call me back",
+            "Operator": "MTN Cameroon",
+            "Code": "*166*@#",
+            "Description": "Envoyez un message de rappel (Call me back) à un numéro MTN Cameroun",
+            "Tags": ["Call me back"],
+            "InputFields": [{
+                "Title": "Numéro de téléphone",
+                "InputType": "Phone number"
+            }]
+        },
+        {
+            "Name": "ME2U (transfer de credit)",
+            "Operator": "MTN Cameroon",
+            "Code": "*150*@*@*@#",
+            "Description": "Vous allez fais un transfer de credit de votre compte principal à un autre numéro MTN Cameroun",
+            "Tags": ["Recharge"],
+            "InputFields": [{
+                "Title": "Montant",
+                "InputType": "Default"},
+                {
+                    "Title": "Numéro de téléphone",
+                    "InputType": "Phone number"
+                },
+                {
+                    "Title": "code ME2U",
+                    "InputType": "Pass code"
+                }
+            ]
+        },
+        {
+            "Name": "Solde principal",
+            "Operator": "MTN Cameroon",
+            "Code": "*155#",
+            "Description": "Afficher le solde de votre compte principal et, aussi votre solde Mtn 4 me",
+            "Tags": ["Solde", "MTN 4 Me"],
+            "InputFields": []
+        },
+        {
+            "Name": "Mon Numero",
+            "Operator": "MTN Cameroon",
+            "Code": "*135*8#",
+            "Description": "Affichez votre numéro de téléphone et votre plan tarifaire actuel.",
+            "Tags": ["Numéro de téléphone"],
+            "InputFields": []
+        },
+        {
+            "Name": "MTN services",
+            "Operator": "MTN Cameroon",
+            "Code": "*123#",
+            "Description": "Affichez tous les services MTN Cameroon.",
+            "Tags": [],
+            "InputFields": []
+        },
+        {
+            "Name": "MTN mobile money",
+            "Operator": "MTN Cameroon",
+            "Code": "*126*1#",
+            "Description": "Afficher le menu principal de MTN mobile.",
+            "Tags": ["MTN Mobile Money"],
+            "InputFields": []
+        },
+        {
+            "Name": "MTN Prolongation(Emprunter du crédit)",
+            "Operator": "MTN Cameroon",
+            "Code": "*121#",
+            "Description": "Emprunter du crédit.",
+            "Tags": ["Recharge"],
+            "InputFields": []
+        },
+        {
+            "Name": "Solde MTN Prolongation",
+            "Operator": "MTN Cameroon",
+            "Code": "*159*86#",
+            "Description": "Solde MTN prolongation.",
+            "Tags": ["Solde"],
+            "InputFields": []
+        },
+        {
+            "Name": "Ajouter un numéro favori",
+            "Operator": "MTN Cameroon",
+            "Code": "*165*1*@#",
+            "Description": "Ajouter un numéro favori.",
+            "Tags": [],
+            "InputFields": [
+                {
+                    "Title": "Numéro de téléphone",
+                    "InputType": "Phone number"
+                }
+            ]
+        },
+        {
+            "Name": "Supprimer un nombre préféré",
+            "Operator": "MTN Cameroon",
+            "Code": "*165*2*@#",
+            "Description": "Supprimer un nombre préféré.",
+            "Tags": [],
+            "InputFields": [
+                {
+                    "Title": "Numéro de téléphone",
+                    "InputType": "Phone number"
+                }
+            ]
+        },
+        {
+            "Name": "Activer MTN Easy Booster",
+            "Operator": "MTN Cameroon",
+            "Code": "*167*1#",
+            "Description": "Activer MTN Easy Booster",
+            "Tags": ["MTN Easy Booster"],
+            "InputFields": []
+        },
+        {
+            "Name": "Désactiver MTN Easy Booster",
+            "Operator": "MTN Cameroon",
+            "Code": "*167*0#",
+            "Description": "Désactiver MTN Easy Booster",
+            "Tags": ["MTN Easy Booster"],
+            "InputFields": []
+        },
+        {
+            "Name": "Solde MTN Easy Booster",
+            "Operator": "MTN Cameroon",
+            "Code": "*159*80#",
+            "Description": "Afficher le solde MTN Easy Booster",
+            "Tags": ["MTN Easy Booster","Solde"],
+            "InputFields": []
+        },
+        {
+            "Name": "Forfait SMS jour(Unlimited text on the Go)",
+            "Operator": "MTN Cameroon",
+            "Code": "*148*5#",
+            "Description": "Abonnez-vous à MTN unlimited text on the Go. Vous serez facturé 20 Frs / jour",
+            "Tags": ["SMS"],
+            "InputFields": []
+        },
+        {
+            "Name": "Forfait SMS mois",
+            "Operator": "MTN Cameroon",
+            "Code": "*148*1#",
+            "Description": "Abonnez-vous au forfait SMS mois. Vous serez facturé 500 Frs",
+            "Tags": ["SMS"],
+            "InputFields": []
+        },
+        {
+            "Name": "Solde forfait SMS",
+            "Operator": "MTN Cameroon",
+            "Code": "*148*9#",
+            "Description": "Solde forfait SMS",
+            "Tags": ["SMS","Solde"],
+            "InputFields": []
+        },
+        {
+            "Name": "MTN 4 Me",
+            "Operator": "MTN Cameroon",
+            "Code": "*123*11#",
+            "Description": "Souscrire a un forfait MTN 4 Me",
+            "Tags": ["MTN 4 Me", "Appels", "SMS", "Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "MTN Go plans",
+            "Operator": "MTN Cameroon",
+            "Code": "*123*12#",
+            "Description": "Souscrire a un forfait MTN Go plans",
+            "Tags": ["MTN Go Plans","Plan tarifaire"],
+            "InputFields": []
+        },
+        {
+            "Name": "Solde MTN Go plans",
+            "Operator": "MTN Cameroon",
+            "Code": "*167*9#",
+            "Description": "Verifier votre solde MTN Go plans",
+            "Tags": ["Solde","MTN Go Plans"],
+            "InputFields": []
+        },
+        {
+            "Name": "Bonus MTN Mobile Money(Achat de credit)",
+            "Operator": "MTN Cameroon",
+            "Code": "*159*123#",
+            "Description": "Verifier votre bonus MTN Mobile Money",
+            "Tags": ["MTN Mobile Money"],
+            "InputFields": []
+        },
+        {
+            "Name": "Bonus MTN Mobile Money (facture)",
+            "Operator": "MTN Cameroon",
+            "Code": "*159*27#",
+            "Description": "Bonus MTN Mobile Money (facture)",
+            "Tags": ["MTN Mobile Money", "Solde"],
+            "InputFields": []
+        },
+        {
+            "Name": "MTN Mobile Money bonus (dépôt)",
+            "Operator": "MTN Cameroon",
+            "Code": "*159*91#",
+            "Description": "MTN Mobile Money bonus (dépôt)",
+            "Tags": ["MTN Mobile Money", "Solde"],
+            "InputFields": []
+        },
+        {
+            "Name": "Bonus Appels",
+            "Operator": "MTN Cameroon",
+            "Code": "*159*2#",
+            "Description": "Verifier votre bonus d'appel",
+            "Tags": ["Solde"],
+            "InputFields": []
+        },
+        {
+            "Name": "MTN Play",
+            "Operator": "MTN Cameroon",
+            "Code": "*128#",
+            "Description": "service MTN play",
+            "Tags": [],
+            "InputFields": []
+        },
+        {
+            "Name": "Souscrire a un forfait internet",
+            "Operator": "MTN Cameroon",
+            "Code": "*157#",
+            "Description": "Souscrire a un forfait internet",
+            "Tags": ["Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Solde Internet",
+            "Operator": "MTN Cameroon",
+            "Code": "*157*99#",
+            "Description": "Verifier votre solde internet.",
+            "Tags": ["Internet", "Solde"],
+            "InputFields": []
+        },
+        {
+            "Name": "Mobile Surf jour 100",
+            "Operator": "MTN Cameroon",
+            "Code": "*157*1*1#",
+            "Description": "Souscrire au forfait internet jour 100. 100Frs = 75Mo (valide pour 24H)",
+            "Tags": ["Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Mobile Surf Jour 250",
+            "Operator": "MTN Cameroon",
+            "Code": "*157*1*2#",
+            "Description": "Souscrire au forfait internet jour 250. 250Frs = 200Mo (valide pour 24H)",
+            "Tags": ["Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Mobile Surf Jour 500",
+            "Operator": "MTN Cameroon",
+            "Code": "*157*1*3#",
+            "Description": "Souscrire au forfait internet Jour. 500Frs = 450Mo (valide pour 24H)",
+            "Tags": ["Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Mobile Surf Week 1000",
+            "Operator": "MTN Cameroon",
+            "Code": "*157*2*1#",
+            "Description": "Souscrire au forfait internet semain. 1000Frs = 500Mo (valide pour 7 Jours)",
+            "Tags": ["Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Mobile Surf Week 3000",
+            "Operator": "MTN Cameroon",
+            "Code": "*157*2*2#",
+            "Description": "Souscrire au forfait internet semain. 3000Frs = 2.5Go (valide pour 7 Jours)",
+            "Tags": ["Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Mobile Surf Month 2000",
+            "Operator": "MTN Cameroon",
+            "Code": "*157*3*1#",
+            "Description": "Souscrire au forfait internet mois. 2000Frs = 600Mo (valide pour 30 Jours)",
+            "Tags": ["Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Mobile Streaming 40000",
+            "Operator": "MTN Cameroon",
+            "Code": "*157*4*1#",
+            "Description": "Souscrire au forfait streaming. 40000Frs = 75Go (valide pour 30 Jours)",
+            "Tags": ["Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Mobile Surf Night 500",
+            "Operator": "MTN Cameroon",
+            "Code": "*157*5*1#",
+            "Description": "Souscrire au forfait internet Surf Night. 500Frs = 1Go (valide de 00H a 06H)",
+            "Tags": ["Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Mobile Surf 50",
+            "Operator": "MTN Cameroon",
+            "Code": "*157*6*1#",
+            "Description": "Souscrire au forfait internet 50. 50Frs = 50Mo (valide pour 02H)",
+            "Tags": ["Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Mobile Surf Jour 100 Gift",
+            "Operator": "MTN Cameroon",
+            "Code": "*157*7*1*1*@#",
+            "Description": "Donner un forfait internet a un numero MTN Cameroon. 100Frs = 75Mo (valide pour 24H)",
+            "Tags": ["Internet", "Cadeau"],
+            "InputFields": [{
+                "Title": "Numéro de téléphone",
+                "InputType": "Phone number"
+            }]
+        },
+        {
+            "Name": "Mobile Surf Jour 250 Gift",
+            "Operator": "MTN Cameroon",
+            "Code": "*157*7*1*2*@#",
+            "Description": "Donner un forfait internet a un numero MTN Cameroon. 250Frs = 200Mo (valide pour 24H)",
+            "Tags": ["Internet", "Cadeau"],
+            "InputFields": [{
+                "Title": "Numéro de téléphone",
+                "InputType": "Phone number"
+            }]
+        },
+        {
+            "Name": "Mobile Surf Jour 500 Gift",
+            "Operator": "MTN Cameroon",
+            "Code": "*157*7*1*3*@#",
+            "Description": "Donner un forfait internet a un numero MTN Cameroon. 500Frs = 450Mo (valide pour 24H)",
+            "Tags": ["Internet", "Cadeau"],
+            "InputFields": [{
+                "Title": "Numéro de téléphone",
+                "InputType": "Phone number"
+            }]
+        },
+        {
+            "Name": "Mobile Surf Week 1000 Gift",
+            "Operator": "MTN Cameroon",
+            "Code": "*157*7*2*1*@#",
+            "Description": "Donner un forfait internet a un numero MTN Cameroon. 1000Frs = 500Mo (valide pour 7 Jours)",
+            "Tags": ["Internet", "Cadeau"],
+            "InputFields": [{
+                "Title": "Numéro de téléphone",
+                "InputType": "Phone number"
+            }]
+        },
+        {
+            "Name": "Mobile Surf Week 3000 Gift",
+            "Operator": "MTN Cameroon",
+            "Code": "*157*7*2*2*@#",
+            "Description": "Donner un forfait internet a un numero MTN Cameroon. 3000Frs = 2.5Go (valide pour 7 Jours)",
+            "Tags": ["Internet", "Cadeau"],
+            "InputFields": [{
+                "Title": "Numéro de téléphone",
+                "InputType": "Phone number"
+            }]
+        },
+        {
+            "Name": "Mobile Surf Month 2000 Gift",
+            "Operator": "MTN Cameroon",
+            "Code": "*157*7*3*1*@#",
+            "Description": "Donner un forfait internet a un numero MTN Cameroon. 2000Frs = 600Mo (valide pour 30 Jours)",
+            "Tags": ["Internet", "Cadeau"],
+            "InputFields": [{
+                "Title": "Numéro de téléphone",
+                "InputType": "Phone number"
+            }]
+        },
+        {
+            "Name": "Mobile Streaming 40000 Gift",
+            "Operator": "MTN Cameroon",
+            "Code": "*157*7*4*1*@#",
+            "Description": "Donner un forfait internet a un numero MTN Cameroon. 40000Frs = 75Go (valide pour 30 Jours)",
+            "Tags": ["Internet", "Cadeau"],
+            "InputFields": [{
+                "Title": "Numéro de téléphone",
+                "InputType": "Phone number"
+            }]
+        },
+        {
+            "Name": "Mobile Surf Night 500 Gift",
+            "Operator": "MTN Cameroon",
+            "Code": "*157*7*5*1*@#",
+            "Description": "Donner un forfait internet a un numero MTN Cameroon. 500Frs = 1Go (valide de 00H a 06H)",
+            "Tags": ["Internet", "Cadeau"],
+            "InputFields": [{
+                "Title": "Numéro de téléphone",
+                "InputType": "Phone number"
+            }]
+        },
+        {
+            "Name": "Mobile Surf 50 Gift",
+            "Operator": "MTN Cameroon",
+            "Code": "*157*7*6*1*@#",
+            "Description": "Donner un forfait internet a un numero MTN Cameroon. 50Frs = 50Mo (valide pour 02H)",
+            "Tags": ["Internet", "Cadeau"],
+            "InputFields": [{
+                "Title": "Numéro de téléphone",
+                "InputType": "Phone number"
+            }]
+        },
+        {
+            "Name": "WhatsApp Jour",
+            "Operator": "MTN Cameroon",
+            "Code": "*701*1#",
+            "Description": "Souscrire au forfait MTN WhatsApp jour. 200Frs (valide pour 1 Jour)",
+            "Tags": ["WhatsApp"],
+            "InputFields": []
+        },
+        {
+            "Name": "WhatsApp Week",
+            "Operator": "MTN Cameroon",
+            "Code": "*701*2#",
+            "Description": "Souscrire au forfait MTN WhatsApp semaine. 500Frs (valide pour 7 Jours)",
+            "Tags": ["WhatsApp"],
+            "InputFields": []
+        },
+        {
+            "Name": "WhatsApp On The Go",
+            "Operator": "MTN Cameroon",
+            "Code": "*701*6#",
+            "Description": "Souscrire au forfait MTN WhatsApp On The Go. 20Frs/Jour",
+            "Tags": ["WhatsApp"],
+            "InputFields": []
+        },
+        {
+            "Name": "WhatsApp Month",
+            "Operator": "MTN Cameroon",
+            "Code": "*701*3#",
+            "Description": "Souscrire au forfait MTN WhatsApp mois. This will cost you 1500Frs(valide for 30 Jours)",
+            "Tags": ["WhatsApp"],
+            "InputFields": []
+        },
+        {
+            "Name": "Solde WhatsApp",
+            "Operator": "MTN Cameroon",
+            "Code": "*701*4#",
+            "Description": "Verifier le solde de votre compte WhatsApp",
+            "Tags": ["WhatsApp", "Solde"],
+            "InputFields": []
+        },
+
+
+        {
+            "Name": "Orange services",
+            "Operator": "Orange Cameroon",
+            "Code": "#111#",
+            "Description": "Afficher les services Orange Cameroon",
+            "Tags": [],
+            "InputFields": []
+        },
+        {
+            "Name": "Mon numero",
+            "Operator": "Orange Cameroon",
+            "Code": "#99#",
+            "Description": "Afficher votre numero Orange Cameroon",
+            "Tags": ["Numéro de téléphone"],
+            "InputFields": [{
+                "Title": "Numéro de téléphone",
+                "InputType": "Phone number"
+            }]
+        },
+        {
+            "Name": "Solde principal",
+            "Operator": "Orange Cameroon",
+            "Code": "#123#",
+            "Description": "Afficher le solde de votre compte principal et autre sous compte(selectionez 0)",
+            "Tags": ["Solde", "Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Call me back",
+            "Operator": "Orange Cameroon",
+            "Code": "#146*@#",
+            "Description": "Envoyer un call me back a un numero Orange Cameroon",
+            "Tags": [
+                "Call me back"
+            ],
+            "InputFields": [{
+                "Title": "Numéro de téléphone",
+                "InputType": "Phone number"
+            }]
+        },
+        {
+            "Name": "Transfer de credit",
+            "Operator": "Orange Cameroon",
+            "Code": "*144*@*@*@#",
+            "Description": "Transferer du credit de votre compte principal a un numero Orange Cameroon",
+            "Tags": ["Recharge"],
+            "InputFields": [
+                {
+                    "Title": "Phone number",
+                    "InputType": "Phone number"
+                },
+                {
+                    "Title": "Montant",
+                    "InputType": "Default"},
+
+                {
+                    "Title": "ME2U code",
+                    "InputType": "Pass code"
+                }
+            ]
+        },
+        {
+            "Name": "Forfaits Orange(appels et autre)",
+            "Operator": "Orange Cameroon",
+            "Code": "#131#",
+            "Description": "Afficher les forfaits Orange (Appels et autre)",
+            "Tags": ["Appels", "SMS"],
+            "InputFields": []
+        },
+        {
+            "Name": "Forfait SMS",
+            "Operator": "Orange Cameroon",
+            "Code": "#131*1#",
+            "Description": "Souscrire a un forfait SMS",
+            "Tags": ["SMS"],
+            "InputFields": []
+        },
+        {
+            "Name": "Orange Bonus(Multipliez votre credit)",
+            "Operator": "Orange Cameroon",
+            "Code": "#131*2#",
+            "Description": "Souscrire au forfait Orange bonus",
+            "Tags": ["Appels"],
+            "InputFields": []
+        },
+        {
+            "Name": "Orange Bonus Plus",
+            "Operator": "Orange Cameroon",
+            "Code": "#131*7#",
+            "Description": "Souscrire au forfait Orange bonus Plus",
+            "Tags": ["Appels"],
+            "InputFields": []
+        },
+        {
+            "Name": "Take Ya Own(Offrir un forfait)",
+            "Operator": "Orange Cameroon",
+            "Code": "#131*5#",
+            "Description": "Take Ya Own(Offrir un forfait) a un numero Orange Cameroon",
+            "Tags": [],
+            "InputFields": []
+        },
+        {
+            "Name": "Souscrire a un forfait internet",
+            "Operator": "Orange Cameroon",
+            "Code": "#145*2#",
+            "Description": "Souscrire a un forfait internet",
+            "Tags": ["Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Solde forfait internet",
+            "Operator": "Orange Cameroon",
+            "Code": "#145*1#",
+            "Description": "Afficher le solde de votre forfait internet",
+            "Tags": ["Internet", "Solde"],
+            "InputFields": []
+        },
+        {
+            "Name": "SOS Credit (Emprunter du credit)",
+            "Operator": "Orange Cameroon",
+            "Code": "#133#",
+            "Description": "SOS Credit (Emprunter du credit)",
+            "Tags": ["Recharge"],
+            "InputFields": []
+        },
+        {
+            "Name": "SOS Data(Emprunter du credit internet)",
+            "Operator": "Orange Cameroon",
+            "Code": "#145*3#",
+            "Description": "SOS Data(Emprunter du credit internet)",
+            "Tags": ["Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Recharge carte de credit",
+            "Operator": "Orange Cameroon",
+            "Code": "#188*@#",
+            "Description": "Recharger avec une carte de credit",
+            "Tags": ["Recharge"],
+            "InputFields": [{
+                "Title": "Numero de carte",
+                "InputType": "Pass code"
+            }]
+        },
+        {
+            "Name": "Orange Money",
+            "Operator": "Orange Cameroon",
+            "Code": "#150#",
+            "Description": "Services Orange Money",
+            "Tags": ["Orange Money"],
+            "InputFields": []
+        },
+        {
+            "Name": "Orange loyalty",
+            "Operator": "Orange Cameroon",
+            "Code": "#140#",
+            "Description": "Orange loyalty program",
+            "Tags": ["Appels", "Internet", "SMS"],
+            "InputFields": []
+        },
+        {
+            "Name": "Weekend surprise",
+            "Operator": "Orange Cameroon",
+            "Code": "#195#",
+            "Description": "Orange weekend surprise",
+            "Tags": [],
+            "InputFields": []
+        },
+        {
+            "Name": "Orange Multimedia",
+            "Operator": "Orange Cameroon",
+            "Code": "#119#",
+            "Description": "Afficher les service du portail Orange Multimedia",
+            "Tags": [],
+            "InputFields": []
+        },
+        {
+            "Name": "Forfait Giga Data",
+            "Operator": "Orange Cameroon",
+            "Code": "#145*2*4#",
+            "Description": "Afficher les forfaits Giga data",
+            "Tags": ["Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Plenty Classic",
+            "Operator": "Orange Cameroon",
+            "Code": "#141*1#",
+            "Description": "Subscrire au plan Orange plenty",
+            "Tags": ["Plan tarifaire"],
+            "InputFields": []
+        },
+        {
+            "Name": "Plenty FUN",
+            "Operator": "Orange Cameroon",
+            "Code": "#141*2#",
+            "Description": "Subscrire au plan Orange Fun",
+            "Tags": ["Plan tarifaire"],
+            "InputFields": []
+        },
+        {
+            "Name": "Plenty Smart",
+            "Operator": "Orange Cameroon",
+            "Code": "#141*3#",
+            "Description": "Subscrire au plan Orange Smart",
+            "Tags": ["Plan tarifaire"],
+            "InputFields": []
+        },
+        {
+            "Name": "Plenty Relax",
+            "Operator": "Orange Cameroon",
+            "Code": "#141*4#",
+            "Description": "Subscrire au plan Orange Relax",
+            "Tags": ["Plan tarifaire"],
+            "InputFields": []
+        },
+        {
+            "Name": "Family Talk",
+            "Operator": "Orange Cameroon",
+            "Code": "#145*5#",
+            "Description": "Subscrire au forfait Family Talk",
+            "Tags": ["Appels"],
+            "InputFields": []
+        },
+        {
+            "Name": "Flexi",
+            "Operator": "Orange Cameroon",
+            "Code": "#131*6#",
+            "Description": "Subscrire au forfait Flexi (appels/internet)",
+            "Tags": ["Appels", "Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Forfait internet 1 Jour 1000",
+            "Operator": "Orange Cameroon",
+            "Code": "#145*2*3*1*1#",
+            "Description": "Souscrire au forfait internet 1 Jour 1000. 1000Frs = 1Go (valide pour 24H)",
+            "Tags": ["Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Forfait internet 1 Jour 500",
+            "Operator": "Orange Cameroon",
+            "Code": "#145*2*3*2*1#",
+            "Description": "Souscrire au forfait internet 1 Jour 500. 500Frs = 300Mo (valide pour 24H)",
+            "Tags": ["Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Forfait internet 1 Jour 250",
+            "Operator": "Orange Cameroon",
+            "Code": "#145*2*3*3*1#",
+            "Description": "Souscrire au forfait internet 1 Jour 250. 250Frs = 125Mo (valide pour 24H)",
+            "Tags": ["Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Forfait internet 1 Jour 100",
+            "Operator": "Orange Cameroon",
+            "Code": "#145*2*3*4*1#",
+            "Description": "Subscrire au forfait internet 1 Jour 100. 100Frs = 50Mo (valide pour 24H)",
+            "Tags": ["Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Forfait internet 3 Jours 500",
+            "Operator": "Orange Cameroon",
+            "Code": "#145*2*2*1*1#",
+            "Description": "Subscrire au Forfait internet 3 Jours 500. 500Frs = 250Mo (valide pour 3 Jours)",
+            "Tags": ["Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Forfait internet 3 Jours 300",
+            "Operator": "Orange Cameroon",
+            "Code": "#145*2*2*2*1#",
+            "Description": "Subscrire Forfait internet 3 Jours 300au f 300Frs = 175Mo (valide pour 3 Jours)",
+            "Tags": ["Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Forfait internet Mois 10,000",
+            "Operator": "Orange Cameroon",
+            "Code": "#145*2*1*1*1#",
+            "Description": "Subscrire au forfait internet Mois 10,000. 10,000Frs = 30GB (valide pour 30 Jours)",
+            "Tags": ["Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Forfait internet Mois 8,000",
+            "Operator": "Orange Cameroon",
+            "Code": "#145*2*1*2*1#",
+            "Description": "Subscrire au forfait internet Mois 8,000. 8,000Frs = 4.6GB (valide pour 30 Jours)",
+            "Tags": ["Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Forfait internet Mois 4,000",
+            "Operator": "Orange Cameroon",
+            "Code": "#145*2*1*3*1#",
+            "Description": "Subscrire au forfait internet Mois 4,000. 4,000Frs = 1.5GB (valide por 30 Jours)",
+            "Tags": ["Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Forfait internet Mois 2,000",
+            "Operator": "Orange Cameroon",
+            "Code": "#145*2*1*4*1#",
+            "Description": "Forfait internet Mois 2,000. 2,000Frs = 600MB (valide pour 30 Jours)",
+            "Tags": ["Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "GigaData Mois 5Go/Jour",
+            "Operator": "Orange Cameroon",
+            "Code": "#145*2*4*1*1*1#",
+            "Description": "Subscrire au forfait GigaData Mois 5Go/Jour. 63000Frs = 5Go/Jour (valide pour 30 Jours)",
+            "Tags": ["Internet", "GigaData"],
+            "InputFields": []
+        },
+        {
+            "Name": "GigaData Mois 4Go/Jour",
+            "Operator": "Orange Cameroon",
+            "Code": "#145*2*4*1*2*1#",
+            "Description": "Subscribe au forfait GigaData Mois 4Go/Jour. 50400Frs = 4Go/Jour (valide pour 30 Jours)",
+            "Tags": ["Internet", "GigaData"],
+            "InputFields": []
+        },
+        {
+            "Name": "GigaData Mois 3Go/Jour",
+            "Operator": "Orange Cameroon",
+            "Code": "#145*2*4*1*3*1#",
+            "Description": "Subscrire au forfait GigaData Mois 3Go/Jour. 34450Frs = 3Go/Jour (valide pour 30 Jours)",
+            "Tags": ["Internet", "GigaData"],
+            "InputFields": []
+        },
+        {
+            "Name": "GigaData Mois 2Go/Jour",
+            "Operator": "Orange Cameroon",
+            "Code": "#145*2*4*1*4*1#",
+            "Description": "Subscrire au forfait GigaData Mois 2Go/Jour. 21500Frs = 2Go/Jour (valide pour 30 Jours)",
+            "Tags": ["Internet", "GigaData"],
+            "InputFields": []
+        },
+        {
+            "Name": "GigaData Mois 1Go/Jour",
+            "Operator": "Orange Cameroon",
+            "Code": "#145*2*4*1*5*1#",
+            "Description": "Subscrire au forfait GigaData Mois 1Go/Jour. 10000Frs = 1Go/Jour (valide for 30 Jours)",
+            "Tags": ["Internet", "GigaData"],
+            "InputFields": []
+        },
+        {
+            "Name": "GigaData 15 Jours 5Go/Jour",
+            "Operator": "Orange Cameroon",
+            "Code": "#145*2*4*2*1*1#",
+            "Description": "Subscrire au forfait GigaData 15 Jours 5Go/Jour. 32250Frs = 5Go/Jour (valide pour 15 Jours)",
+            "Tags": ["Internet", "GigaData"],
+            "InputFields": []
+        },
+        {
+            "Name": "GigaData 15 Jours 4Go/Jour",
+            "Operator": "Orange Cameroon",
+            "Code": "#145*2*4*2*2*1#",
+            "Description": "Subscrire au forfait GigaData 15 Jours 4Go/Jour. 25800Frs = 4Go/Jour (valide for 15 Jours)",
+            "Tags": ["Internet", "GigaData"],
+            "InputFields": []
+        },
+        {
+            "Name": "GigaData 15 Jours 3Go/Jour",
+            "Operator": "Orange Cameroon",
+            "Code": "#145*2*4*2*3*1#",
+            "Description": "Subscrire au forfait GigaData 15 Jours 3Go/Jour. 18000Frs = 3Go/Jour (valide pour 15 Jours)",
+            "Tags": ["Internet", "GigaData"],
+            "InputFields": []
+        },
+        {
+            "Name": "GigaData 15 Jours 2Go/Jour",
+            "Operator": "Orange Cameroon",
+            "Code": "#145*2*4*2*4*1#",
+            "Description": "Subscrire au forfaitGigaData 15 Jours 2Go/Jour. 11250Frs = 2Go/Jour (valide for 15 Jours)",
+            "Tags": ["Internet", "GigaData"],
+            "InputFields": []
+        },
+        {
+            "Name": "GigaData 15 Jours 1Go/Jour",
+            "Operator": "Orange Cameroon",
+            "Code": "#145*2*4*2*5*1#",
+            "Description": "Subscrire au forfait GigaData 15 Jours 1Go/Jour. 5250Frs = 1Go/Jour (valide for 15 Jours)",
+            "Tags": ["Internet", "GigaData"],
+            "InputFields": []
+        },
+        {
+            "Name": "GigaData 7 Jours 5Go/Jour",
+            "Operator": "Orange Cameroon",
+            "Code": "#145*2*4*3*1*1#",
+            "Description": "Subscrire au forfait GigaData 7 Jours 5Go/Jour. 15400Frs = 5Go/Jour (valide pour 7 Jours)",
+            "Tags": ["Internet", "GigaData"],
+            "InputFields": []
+        },
+        {
+            "Name": "GigaData 7 Jours 4Go/Jour",
+            "Operator": "Orange Cameroon",
+            "Code": "#145*2*4*3*2*1#",
+            "Description": "Subscrire au forfait GigaData 7 Jours 4Go/Jour. 12300Frs = 4Go/Jour (valide pour 7 Jours)",
+            "Tags": ["Internet", "GigaData"],
+            "InputFields": []
+        },
+        {
+            "Name": "GigaData 7 Jours 3Go/Jour",
+            "Operator": "Orange Cameroon",
+            "Code": "#145*2*4*3*3*1#",
+            "Description": "Subscrire au forfait GigaData 7 Jours 3Go/Jour. 8950Frs = 3Go/Jour (valide pour 7 Jours)",
+            "Tags": ["Internet", "GigaData"],
+            "InputFields": []
+        },
+        {
+            "Name": "GigaData 7 Jours 2Go/Jour",
+            "Operator": "Orange Cameroon",
+            "Code": "#145*2*4*3*4*1#",
+            "Description": "Subscrire au forfait GigaData 7 Jours 2Go/Jour bundle 5600Frs = 2Go/Jour (valide pour 7 Jours)",
+            "Tags": ["Internet", "GigaData"],
+            "InputFields": []
+        },
+        {
+            "Name": "GigaData 7 Jours 1Go/Jour",
+            "Operator": "Orange Cameroon",
+            "Code": "#145*2*4*3*5*1#",
+            "Description": "Subscrire au forfait GigaData 7 Jours 1Go/Jour. 2650Frs = 1Go/Jour (valide pour 7 Jours)",
+            "Tags": ["Internet", "GigaData"],
+            "InputFields": []
+        },
+        {
+            "Name": "GigaData 3 Jours 5Go/Jour",
+            "Operator": "Orange Cameroon",
+            "Code": "#145*2*4*4*1*1#",
+            "Description": "Subscrire au forfait GigaData 3 Jours 5Go/Jour. 6750Frs = 5Go/Jour (valide pour 3 Jours)",
+            "Tags": ["Internet", "GigaData"],
+            "InputFields": []
+        },
+        {
+            "Name": "GigaData 3 Jours 4Go/Jour",
+            "Operator": "Orange Cameroon",
+            "Code": "#145*2*4*4*2*1#",
+            "Description": "Subscrire au forfait GigaData 3 Jours 4Go/Jour. 5400Frs = 4Go/Jour (valide pour 3 Jours)",
+            "Tags": ["Internet", "GigaData"],
+            "InputFields": []
+        },
+        {
+            "Name": "GigaData 3 Jours 3Go/Jour",
+            "Operator": "Orange Cameroon",
+            "Code": "#145*2*4*4*3*1#",
+            "Description": "Subscrire au forfait GigaData 3 Jours 3Go/Jour. 4050Frs = 3Go/Jour (valide pour 3 Jours)",
+            "Tags": ["Internet", "GigaData"],
+            "InputFields": []
+        },
+        {
+            "Name": "GigaData 3 Jours 2Go/Jour",
+            "Operator": "Orange Cameroon",
+            "Code": "#145*2*4*4*4*1#",
+            "Description": "Subscribe au forfait GigaData 3 Jours 2Go/Jour. 2550Frs = 2Go/Jour (valide pour 3 Jours)",
+            "Tags": ["Internet", "GigaData"],
+            "InputFields": []
+        },
+        {
+            "Name": "GigaData 3 Jours 1Go/Jour",
+            "Operator": "Orange Cameroon",
+            "Code": "#145*2*4*4*5*1#",
+            "Description": "Subscrire au forfait GigaData 3 Jours 1Go/Jour. 1200Frs = 1Go/Jour (valide pour 3 Jours)",
+            "Tags": ["Internet", "GigaData"],
+            "InputFields": []
+        },
+        {
+            "Name": "Data en Demand 24H",
+            "Operator": "Orange Cameroon",
+            "Code": "#145*2*5*5*@#",
+            "Description": "Data en demand 24H de validite. Achetez un forfait internet fait sur demainde qui sera valide pour 24H.\nSVP specifiez le volume internet en MB. Exemple 500",
+            "Tags": ["Internet"],
+            "InputFields": [{
+                "Title": "Volume in MB, Example 500",
+                "InputType": "Default"
+            }]
+        },
+        {
+            "Name": "Data en Demand 3 Jours",
+            "Operator": "Orange Cameroon",
+            "Code": "#145*2*5*4*@#",
+            "Description": "Data on demand 3 Jours de validite. Achetez un forfait internet fait sur demainde qui sera valide pour 3 Jours.\nSVP specifiez le volume internet en MB. Exemple 500",
+            "Tags": ["Internet"],
+            "InputFields": [{
+                "Title": "Volume en MB, Exemple 500",
+                "InputType": "Default"
+            }]
+        },
+        {
+            "Name": "Data en Demand 7 Jours",
+            "Operator": "Orange Cameroon",
+            "Code": "#145*2*5*3*@#",
+            "Description": "Data on demand 7 Jours de validite. Achetez un forfait internet fait sur demainde qui sera valide pour 7 Jours.\nSVP specifiez le volume internet en MB. Exemple 500",
+            "Tags": ["Internet"],
+            "InputFields": [{
+                "Title": "Volume en MB, Exemple 500",
+                "InputType": "Default"
+            }]
+        },
+        {
+            "Name": "Data en Demand 10 Jours",
+            "Operator": "Orange Cameroon",
+            "Code": "#145*2*5*2*@#",
+            "Description": "Data on demand 10 Jours de validite. Achetez un forfait internet fait sur demainde qui sera valide pour 10 Jours.\nSVP specifiez le volume internet en MB. Exemple 500",
+            "Tags": ["Internet"],
+            "InputFields": [{
+                "Title": "Volume en MB, Exemple 500",
+                "InputType": "Default"
+            }]
+        },
+        {
+            "Name": "Data en Demand 30 Jours",
+            "Operator": "Orange Cameroon",
+            "Code": "#145*2*5*1*@#",
+            "Description": "Data en demand 30 Jours de validite. Achetez un forfait internet fait sur demainde qui sera valide pour 30 Jours.\nSVP specifiez le volume internet en MB. Exemple 500",
+            "Tags": ["Internet"],
+            "InputFields": [{
+                "Title": "Volume en MB, Exemple 500",
+                "InputType": "Default"
+            }]
+        },
+        {
+            "Name": "Pack SMS Semaine",
+            "Operator": "Orange Cameroon",
+            "Code": "#131*1*2*1#",
+            "Description": "SMS illimite au numeros Orange. 255Frs valide 7 Jours",
+            "Tags": ["SMS"],
+            "InputFields": []
+        },
+        {
+            "Name": "Pack SMS Jour",
+            "Operator": "Orange Cameroon",
+            "Code": "#131*1*1*1#",
+            "Description": "25 SMS a Orange. 102Frs valide jusqu'a 00H",
+            "Tags": ["SMS"],
+            "InputFields": []
+        },
+        {
+            "Name": "Pack SMS Mois",
+            "Operator": "Orange Cameroon",
+            "Code": "#131*1*3*1#",
+            "Description": "SMS illimite a Orange. 459Frs valide 30 Jours",
+            "Tags": ["SMS"],
+            "InputFields": []
+        },
+
+
+
+
+        {
+            "Name": "Solde principal",
+            "Operator": "Nexttel",
+            "Code": "*801#",
+            "Description": "Afficher le solde de votre compte principal",
+            "Tags": ["Solde"],
+            "InputFields": []
+        },
+        {
+            "Name": "Solde Bonus",
+            "Operator": "Nexttel",
+            "Code": "*801*1#",
+            "Description": "Afficher le solde de votre compte bonus",
+            "Tags": ["Solde"],
+            "InputFields": []
+        },
+        {
+            "Name": "Recharge Carte de Credit",
+            "Operator": "Nexttel",
+            "Code": "*802*@#",
+            "Description": "Rechargez votre compte avec une carte de recharge",
+            "Tags": ["Recharge"],
+            "InputFields": [{
+                "Title": "Numero de la carte",
+                "InputType": "Pass code"
+            }]
+        },
+        {
+            "Name": "Transfer de Credit(Ishare)",
+            "Operator": "Nexttel",
+            "Code": "*869*@*@*@#",
+            "Description": "Transferer du credit de votre compte principala a un numero Nexttel",
+            "Tags": ["Recharge"],
+            "InputFields": [
+                {
+                    "Title": "Ishare code",
+                    "InputType": "Pass code"
+                },
+                {
+                    "Title": "Numéro de téléphone",
+                    "InputType": "Phone number"
+                },
+                {
+                    "Title": "Montant",
+                    "InputType": "Default"
+                }
+            ]
+        },
+        {
+            "Name": "Forfait Internet FLY",
+            "Operator": "Nexttel",
+            "Code": "*865#",
+            "Description": "Subscrire au forfait internet FLY",
+            "Tags": ["Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Solde Internet",
+            "Operator": "Nexttel",
+            "Code": "*865*1#",
+            "Description": "Afficher le solde de votre compte internet",
+            "Tags": ["Solde","Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Activer Eco+",
+            "Operator": "Nexttel",
+            "Code": "*805#",
+            "Description": "Activer Eco+. 400% bonus",
+            "Tags": ["Appels"],
+            "InputFields": []
+        },
+        {
+            "Name": "Activer Next15+",
+            "Operator": "Nexttel",
+            "Code": "*805*2#",
+            "Description": "Activer Next15+. Appels 15Frs/min",
+            "Tags": ["Appels"],
+            "InputFields": []
+        },
+        {
+            "Name": "Solde Next15+",
+            "Operator": "Nexttel",
+            "Code": "*805*21#",
+            "Description": "Afficher le solde Next15",
+            "Tags": ["Solde"],
+            "InputFields": []
+        },
+        {
+            "Name": "Pack Jackpot(Multiplier du credit)",
+            "Operator": "Nexttel",
+            "Code": "*806#",
+            "Description": "Pack Jackpot(Multiplier du credit)",
+            "Tags": ["Appels"],
+            "InputFields": []
+        },
+        {
+            "Name": "Solde Jackpot",
+            "Operator": "Nexttel",
+            "Code": "*806*1#",
+            "Description": "Afficher le solde de votre compte Jackpot",
+            "Tags": ["Solde", "Appels"],
+            "InputFields": []
+        },
+        {
+            "Name": "Forfait internet Jour",
+            "Operator": "Nexttel",
+            "Code": "*865*20#",
+            "Description": "Subscrire au forfait internet Jour. 50Frs = 50Mo (valide pour 2H)",
+            "Tags": ["Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Forfait internet Jour 1",
+            "Operator": "Nexttel",
+            "Code": "*865*21#",
+            "Description": "Subscrire au forfait internet Jour. 150Frs = 150Mo (valide pour 24H)",
+            "Tags": ["Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Forfait internet Jour 2",
+            "Operator": "Nexttel",
+            "Code": "*865*22#",
+            "Description": "Subscrire au forfait internet Jour. 250Frs = 250Mo (valide pour 24H)",
+            "Tags": ["Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Forfait internet Jour 3",
+            "Operator": "Nexttel",
+            "Code": "*865*23#",
+            "Description": "Subscrire au forfait internet Jour. 500Frs = 500Mo (valide pour 24H)",
+            "Tags": ["Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Forfait internet Jour 4",
+            "Operator": "Nexttel",
+            "Code": "*865*24#",
+            "Description": "Subscrire au forfait internet Jour. 100Frs = 100Mo (valide pour 24H)",
+            "Tags": ["Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Forfait internet Night 1",
+            "Operator": "Nexttel",
+            "Code": "*865*11#",
+            "Description": "Subscrire au forfait internet night. 150Frs = 200Mo (valide de 00H a 6H:00)",
+            "Tags": ["Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Forfait internet Night 2",
+            "Operator": "Nexttel",
+            "Code": "*865*12#",
+            "Description": "Subscrire au forfait internet night. 250Frs = 300Mo (valide de 00H a 6H:00)",
+            "Tags": ["Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Forfait internet Semaine 1",
+            "Operator": "Nexttel",
+            "Code": "*865*80#",
+            "Description": "Subscrire au forfait internet semaine. 300Frs = 400Mo (valide pour 1 semaine)",
+            "Tags": ["Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Forfait internet Semaine 2",
+            "Operator": "Nexttel",
+            "Code": "*865*81#",
+            "Description": "Subscrire au forfait internet semaine. 250Frs = 300Mo (valide pour 1 semaine)",
+            "Tags": ["Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Forfait internet Semaine 3",
+            "Operator": "Nexttel",
+            "Code": "*865*82#",
+            "Description": "Subscrire au forfait internet semaine. 250Frs = 300Mo (valide pour 1 semaine)",
+            "Tags": ["Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Forfait internet Semaine 4",
+            "Operator": "Nexttel",
+            "Code": "*865*83#",
+            "Description": "Subscrire au forfait internet semaine. 250Frs = 300Mo (valide pour 1 semaine)",
+            "Tags": ["Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Forfait internet Semaine 5",
+            "Operator": "Nexttel",
+            "Code": "*865*84#",
+            "Description": "Subscrire au forfait internet semaine. 250Frs = 300Mo (valide pour 1 semaine)",
+            "Tags": ["Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Forfait internet Mois 1",
+            "Operator": "Nexttel",
+            "Code": "*865*41#",
+            "Description": "Subscrire au forfait internet mois. 8000Frs = 4.6Go (valide pour 1 mois)",
+            "Tags": ["Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Forfait internet Mois 2",
+            "Operator": "Nexttel",
+            "Code": "*865*42#",
+            "Description": "Subscrire au forfait internet mois. 12000Frs = 8Go (valide pour 1 mois)",
+            "Tags": ["Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Forfait internet Mois 3",
+            "Operator": "Nexttel",
+            "Code": "*865*43#",
+            "Description": "Subscrire au forfait internet mois. 25000Frs = 18Go (valide pour 1 mois)",
+            "Tags": ["Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Forfait internet Mois 4",
+            "Operator": "Nexttel",
+            "Code": "*865*44#",
+            "Description": "Subscrire au forfait internet mois. 4000Frs = 1.5Go (valide pour 1 mois)",
+            "Tags": ["Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Mon Numero",
+            "Operator": "Nexttel",
+            "Code": "*600#",
+            "Description": "Afficher votre numero NeXttel",
+            "Tags": ["Numéro de téléphone"],
+            "InputFields": []
+        },
+
+
+        {
+            "Name": "Transfer de Credit",
+            "Operator": "Camtel",
+            "Code": "*126*@*@*@#",
+            "Description": "Transferer du credit de votre compte principal a un numero Camtel",
+            "Tags": ["Recharge"],
+            "InputFields": [
+                {
+                    "Title": "Numéro de téléphone",
+                    "InputType": "Phone number"
+                },
+                {
+                    "Title": "Montant",
+                    "InputType": "Default"},
+
+                {
+                    "Title": "Code",
+                    "InputType": "Pass code"
+                }
+            ]
+        },
+        {
+            "Name": "Solde principal",
+            "Operator": "Camtel",
+            "Code": "*825*1#",
+            "Description": "Afficher le solde de votre compte principal",
+            "Tags": ["Solde"],
+            "InputFields": []
+        },
+        {
+            "Name": "Toli Fap",
+            "Operator": "Camtel",
+            "Code": "*155*500*1#",
+            "Description": "Subscrire au forfait Toli Fap",
+            "Tags": ["Toli"],
+            "InputFields": []
+        },
+        {
+            "Name": "Toli Kolo",
+            "Operator": "Camtel",
+            "Code": "*155*1000*1#",
+            "Description": "Subscrire au forfait Toli Kolo",
+            "Tags": ["Toli"],
+            "InputFields": []
+        },
+        {
+            "Name": "Toli 5000",
+            "Operator": "Camtel",
+            "Code": "*155*5000*1#",
+            "Description": "Subscrire au forfait Toli 5000",
+            "Tags": ["Toli"],
+            "InputFields": []
+        },
+        {
+            "Name": "Toli Premium One",
+            "Operator": "Camtel",
+            "Code": "*10000*155*1#",
+            "Description": "Subscrire au forfait Toli Premium One",
+            "Tags": ["Toli"],
+            "InputFields": []
+        },
+        {
+            "Name": "Toli Premium Two",
+            "Operator": "Camtel",
+            "Code": "*20000*155*1#",
+            "Description": "Subscrire au forfait Toli Premium Two",
+            "Tags": ["Toli"],
+            "InputFields": []
+        },
+        {
+            "Name": "Fako Jour",
+            "Operator": "Camtel",
+            "Code": "*155*6050*1#",
+            "Description": "Subscrire au forfait Fako Jour",
+            "Tags": ["Fako", "Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Fako Mini",
+            "Operator": "Camtel",
+            "Code": "*155*6100*2#",
+            "Description": "Subscrire au forfait Fako Mini",
+            "Tags": ["Fako", "Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Forfaits Fako",
+            "Operator": "Camtel",
+            "Code": "*155*6150*1#",
+            "Description": "Afficher les forfaits Fako",
+            "Tags": ["Fako", "Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Fako Jour More",
+            "Operator": "Camtel",
+            "Code": "*155*6051*2#",
+            "Description": "Subscrire au forfait Fako Jour More",
+            "Tags": ["Fako", "Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Fako Smart",
+            "Operator": "Camtel",
+            "Code": "*155*6700*1#",
+            "Description": "Subscrire au forfait Fako Smart",
+            "Tags": ["Fako", "Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Fako Comfort",
+            "Operator": "Camtel",
+            "Code": "*155*6015*1#",
+            "Description": "Subscrire au forfait Fako Comfort",
+            "Tags": ["Fako", "Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Fako Night",
+            "Operator": "Camtel",
+            "Code": "*155*6002*1#",
+            "Description": "Subscrire au forfait Fako Night",
+            "Tags": ["Fako", "Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Fako Night More",
+            "Operator": "Camtel",
+            "Code": "*155*6003*1#",
+            "Description": "Subscrire au forfait Fako Night More",
+            "Tags": ["Fako", "Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Fako Chatter",
+            "Operator": "Camtel",
+            "Code": "*155*1111*1#",
+            "Description": "Subscrire au forfait Fako Chatter",
+            "Tags": ["Fako", "Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Fako Streamer",
+            "Operator": "Camtel",
+            "Code": "*155*1112*1#",
+            "Description": "Subscrire au forfait Fako Streamer",
+            "Tags": ["Fako", "Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Fako Downloader",
+            "Operator": "Camtel",
+            "Code": "*155*1113*1#",
+            "Description": "Subscrire au forfait Fako Downloader",
+            "Tags": ["Fako", "Internet"],
+            "InputFields": []
+        },
+        {
+            "Name": "Fako Big Downloader",
+            "Operator": "Camtel",
+            "Code": "*155*1114*1#",
+            "Description": "Subscrire au forfait Fako Big Downloader",
+            "Tags": ["Fako", "Internet"],
+            "InputFields": []
+        }
+
+
+
+    ]
+}

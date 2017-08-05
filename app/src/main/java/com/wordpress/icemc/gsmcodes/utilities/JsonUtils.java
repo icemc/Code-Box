@@ -2,6 +2,7 @@ package com.wordpress.icemc.gsmcodes.utilities;
 
 
 import android.content.Context;
+import android.net.Uri;
 import android.util.Log;
 
 import com.wordpress.icemc.gsmcodes.dao.CodeDao;
@@ -278,13 +279,16 @@ public  class JsonUtils {
             CodeDao codeDao = new CodeDao(context);
             TagMapDao tagMapDao = new TagMapDao(context);
             for(CodeWrapper c: codeWrappers) {
-                codeDao.saveCode(codeDao.getValuesFromObject(c.getCode()));
-                for (String t: c.getTags()) {
-                    tagMapDao.saveTagMap(tagMapDao.getValuesFromObject(
-                            new TagMap.Builder()
-                                    .tagId(t)
-                                    .codeId(c.getCode().getCode())
-                                    .build()));
+                Uri uri = codeDao.saveCode(codeDao.getValuesFromObject(c.getCode()));
+                if (uri != null) {
+                    for (String t : c.getTags()) {
+                        tagMapDao.saveTagMap(tagMapDao.getValuesFromObject(
+                                new TagMap.Builder()
+                                        .tagId(t)
+                                        .codeId(c.getCode().getCode())
+                                        .operatorId(c.getCode().getOperator())
+                                        .build()));
+                    }
                 }
             }
         } else {

@@ -19,7 +19,7 @@
 
     <string name="slide_4_title">Lets get Started</string>
     <string name="slide_4_desc">All major mobile operators in Cameroon are available!</string>
-    <string name="title_activity_operators">Operators</string>
+    <string name="title_activity_operators">Mobile Operators</string>
     <string name="dialog_cancel">Cancel</string>
     <string name="dialog_ok">OK</string>
     <string name="activate_code">Activate this code</string>
@@ -41,7 +41,7 @@
     <string name="communication">Communication</string>
     <string name="donate">Donate</string>
     <string name="help">Help</string>
-    <string name="send">Send</string>
+    <string name="send">Send FeedBack</string>
     <string name="share">Share</string>
     <string name="settings">Settings</string>
     <string name="operators">All operators</string>
@@ -52,10 +52,10 @@
     <string name="saving">Loading....</string>
     <string name="code_email">About:Code Box</string>
     <string name="action_search">Search</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Language</string>
     <string name="action_sort">Filter</string>
     <string name="action_create">Add code</string>
-    <string name="search_hint">Search code name</string>
+    <string name="search_hint">Search code names or categories</string>
 
 
     <item name="saving" type="id">Loading</item>
@@ -67,8 +67,8 @@
     <string name="error_empty_code_field">Please enter the code</string>
     <string name="error_invalid_code_end_char">Error parsing code. Code must end with \'#\'</string>
     <string name="error_invalid_code_start_char">Error parsing code. Code must start either with \'*\' or \'#\'</string>
-    <string name="error_code_not_saved">Error could not save code.</string>
-    <string name="error_code_not_saved_already_present">Error could not save code. Code already exists in database:</string>
+    <string name="error_code_not_saved">Error! Could not save code.</string>
+    <string name="error_code_not_saved_already_present">Error! Could not save code. Code already exists in database</string>
     <string name="select_categories">Select categories related to the code</string>
     <string name="add_code_heading">Please enter the code data</string>
     <string name="code">Code</string>
@@ -78,4 +78,24 @@
     <string name="service_number">Help line:</string>
     <string name="code_deleted">Code deleted successfully</string>
     <string name="not_yet_implemented">Sorry! Not yet implemented! Will be available on final release</string>
+    <string name="create_this_code_warning">Are you sure you want to add this code?</string>
+    <string name="others">Others</string>
+    <string name="reload">Restore codes</string>
+    <string name="quit_app">Quit app</string>
+    <string name="reload_codes_title">Restore codes</string>
+    <string name="reload_codes_msg">You are about to recover all codes that were deleted.
+        Note that only deleted codes that were shipped with the app will be recovered</string>
+    <string name="undo">UNDO</string>
+    <string name="categories">Categories</string>
+    <string name="no_categories">This code has no category</string>
+    <string name="action_licence">Terms and Conditions</string>
+    <string name="select_language">Select App language</string>
+    <string name="license">THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.THE NAME MTN CAMEROON, ORANGE CAMEROON, CAMTEL, AND NEXTTEL ARE ALL TRADE MARK NAME OF THEIR RESPECTIVE COMPANIES. THIS SOFTWARE IS NOT IN ANY WAY RELATED TO ANY OF THE COMPANIES. BY USING THIS SOFTWARE YOU AGREE TO BE SOLELY RESPONSIBLE FOR ANY DAMAGE IT MAY CAUSE BE IT INTENTIONAL OR NOT. END OF TERMS AND CONDITIONS</string>
+
 </resources>

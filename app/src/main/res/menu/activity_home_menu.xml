@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:GSMCodes="http://schemas.android.com/apk/res-auto"
-    xmlns:app="http://schemas.android.com/tools">
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:GSMCodes="http://schemas.android.com/apk/res-auto">
     <!-- Search, should appear as action button -->
     <item android:id="@+id/action_search"
         android:title="@string/action_search"
@@ -21,7 +21,11 @@
 
 
     <!-- Settings, should always be in the overflow -->
-    <item android:id="@+id/action_settings"
+    <item android:id="@+id/action_language"
         android:title="@string/action_settings"
+        GSMCodes:showAsAction="never" />
+
+    <item android:id="@+id/action_licence"
+        android:title="@string/action_licence"
         GSMCodes:showAsAction="never" />
 </menu>

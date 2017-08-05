@@ -100,6 +100,7 @@ public class GSMCodeContentProvider extends ContentProvider {
                     db.execSQL("CREATE TABLE " + tableName + " ("
                             + TagMapColumns._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                             + TagMapColumns.TAG_NAME + " text not null, "
+                            + TagMapColumns.CODE_OPERATOR + " text not null, "
                             + TagMapColumns.CODE_CODE + " text not null );");
                     return;
                 default:
@@ -223,7 +224,7 @@ public class GSMCodeContentProvider extends ContentProvider {
 ////                            t.setDuration(Toast.LENGTH_LONG);
 //                        }
                     } finally {
-                        c.close();
+                        //c.close();
                     }
                 }
                 rowId = db.insert(CODES_TABLE, null, values);
@@ -436,6 +437,7 @@ public class GSMCodeContentProvider extends ContentProvider {
         tagMapsProjectionMap.put(TagMapColumns._ID, TagMapColumns._ID);
         tagMapsProjectionMap.put(TagMapColumns.TAG_NAME, TagMapColumns.TAG_NAME);
         tagMapsProjectionMap.put(TagMapColumns.CODE_CODE, TagMapColumns.CODE_CODE);
+        tagMapsProjectionMap.put(TagMapColumns.CODE_OPERATOR, TagMapColumns.CODE_OPERATOR);
     }
 
 

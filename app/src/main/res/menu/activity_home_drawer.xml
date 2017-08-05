@@ -16,8 +16,12 @@
             android:title="@string/share" />
         <item
             android:id="@+id/nav_send"
-            android:icon="@drawable/ic_send_black_24dp"
+            android:icon="@drawable/ic_email_black_24dp"
             android:title="@string/send" />
+        <item
+            android:id="@+id/nav_reload"
+            android:icon="@drawable/ic_get_app_black_24dp"
+            android:title="@string/reload" />
     </group>
 
     <!--<item android:title="@string/communication">-->
@@ -25,20 +29,22 @@
             <!---->
         <!--</menu>-->
     <!--</item>-->
-    <item android:title="@string/About">
+    <item android:title="@string/others">
         <menu>
             <item
                 android:id="@+id/nav_about"
                 android:icon="@drawable/ic_error_outline_black_24dp"
                 android:title="@string/About" />
-            <item
-                android:id="@+id/nav_donate"
-                android:icon="@drawable/ic_redeem_black_24dp"
-                android:title="@string/donate" />
+
             <item
                 android:id="@+id/nav_help"
                 android:icon="@drawable/ic_help_black_24dp"
                 android:title="@string/help" />
+
+            <item
+                android:id="@+id/nav_quit"
+                android:icon="@drawable/ic_close_black_24dp"
+                android:title="@string/quit_app" />
 
         </menu>
     </item>

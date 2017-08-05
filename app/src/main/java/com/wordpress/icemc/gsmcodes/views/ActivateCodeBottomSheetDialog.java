@@ -1,16 +1,12 @@
 package com.wordpress.icemc.gsmcodes.views;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.support.design.widget.BottomSheetDialog;
 import android.support.design.widget.TextInputLayout;
 import android.text.InputType;
-import android.view.HapticFeedbackConstants;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -19,6 +15,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.wordpress.icemc.gsmcodes.R;
+import com.wordpress.icemc.gsmcodes.dao.TagMapDao;
 import com.wordpress.icemc.gsmcodes.listeners.ContactButtonClickListener;
 import com.wordpress.icemc.gsmcodes.listeners.ContactPickListener;
 import com.wordpress.icemc.gsmcodes.model.Code;
@@ -26,12 +23,14 @@ import com.wordpress.icemc.gsmcodes.model.InputField;
 import com.wordpress.icemc.gsmcodes.utilities.GSMCodeUtils;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ActivateCodeBottomSheetDialog extends BottomSheetDialog implements ContactPickListener{
     private ArrayList<EditText> editTexts = new ArrayList<>();
     private final Code code;
-    private Button btn_dialog_bottom_sheet_ok;
-    private Button btn_dialog_bottom_sheet_cancel;
+    private Button btn_dialog_bottom_sheet_ok, btn_dialog_bottom_sheet_cancel;
+    private ImageView share, delete;
+    private LinearLayout tags;
 
     private ContactButtonClickListener contactButtonClickListener;
 
@@ -46,31 +45,15 @@ public class ActivateCodeBottomSheetDialog extends BottomSheetDialog implements 
 
     private void inflateSheet() {
 
-        View dialogView = getLayoutInflater().inflate(R.layout.dialog_bottom_sheet, null);
+        View dialogView = getLayoutInflater().inflate(R.layout.activate_code_bottom_sheet, null);
         ImageView logo = (ImageView) dialogView.findViewById(R.id.operator_logo_small);
-        ImageView share = (ImageView) dialogView.findViewById(R.id.share_button);
+        delete = (ImageView) dialogView.findViewById(R.id.delete_button);
+        share = (ImageView) dialogView.findViewById(R.id.share_button);
         share.getDrawable().mutate().setColorFilter(
                 getContext().getResources().getColor(R.color.colorAccent), PorterDuff.Mode.SRC_IN);
-        share.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setAction(Intent.ACTION_SEND);
-                intent.putExtra(Intent.EXTRA_TEXT, code.getOperator() + "\n"
-                        + code.getName() + "\n"
-                        + code.getDescription() + "\n"
-                        + GSMCodeUtils.setCodeStringUsingInputFields(
-                        code.getCode(), code.getInputFields()));
-                intent.setType("text/plain");
-
-                try {
-                    getContext().startActivity(intent);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-        Glide.with(getContext()).load(GSMCodeUtils.getLogoFromOperatorName(code.getOperator())).into(logo);
+        delete.getDrawable().mutate().setColorFilter(
+                getContext().getResources().getColor(R.color.colorAccent), PorterDuff.Mode.SRC_IN);
+        tags = (LinearLayout) dialogView.findViewById(R.id.categories_container);
         btn_dialog_bottom_sheet_ok = (Button) dialogView.findViewById(R.id.btn_dialog_bottom_sheet_ok);
         btn_dialog_bottom_sheet_cancel = (Button) dialogView.findViewById(R.id.btn_dialog_bottom_sheet_cancel);
         TextView name = (TextView) dialogView.findViewById(R.id.name_bottom_sheet);
@@ -78,6 +61,26 @@ public class ActivateCodeBottomSheetDialog extends BottomSheetDialog implements 
         TextView formattedCode = (TextView) dialogView.findViewById(R.id.code_bottom_sheet);
         LinearLayout inputFieldsLayouts = (LinearLayout) dialogView.findViewById(
                 R.id.input_fields_layout);
+
+        Glide.with(getContext()).load(GSMCodeUtils.getLogoFromOperatorName(code.getOperator())).into(logo);
+
+        //Input all the tags for this particular code in tags linear layout
+        LayoutInflater li = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        TagMapDao dao = new TagMapDao(getContext());
+        List<String> allTags = dao.getTagsFromTagMapsCursor(dao.getTagMapCursorForCode(code));
+        if(allTags.size() > 0) {
+            for (String tag : allTags) {
+                View v = li.inflate(R.layout.category_text_view, null);
+                TextView t = (TextView) v.findViewById(R.id.category_text_view);
+                t.setText(tag);
+                tags.addView(v);
+            }
+        } else {
+            View v = li.inflate(R.layout.category_text_view, null);
+            TextView t = (TextView) v.findViewById(R.id.category_text_view);
+            t.setText(R.string.no_categories);
+            tags.addView(v);
+        }
 
         name.setText(code.getName());
         description.setText(code.getDescription());
@@ -87,7 +90,6 @@ public class ActivateCodeBottomSheetDialog extends BottomSheetDialog implements 
         //TODO inflate the inflate the input field layout here
         if (code.getInputFields() != null) {
             InputField[] inputFields = code.getInputFields();
-            LayoutInflater li = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             if (needsContactButton(inputFields)) {
                 for (InputField i: inputFields) {
                     if (i.getInputType() == com.wordpress.icemc.gsmcodes.model.InputType.PHONE_NUMBER) {
@@ -170,16 +172,20 @@ public class ActivateCodeBottomSheetDialog extends BottomSheetDialog implements 
         return code;
     }
 
-    public void setEditTextText(int index, String text) {
-        editTexts.get(index).setText(text);
-    }
-
     public Button getBtn_dialog_bottom_sheet_ok() {
         return btn_dialog_bottom_sheet_ok;
     }
 
     public Button getBtn_dialog_bottom_sheet_cancel() {
         return btn_dialog_bottom_sheet_cancel;
+    }
+
+    public ImageView getShareButton() {
+        return share;
+    }
+
+    public ImageView getDeleteButton() {
+        return delete;
     }
 
     public ArrayList<EditText> getEditTexts() {

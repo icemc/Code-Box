@@ -36,6 +36,14 @@ public class TagMapDao {
         return getTagMapCursor(projection, selection, selectionArgs, null);
     }
 
+    public Cursor getTagMapCursorForCode(Code code) {
+        String selection = TagMapColumns.CODE_CODE + "=?" + " AND " + TagMapColumns.CODE_OPERATOR + "=?";
+        String[] selectionArgs = {code.getCode(), code.getOperator()};
+        String sortOrder = TagMapColumns.TAG_NAME + " ASC";
+
+        return getTagMapCursor(null, selection, selectionArgs, sortOrder);
+    }
+
     public Cursor getTagMapCursor(String[] projection, String selection, String[] selectionArgs, String sortOrder) {
         return context.getContentResolver().query(TagMapColumns.CONTENT_URI, projection, selection, selectionArgs, sortOrder);
     }
@@ -44,9 +52,9 @@ public class TagMapDao {
         return context.getContentResolver().insert(TagMapColumns.CONTENT_URI, values);
     }
 
-    public int deleteTagMapsFromCode(Code code) {
-        String selection = TagMapColumns.CODE_CODE + "=?";
-        String[] selectionArgs = {code.getCode()};
+    public int deleteTagMapsForCode(Code code) {
+        String selection = TagMapColumns.CODE_CODE + "=?" + " AND " + TagMapColumns.CODE_OPERATOR + "=?";
+        String[] selectionArgs = {code.getCode(), code.getOperator()};
         return context.getContentResolver().delete(TagMapColumns.CONTENT_URI, selection, selectionArgs);
     }
 
@@ -57,10 +65,12 @@ public class TagMapDao {
                 while (cursor.moveToNext()) {
                     int codeNameIndex = cursor.getColumnIndex(TagMapColumns.CODE_CODE);
                     int tagNameIndex = cursor.getColumnIndex(TagMapColumns.TAG_NAME);
+                    int operatorNameIndex = cursor.getColumnIndex(TagMapColumns.CODE_OPERATOR);
 
                     TagMap tagMap = new TagMap.Builder()
                             .tagId(cursor.getString(tagNameIndex))
                             .codeId(cursor.getString(codeNameIndex))
+                            .operatorId(cursor.getString(operatorNameIndex))
                             .build();
 
                     tagMaps.add(tagMap);
@@ -72,11 +82,31 @@ public class TagMapDao {
         return tagMaps;
     }
 
+    public List<String> getTagsFromTagMapsCursor(Cursor cursor) {
+        List<String> tags = new ArrayList<>();
+        if(cursor != null) {
+            try {
+                while(cursor.moveToNext()) {
+                    int tagNameIndex = cursor.getColumnIndex(TagMapColumns.TAG_NAME);
+                    tags.add(cursor.getString(tagNameIndex));
+                }
+            } finally {
+                cursor.close();
+            }
+        }
+        return tags;
+    }
+
     public ContentValues getValuesFromObject(TagMap tagMap) {
         ContentValues values = new ContentValues();
         values.put(TagMapColumns.CODE_CODE, tagMap.getCodeId());
         values.put(TagMapColumns.TAG_NAME, tagMap.getTagId());
+        values.put(TagMapColumns.CODE_OPERATOR, tagMap.getOperatorId());
 
         return values;
+    }
+
+    public void deleteTagMaps() {
+        context.getContentResolver().delete(TagMapColumns.CONTENT_URI, null, null);
     }
 }

@@ -72,4 +72,8 @@ public class OperatorsDao {
         values.put(OperatorColumns.PHONE_NUMBER,operator.getPhoneNumber());
         return values;
     }
+
+    public void deleteOperators() {
+        context.getContentResolver().delete(OperatorColumns.CONTENT_URI, null, null);
+    }
 }

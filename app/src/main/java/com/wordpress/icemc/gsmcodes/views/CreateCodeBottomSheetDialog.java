@@ -4,11 +4,13 @@ import android.content.Context;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomSheetDialog;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -23,15 +25,18 @@ import java.util.List;
 public class CreateCodeBottomSheetDialog extends BottomSheetDialog implements TagSelectionListener {
 
     private EditText code, name, description;
-    private TextView tags, tagButton;
+    private View noTagView;
+    private TextView tagButton;
     private ArrayList<String> tagsList = new ArrayList<>();
     private Button okButton, cancelButton;
-    private HorizontalScrollView scrollView;
+    private LinearLayout tagsContainer;
+    private LayoutInflater layoutInflater;
 
     private AddCodeListener listener;
     public CreateCodeBottomSheetDialog(@NonNull Context context, AddCodeListener listener) {
         super(context, R.style.MaterialBottomSheet);
         this.listener = listener;
+        layoutInflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflateSheet();
     }
 
@@ -45,12 +50,19 @@ public class CreateCodeBottomSheetDialog extends BottomSheetDialog implements Ta
         code = (EditText) dialogView.findViewById(R.id.code_code);
         name = (EditText) dialogView.findViewById(R.id.code_name);
         description = (EditText) dialogView.findViewById(R.id.code_description);
-        tags = (TextView) dialogView.findViewById(R.id.tag_list);
         tagButton = (TextView) dialogView.findViewById(R.id.textView);
 
         okButton = (Button) dialogView.findViewById(R.id.btn_create_code_dialog_bottom_sheet_ok);
         cancelButton = (Button) dialogView.findViewById(R.id.btn_create_code_dialog_bottom_sheet_cancel);
-        scrollView = (HorizontalScrollView) dialogView.findViewById(R.id.scroll_tag);
+        tagsContainer =  (LinearLayout) dialogView.findViewById(R.id.tags_container);
+
+        noTagView = layoutInflater.inflate(R.layout.category_text_view, null);
+        TextView noTagTextView = (TextView) noTagView.findViewById(R.id.category_text_view);
+        noTagTextView.setText(R.string.no_tags_msg);
+        noTagTextView.setOnClickListener(tagListener);
+        tagButton.setOnClickListener(tagListener);
+        tagsContainer.setOnClickListener(tagListener);
+        tagsContainer.addView(noTagView);
 
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,17 +77,6 @@ public class CreateCodeBottomSheetDialog extends BottomSheetDialog implements Ta
                 listener.onOKButtonClick();
             }
         });
-
-        View.OnClickListener tagListener = new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                listener.onTagsButtonClick(tagsList);
-            }
-        };
-
-        tags.setOnClickListener(tagListener);
-        tagButton.setOnClickListener(tagListener);
-        scrollView.setOnClickListener(tagListener);
         setContentView(dialogView);
     }
 
@@ -95,25 +96,32 @@ public class CreateCodeBottomSheetDialog extends BottomSheetDialog implements Ta
     public List<String> getTags() {
         return tagsList;
     }
-    public void setTags(List<String> allTags) {
-
-    }
 
     @Override
     public void onTagSelectionFinished(List<String> allTags) {
         tagsList.clear();
+        tagsContainer.removeAllViews();
         if(allTags != null && allTags.size() > 0) {
             tagsList.addAll(allTags);
-            String tagsString = " " + allTags.get(0);
-            for (String s: allTags.subList(1, allTags.size())) {
-                tagsString +=  ", " + s;
+            for (String s: allTags) {
+                View v = layoutInflater.inflate(R.layout.category_text_view, null);
+                TextView t = (TextView) v.findViewById(R.id.category_text_view);
+                t.setText(s);
+                t.setOnClickListener(tagListener);
+                tagsContainer.addView(v);
             }
-            tagsString += " ";
-            tags.setText(tagsString);
+
         } else {
-            tags.setText(getContext().getString(R.string.no_tags_msg));
+            tagsContainer.addView(noTagView);
         }
     }
+
+    private View.OnClickListener tagListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            listener.onTagsButtonClick(tagsList);
+        }
+    };
 
     public interface AddCodeListener {
         void onOKButtonClick ();

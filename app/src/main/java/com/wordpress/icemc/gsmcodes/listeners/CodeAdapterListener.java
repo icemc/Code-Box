@@ -2,10 +2,9 @@ package com.wordpress.icemc.gsmcodes.listeners;
 
 
 public interface CodeAdapterListener {
-    void onIconClicked(int position);
+    void onIconClicked(final int position);
 
-    void onCodeRowClicked(int position);
+    void onCodeRowClicked(final int position);
 
-    void onPhoneClicked(int position);
-    void onCodeRowSwiped(int position);
+    void onPhoneClicked(final int position);
 }

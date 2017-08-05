@@ -108,7 +108,7 @@
             "Name": "Enable MTN Easy Booster",
             "Operator": "MTN Cameroon",
             "Code": "*167*1#",
-            "Description": "Enable mtn easy booster.",
+            "Description": "Enable MTN easy booster.",
             "Tags": ["MTN Easy Booster"],
             "InputFields": []
         },
@@ -116,7 +116,7 @@
             "Name": "Disable MTN Easy Booster",
             "Operator": "MTN Cameroon",
             "Code": "*167*0#",
-            "Description": "Disable mtn easy booster.",
+            "Description": "Disable MTN easy booster.",
             "Tags": ["MTN Easy Booster"],
             "InputFields": []
         },
@@ -124,7 +124,7 @@
             "Name": "MTN Easy Booster balance",
             "Operator": "MTN Cameroon",
             "Code": "*159*80#",
-            "Description": "Display mtn easy booster balance.",
+            "Description": "Display MTN easy booster balance.",
             "Tags": ["MTN Easy Booster","Balance"],
             "InputFields": []
         },
@@ -132,7 +132,7 @@
             "Name": "SMS package day(Unlimited text on the Go)",
             "Operator": "MTN Cameroon",
             "Code": "*148*5#",
-            "Description": "Subscribe to mtn unlimited text on the Go. You will be charged 20 Frs/day",
+            "Description": "Subscribe to MTN unlimited text on the Go. You will be charged 20 Frs/day",
             "Tags": ["SMS"],
             "InputFields": []
         },
@@ -140,7 +140,7 @@
             "Name": "SMS package month",
             "Operator": "MTN Cameroon",
             "Code": "*148*1#",
-            "Description": "Subscribe to mtn monthly text. You will be charged 500 Frs",
+            "Description": "Subscribe to MTN monthly text. You will be charged 500 Frs",
             "Tags": ["SMS"],
             "InputFields": []
         },
@@ -148,7 +148,7 @@
             "Name": "SMS package validity",
             "Operator": "MTN Cameroon",
             "Code": "*148*9#",
-            "Description": "Check the validy of an sms package",
+            "Description": "Check the validity of an sms package",
             "Tags": ["SMS","Balance"],
             "InputFields": []
         },
@@ -212,7 +212,7 @@
             "Name": "MTN Play",
             "Operator": "MTN Cameroon",
             "Code": "*128#",
-            "Description": "MTN play pakages",
+            "Description": "MTN play packages",
             "Tags": [],
             "InputFields": []
         },
@@ -509,7 +509,7 @@
                     "InputType": "Default"},
 
                 {
-                    "Title": "ME2U code",
+                    "Title": "Code",
                     "InputType": "Pass code"
                 }
             ]
@@ -1068,7 +1068,7 @@
             "Name": "Internet balance",
             "Operator": "Nexttel",
             "Code": "*865*1#",
-            "Description": "Subscribe to to an internet package FLY or WhatsApp",
+            "Description": "Display internet balance",
             "Tags": ["Balance","Internet"],
             "InputFields": []
         },
@@ -1092,7 +1092,7 @@
             "Name": "Next15+ balance",
             "Operator": "Nexttel",
             "Code": "*805*21#",
-            "Description": "Consult your Next15 balance",
+            "Description": "Display Next15 balance",
             "Tags": ["Balance"],
             "InputFields": []
         },
@@ -1100,7 +1100,7 @@
             "Name": "Jackpot package(Multiply airtime)",
             "Operator": "Nexttel",
             "Code": "*806#",
-            "Description": "Consult your Next15 balance",
+            "Description": "display Jackpot packages(Multiply airtime)",
             "Tags": ["Calls"],
             "InputFields": []
         },
@@ -1108,7 +1108,7 @@
             "Name": "Jackpot balance",
             "Operator": "Nexttel",
             "Code": "*806*1#",
-            "Description": "Consult your jackpot balance",
+            "Description": "Display your jackpot balance",
             "Tags": ["Balance", "Calls"],
             "InputFields": []
         },
