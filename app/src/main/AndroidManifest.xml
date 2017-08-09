@@ -15,8 +15,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".activities.WelcomeActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:hardwareAccelerated="false">
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -43,7 +42,7 @@
         <activity
             android:name=".activities.OperatorsActivity"
             android:label="@string/title_activity_operators"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activities.AboutActivity1"
             android:label="@string/About"

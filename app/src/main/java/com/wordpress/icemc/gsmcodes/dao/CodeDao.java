@@ -180,4 +180,17 @@ public class CodeDao {
         }
         return returnColor;
     }
+
+    private String getRandomColorType() {
+        String[] colorTypes = {"400", "500"};
+        if(Math.random() >= 0.5) {
+            return colorTypes[1];
+        } else {
+            return colorTypes[0];
+        }
+    }
+
+    public void deleteCodes() {
+        context.getContentResolver().delete(CodeColumns.CONTENT_URI, null, null);
+    }
 }

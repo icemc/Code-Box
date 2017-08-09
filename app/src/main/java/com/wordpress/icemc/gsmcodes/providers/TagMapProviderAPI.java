@@ -28,6 +28,7 @@ public class TagMapProviderAPI {
         //These are the only things needed for an insert
         public static final String TAG_NAME = "tagName";
         public static final String CODE_CODE = "codeCode";
+        public static final String CODE_OPERATOR = "codeOperator";
 
 
     }

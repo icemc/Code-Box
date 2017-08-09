@@ -25,7 +25,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/activate_this_code_warning"
+                android:text="@string/create_this_code_warning"
                 android:paddingLeft="@dimen/logo_small_padding"
                 android:textSize="@dimen/text_primary"
                 android:textColor="@color/from"
@@ -44,6 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
+                android:background="@drawable/bg_simple_button_rectangle"
                 android:text="@string/dialog_ok"
                 android:textColor="@color/colorAccent" />
 
@@ -52,6 +53,7 @@
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/bg_simple_button_rectangle"
                 android:layout_toLeftOf="@+id/btn_create_code_dialog_bottom_sheet_ok"
                 android:text="@string/dialog_cancel"
                 android:textColor="@color/colorAccent" />

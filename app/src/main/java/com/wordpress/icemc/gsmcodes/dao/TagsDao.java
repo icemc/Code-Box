@@ -67,4 +67,8 @@ public class TagsDao {
         values.put(TagColumns.OPERATOR_NAME, tag.getOperator());
         return values;
     }
+
+    public void deleteTags() {
+        context.getContentResolver().delete(TagColumns.CONTENT_URI, null, null);
+    }
 }

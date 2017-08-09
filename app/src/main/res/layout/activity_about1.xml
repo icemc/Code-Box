@@ -11,7 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fitsSystemWindows="true"
-        app:layout_scrollFlags="scroll|enterAlways"
         android:theme="@style/AppTheme.AppBarOverlay">
         <Space
             android:layout_width="match_parent"
@@ -21,12 +20,31 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|enterAlways"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_about1" />
+    <ScrollView
+        android:id="@+id/scroll_about"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:paddingTop="@dimen/padding_list_row"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/padding_list_row">
+
+            <include layout="@layout/card_about_1" />
+
+            <include layout="@layout/card_about_2" />
+
+        </LinearLayout>
+    </ScrollView>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab_about_share"
@@ -34,6 +52,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        android:src="@drawable/ic_share_black_24dp" />
+        app:srcCompat="@drawable/ic_share_black_24dp" />
 
 </android.support.design.widget.CoordinatorLayout>

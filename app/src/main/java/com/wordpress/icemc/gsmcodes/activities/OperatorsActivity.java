@@ -1,5 +1,7 @@
 package com.wordpress.icemc.gsmcodes.activities;
 
+import android.content.Intent;
+import android.content.res.Configuration;
 import android.database.Cursor;
 import android.graphics.Rect;
 import android.os.Bundle;
@@ -32,6 +34,9 @@ public class OperatorsActivity extends AppCompatActivity implements LoaderManage
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if (getIntent().getExtras() != null && getIntent().getExtras().getBoolean("START_HOME", false)) {
+            startActivity(new Intent(this, HomeActivity.class));
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_operators);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -43,15 +48,6 @@ public class OperatorsActivity extends AppCompatActivity implements LoaderManage
 
         //initCollapsingToolbar();
 
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
-
         recyclerView = (RecyclerView) findViewById(R.id.operator_recycler_view);
         adapter = new OperatorAdapter(this, operators);
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 2);
@@ -60,11 +56,10 @@ public class OperatorsActivity extends AppCompatActivity implements LoaderManage
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapter);
         //TODO load all operators and cache the result
-        List<Operator> ops = getOperators();
-        Log.d(OperatorsActivity.class.getSimpleName(), "Total operators read from database: " + ops.size());
-        getSupportLoaderManager().initLoader(OPERATOR_LOADER, null, this);
-        //operators.addAll(getOperators());
-        adapter.notifyDataSetChanged();
+        //List<Operator> ops = getOperators();
+        //Log.d(OperatorsActivity.class.getSimpleName(), "Total operators read from database: " + ops.size());
+        getSupportLoaderManager().initLoader(OPERATOR_LOADER, null, this).forceLoad();
+
     }
 
     @Override
@@ -81,6 +76,7 @@ public class OperatorsActivity extends AppCompatActivity implements LoaderManage
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
         OperatorsDao dao = new OperatorsDao(this);
         operators.addAll(dao.getOperatorsFromCursor(data));
+        adapter.notifyDataSetChanged();
     }
 
     @Override

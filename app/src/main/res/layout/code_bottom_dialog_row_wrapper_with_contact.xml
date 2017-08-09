@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,26 +7,36 @@
 
     <ImageView
         android:id="@+id/bottom_sheet_contact_button"
-        android:paddingLeft="20dp"
-        android:paddingStart="20dp"
-        android:paddingEnd="20dp"
-        android:paddingRight="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginEnd="12dp"
+        android:padding="@dimen/bg_button_padding"
+        android:background="@drawable/bg_simple_button_round"
         app:srcCompat="@drawable/ic_contacts_black_24dp"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-         />
+        android:layout_alignBottom="@+id/bottom_dialog_input_layout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingRight="@dimen/text_input_layout_left_padding"
         android:paddingEnd="@dimen/text_input_layout_left_padding"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/bottom_sheet_contact_button"
+        android:layout_toEndOf="@+id/bottom_sheet_contact_button"
         android:id="@+id/bottom_dialog_input_layout">
         <android.support.v7.widget.AppCompatEditText
             android:id="@+id/bottom_dialog_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:backgroundTint="@color/colorAccent"/>
+            app:backgroundTint="@color/colorAccent" />
     </android.support.design.widget.TextInputLayout>
 
 
-</LinearLayout>
+
+
+</RelativeLayout>

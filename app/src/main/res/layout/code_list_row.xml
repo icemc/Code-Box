@@ -110,14 +110,11 @@
             android:layout_width="@dimen/icon_phone"
             android:layout_height="@dimen/icon_phone"
             app:srcCompat="@drawable/ic_call_black_24dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/bg_list_row"
-            android:layout_alignBottom="@+id/message_container"
+            android:padding="@dimen/bg_button_padding"
+            android:background="@drawable/bg_simple_button_round"
+            android:layout_alignBottom="@+id/icon_container"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            />
+            android:layout_alignParentEnd="true" />
 
     </RelativeLayout>
 </android.support.v7.widget.CardView>

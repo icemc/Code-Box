@@ -5,10 +5,15 @@ import android.app.Application;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+
+import com.wordpress.icemc.gsmcodes.utilities.AppStart;
+import com.wordpress.icemc.gsmcodes.utilities.LocaleHelper;
 
 
 public class GSMCodes extends Application{
     private static GSMCodes ourInstance = new GSMCodes();
+    public static Configuration phoneConfiguration;
 
     public static GSMCodes getInstance() {
         return ourInstance;
@@ -17,6 +22,19 @@ public class GSMCodes extends Application{
     @Override
     public void onCreate() {
         super.onCreate();
+        phoneConfiguration = getResources().getConfiguration();
+        switch (AppStart.checkAppStartStatus(this, PreferenceManager.getDefaultSharedPreferences(this))) {
+            case NORMAL:
+                new LocaleHelper().updateLocale(this);
+                break;
+            case FIRST_TIME:
+                AppStart.setAppStartStatusToFirstTime(PreferenceManager.getDefaultSharedPreferences(this));
+                break;
+            case FIRST_TIME_VERSION:
+                AppStart.setAppStartStatusToFirstTimeVersion(PreferenceManager.getDefaultSharedPreferences(this));
+                break;
+        }
+
         registerActivityLifecycleCallbacks(new ActivityLifecycleCallbacks() {
             @Override
             public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
@@ -58,5 +76,6 @@ public class GSMCodes extends Application{
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
+        //new LocaleHelper().updateLocale(this);
     }
 }

@@ -11,19 +11,20 @@
         android:paddingLeft="@dimen/logo_small_padding"/>
 
     <TextView
+        android:id="@+id/create_code"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/view2"
+        android:layout_centerHorizontal="true"
         android:paddingLeft="20dp"
         android:paddingStart="20dp"
-        android:textSize="@dimen/text_secondary"
         android:paddingTop="15dp"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:paddingBottom="20dp"
         android:text="@string/add_code_heading"
-        android:id="@+id/create_code"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="@color/from"
-        android:textStyle="bold"
-        android:layout_toRightOf="@+id/textView2"
-        android:layout_toEndOf="@+id/textView2" />
+        android:textSize="@dimen/text_primary"
+        android:textStyle="bold" />
 
 
     <TextView
@@ -31,7 +32,7 @@
         android:layout_height="wrap_content"
         android:textSize="@dimen/text_secondary"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Name: "
+        android:text="@string/name"
         android:textColor="@color/from"
         android:textStyle="bold"
         android:id="@+id/textView2"
@@ -60,7 +61,6 @@
             android:hint="@string/name"
             android:maxLines="1"
             android:inputType="textAutoComplete|textCapSentences|textAutoCorrect"
-            android:singleLine="true"
             app:backgroundTint="@color/colorAccent"/>
 
     </android.support.design.widget.TextInputLayout>
@@ -72,7 +72,7 @@
         android:textColor="@color/from"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="10dp"
-        android:text="Code: "
+        android:text="@string/code"
         android:textSize="@dimen/text_secondary"
         android:textStyle="bold"
         android:id="@+id/textView3"
@@ -84,9 +84,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Description: "
+        android:text="@string/description"
         android:id="@+id/textView4"
         android:textStyle="bold"
+        android:paddingRight="5dp"
+        android:paddingEnd="5dp"
         android:textSize="@dimen/text_secondary"
         android:layout_alignBottom="@+id/view"
         android:textColor="@color/from"
@@ -98,39 +100,36 @@
         android:layout_height="wrap_content"
         android:id="@+id/scroll_tag"
         android:clickable="true"
-        android:layout_alignBottom="@+id/textView"
-        android:background="@color/row_activated"
         android:paddingBottom="5dp"
         android:scrollbars="none"
-        android:layout_marginRight="5dp"
-        android:layout_marginEnd="5dp"
-        android:layout_alignLeft="@+id/view"
         android:paddingEnd="5dp"
         android:paddingRight="5dp"
-        android:layout_alignStart="@+id/view">
-        <TextView
+        android:layout_alignBottom="@+id/textView"
+        android:layout_toRightOf="@+id/textView4"
+        android:layout_toEndOf="@+id/textView4">
+        <LinearLayout
             android:layout_width="wrap_content"
+            android:id="@+id/tags_container"
             android:layout_height="wrap_content"
-            android:id="@+id/tag_list"
-            android:textColor="@color/from"
-            android:textStyle="bold"
-            android:text="@string/no_tags_msg"
-            android:scrollbars="none"
-            android:textSize="@dimen/text_primary"
-            android:layout_marginTop="5dp"/>
+            android:orientation="horizontal"
+            android:paddingTop="5dp">
+
+        </LinearLayout>
     </HorizontalScrollView>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Categories:"
+        android:text="@string/categories"
         android:textStyle="bold"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="14dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
         android:id="@+id/textView"
-        android:layout_below="@+id/textView4"
         android:textColor="@color/from"
         android:textSize="@dimen/text_secondary"
+        android:layout_below="@+id/textView4"
         android:layout_alignLeft="@+id/textView4"
         android:layout_alignStart="@+id/textView4" />
     <android.support.design.widget.TextInputLayout
@@ -149,7 +148,6 @@
             android:hint="@string/code"
             android:maxLines="1"
             android:inputType="phone"
-            android:singleLine="true"
             app:backgroundTint="@color/colorAccent"/>
 
     </android.support.design.widget.TextInputLayout>
@@ -171,8 +169,7 @@
             app:backgroundTint="@color/colorAccent"
             android:inputType="textAutoComplete|textCapSentences|textMultiLine|textAutoCorrect"
             android:paddingEnd="5dp"
-            android:paddingRight="5dp"
-            android:singleLine="false"/>
+            android:paddingRight="5dp" />
 
     </android.support.design.widget.TextInputLayout>
 

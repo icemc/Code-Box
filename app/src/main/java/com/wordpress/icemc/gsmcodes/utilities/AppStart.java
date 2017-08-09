@@ -52,5 +52,17 @@ public class AppStart {
             return AppStartStatus.NORMAL;
         }
     }
+
+    public static void setAppStartStatusToFirstTime(SharedPreferences sharedPreferences) {
+        sharedPreferences.edit()
+                .putInt(LAST_APP_VERSION, -1)
+                .commit();
+    }
+
+    public static void setAppStartStatusToFirstTimeVersion(SharedPreferences sharedPreferences) {
+        sharedPreferences.edit()
+                .putInt(LAST_APP_VERSION, 1)
+                .commit();
+    }
 }
 

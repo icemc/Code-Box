@@ -1,7 +1,9 @@
 package com.wordpress.icemc.gsmcodes.activities;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -13,6 +15,7 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,14 +26,22 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.wordpress.icemc.gsmcodes.R;
+import com.wordpress.icemc.gsmcodes.dao.CodeDao;
+import com.wordpress.icemc.gsmcodes.dao.OperatorsDao;
+import com.wordpress.icemc.gsmcodes.dao.TagMapDao;
+import com.wordpress.icemc.gsmcodes.dao.TagsDao;
 import com.wordpress.icemc.gsmcodes.listeners.GetCodesListener;
 import com.wordpress.icemc.gsmcodes.utilities.AppStart;
 import com.wordpress.icemc.gsmcodes.utilities.AppStartStatus;
 import com.wordpress.icemc.gsmcodes.utilities.ApplicationConstants;
 import com.wordpress.icemc.gsmcodes.utilities.JsonUtils;
+import com.wordpress.icemc.gsmcodes.utilities.LocaleHelper;
+
+import java.util.Locale;
 
 public class WelcomeActivity extends AppCompatActivity implements GetCodesListener{
 
+    private static final String TAG = WelcomeActivity.class.getSimpleName();
     private ViewPager viewPager;
     private MyViewPagerAdapter myViewPagerAdapter;
     private LinearLayout dotsLayout;
@@ -40,6 +51,7 @@ public class WelcomeActivity extends AppCompatActivity implements GetCodesListen
     private AppStartStatus status;
     private ProgressDialog pDialog;
     private SharedPreferences sharedPreferences;
+    private String selectedAppLanguage = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,16 +62,23 @@ public class WelcomeActivity extends AppCompatActivity implements GetCodesListen
         switch (status = AppStart.checkAppStartStatus(this, sharedPreferences)) {
             case NORMAL:
                 String operator = sharedPreferences.getString(ApplicationConstants.LAST_OPERATOR_USED, "");
-                if(!operator.equals("")) {
+                if (getIntent().getExtras() != null && getIntent().getExtras().getBoolean("EXIT", false)) {
+                    Log.d(TAG, "Closing application");
+                    finish();
+                } else if(!operator.equals("")) {
+                    //Launch HomeActivity
                     Intent intent = new Intent(WelcomeActivity.this, HomeActivity.class);
                     startActivity(intent);
                 } else {
-                    launchHomeScreen();
-                    finish();
+                    loadDataIntoDatabase();
                 }
                 break;
             case FIRST_TIME_VERSION:
                 //Add any version specific stuff here
+                new CodeDao(this).deleteCodes();
+                new OperatorsDao(this).deleteOperators();
+                new TagsDao(this).deleteTags();
+                new TagMapDao(this).deleteTagMaps();
                 break;
             case FIRST_TIME:
                 break;
@@ -101,7 +120,42 @@ public class WelcomeActivity extends AppCompatActivity implements GetCodesListen
         btnSkip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                launchHomeScreen();
+                String currentLanguage = new LocaleHelper().getLocaleString();
+                int index = -1;
+
+                for(int i = 0; i < ApplicationConstants.TRANSLATIONS_AVAILABLE.length; i++) {
+                    if((currentLanguage).equals(
+                            new Locale(ApplicationConstants.TRANSLATIONS_AVAILABLE[i]).getLanguage())) {
+                        index = i;
+                        break;
+                    }
+                }
+                if (index == -1) {
+                    //Default to english
+                    index = 0;
+                }
+
+                final int currentIndex = index;
+                new AlertDialog.Builder(WelcomeActivity.this, R.style.MaterialDialog)
+                        .setTitle(R.string.select_language)
+                        .setSingleChoiceItems(ApplicationConstants.LANGUAGES, currentIndex, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                sharedPreferences.edit().putString(ApplicationConstants.APP_LANGUAGE, ApplicationConstants.TRANSLATIONS_AVAILABLE[which]).apply();
+                                selectedAppLanguage = ApplicationConstants.TRANSLATIONS_AVAILABLE[which];
+                                loadDataIntoDatabase();
+                                dialog.dismiss();
+                            }
+                        })
+                        .setPositiveButton(R.string.dialog_ok, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                sharedPreferences.edit().putString(ApplicationConstants.APP_LANGUAGE, ApplicationConstants.TRANSLATIONS_AVAILABLE[currentIndex]).apply();
+                                selectedAppLanguage = ApplicationConstants.TRANSLATIONS_AVAILABLE[currentIndex];
+                                loadDataIntoDatabase();
+                                dialog.dismiss();
+                            }
+                        }).show();
             }
         });
 
@@ -115,7 +169,43 @@ public class WelcomeActivity extends AppCompatActivity implements GetCodesListen
                     // move to next screen
                     viewPager.setCurrentItem(current);
                 } else {
-                    launchHomeScreen();
+                    String currentLanguage = new LocaleHelper().getLocaleString();
+                    int index = -1;
+
+                    for(int i = 0; i < ApplicationConstants.TRANSLATIONS_AVAILABLE.length; i++) {
+                        if((currentLanguage).equals(
+                                new Locale(ApplicationConstants.TRANSLATIONS_AVAILABLE[i]).getLanguage())) {
+                            index = i;
+                            break;
+                        }
+                    }
+                    if (index == -1) {
+                        //Default to english
+                        index = 0;
+                    }
+
+                    final int currentIndex = index;
+                    new AlertDialog.Builder(WelcomeActivity.this, R.style.MaterialDialog)
+                            .setTitle(R.string.select_language)
+                            .setSingleChoiceItems(ApplicationConstants.LANGUAGES, currentIndex, new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    sharedPreferences.edit().putString(ApplicationConstants.APP_LANGUAGE, ApplicationConstants.TRANSLATIONS_AVAILABLE[which]).apply();
+                                    selectedAppLanguage = ApplicationConstants.TRANSLATIONS_AVAILABLE[which];
+                                    loadDataIntoDatabase();
+                                    dialog.dismiss();
+                                }
+                            })
+                            .setPositiveButton(R.string.dialog_ok, new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    sharedPreferences.edit().putString(ApplicationConstants.APP_LANGUAGE, ApplicationConstants.TRANSLATIONS_AVAILABLE[currentIndex]).apply();
+                                    selectedAppLanguage = ApplicationConstants.TRANSLATIONS_AVAILABLE[currentIndex];
+                                    loadDataIntoDatabase();
+                                    dialog.dismiss();
+                        }
+                    }).show();
+
                 }
             }
         });
@@ -144,15 +234,13 @@ public class WelcomeActivity extends AppCompatActivity implements GetCodesListen
         return viewPager.getCurrentItem() + i;
     }
 
-    private void launchHomeScreen() {
-        if(status == AppStartStatus.FIRST_TIME) {
+    private void loadDataIntoDatabase() {
+        if(status == AppStartStatus.FIRST_TIME || status == AppStartStatus.FIRST_TIME_VERSION) {
             new LoadDataIntoDatabase(this).execute();
         } else {
             if(!sharedPreferences.getBoolean(ApplicationConstants.IS_DATABASE_DATA_CORRECT, false)) {
                 new LoadDataIntoDatabase(this).execute();
             }
-            startActivity(new Intent(WelcomeActivity.this, OperatorsActivity.class));
-            finish();
         }
     }
 
@@ -205,7 +293,6 @@ public class WelcomeActivity extends AppCompatActivity implements GetCodesListen
         }
         sharedPreferences.edit().putBoolean(ApplicationConstants.IS_DATABASE_DATA_CORRECT, true).apply();
         startActivity(new Intent(WelcomeActivity.this, OperatorsActivity.class));
-        finish();
     }
 
     @Override
@@ -259,10 +346,16 @@ public class WelcomeActivity extends AppCompatActivity implements GetCodesListen
      */
     private class LoadDataIntoDatabase extends AsyncTask<Void, Void, Void> {
         private GetCodesListener listener;
+        private String path;
 
         public LoadDataIntoDatabase(GetCodesListener listener) {
             super();
             this.listener = listener;
+            if (selectedAppLanguage.equals(ApplicationConstants.TRANSLATIONS_AVAILABLE[1])) {
+                path = "fr/";
+            } else {
+                path = "en/";
+            }
         }
 
         @Override
@@ -273,9 +366,9 @@ public class WelcomeActivity extends AppCompatActivity implements GetCodesListen
 
         @Override
         protected Void doInBackground(Void... params) {
-            JsonUtils.saveJSONOperatorsToDatabase(WelcomeActivity.this, "operators.json");
-            JsonUtils.saveJSONCodesToDatabase(WelcomeActivity.this, "codes.json");
-            JsonUtils.saveJSONTagsToDatabase(WelcomeActivity.this, "tags.json");
+            JsonUtils.saveJSONOperatorsToDatabase(WelcomeActivity.this, path + "operators.json");
+            JsonUtils.saveJSONCodesToDatabase(WelcomeActivity.this,  path + "codes.json");
+            JsonUtils.saveJSONTagsToDatabase(WelcomeActivity.this, path + "tags.json");
             return null;
         }
 

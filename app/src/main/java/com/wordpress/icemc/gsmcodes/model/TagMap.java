@@ -6,15 +6,18 @@ package com.wordpress.icemc.gsmcodes.model;
 public class TagMap {
         private String codeId;
         private String tagId;
+        private String operatorId;
 
         private TagMap(TagMap.Builder builder) {
             codeId = builder.codeId;
             tagId = builder.tagId;
+            operatorId = builder.operatorId;
         }
 
         public static class Builder{
             private String codeId;
             private String tagId;
+            private String operatorId;
 
             public Builder codeId(String code) {
                 codeId = code;
@@ -23,6 +26,11 @@ public class TagMap {
 
             public Builder tagId(String tag) {
                 tagId = tag;
+                return this;
+            }
+
+            public Builder operatorId(String operatorId) {
+                this.operatorId = operatorId;
                 return this;
             }
 
@@ -37,5 +45,9 @@ public class TagMap {
 
         public String getTagId() {
             return tagId;
+        }
+
+        public String getOperatorId() {
+            return operatorId;
         }
 }

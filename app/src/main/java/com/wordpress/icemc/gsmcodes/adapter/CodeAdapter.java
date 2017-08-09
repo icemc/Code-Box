@@ -28,16 +28,13 @@ import com.wordpress.icemc.gsmcodes.utilities.GSMCodeUtils;
 import java.util.Collections;
 import java.util.List;
 
-public class CodeAdapter extends RecyclerView.Adapter<CodeAdapter.MyViewHolder> implements onMoveAndSwipedListener {
+public class CodeAdapter extends RecyclerView.Adapter<CodeAdapter.MyViewHolder> {
     private Context context;
     private List<CodeItem>  codes;
     private CodeAdapterListener listener;
 
     //Index is used to animate only one selected row
-    private static int currentSelectedIndex = -1;
-
-    //Index of last item Animated
-    private  int lastItem = -1;
+    private int currentSelectedIndex = -1;
 
     public CodeAdapter(Context context, List<CodeItem> codes, CodeAdapterListener listener) {
         this.context = context;
@@ -54,12 +51,16 @@ public class CodeAdapter extends RecyclerView.Adapter<CodeAdapter.MyViewHolder> 
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
+    public void onBindViewHolder(MyViewHolder holder, final int position) {
         CodeItem item = codes.get(position);
 
         //display text view info
         holder.name.setText(item.getCode().getName());
         holder.description.setText(item.getCode().getDescription());
+
+        //Apply animation
+        Animation animation = AnimationUtils.loadAnimation(context, R.anim.anim_recycler_item_show);
+        holder.codeListWrapper.startAnimation(animation);
 
         //Display the first letter of code name in icon text
         holder.iconText.setText(item.getCode().getName().substring(0, 1));
@@ -82,9 +83,6 @@ public class CodeAdapter extends RecyclerView.Adapter<CodeAdapter.MyViewHolder> 
         holder.iconContainer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Apply animation
-                Animation animation = AnimationUtils.loadAnimation(context, R.anim.anim_recycler_item_show);
-                holder.codeContainer.startAnimation(animation);
                 listener.onIconClicked(position);
             }
         });
@@ -96,19 +94,26 @@ public class CodeAdapter extends RecyclerView.Adapter<CodeAdapter.MyViewHolder> 
             }
         });
 
-        View.OnLongClickListener l = new View.OnLongClickListener() {
+        holder.codeContainer.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onLongClick(View v) {
-                v.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS);
-                v.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS);
-
-                return true;
+            public void onClick(View v) {
+                listener.onPhoneClicked(position);
             }
-        };
+        });
 
+        holder.card.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onPhoneClicked(position);
+            }
+        });
 
-        holder.codeContainer.setOnLongClickListener(l);
-        holder.codeListWrapper.setOnLongClickListener(l);
+        holder.view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onPhoneClicked(position);
+            }
+        });
     }
 
     private void applyBGColor(MyViewHolder holder, CodeItem item) {
@@ -162,16 +167,9 @@ public class CodeAdapter extends RecyclerView.Adapter<CodeAdapter.MyViewHolder> 
         notifyItemChanged(position);
     }
 
-    @Override
-    public boolean onItemMove(int fromPosition, int toPosition) {
-        Collections.swap(codes, fromPosition, toPosition);
-        notifyItemMoved(fromPosition, toPosition);
-        return false;
-    }
-
-    @Override
-    public void onItemDismiss(int position) {
-        listener.onCodeRowSwiped(position);
+    public void remove(int position) {
+        codes.remove(position);
+        notifyDataSetChanged();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
